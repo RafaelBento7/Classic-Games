@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TrueColorGame">
+
+    <TextView
+        android:id="@+id/trueColorMaxPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/max_points"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/trueColorCorrects"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/points"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutHeartsPoints" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutHeartsPoints"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trueColorMaxPoints">
+
+        <TextView
+            android:id="@+id/trueColorPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/points"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/trueColorHeart3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_heart"
+                android:contentDescription="@string/heart1" />
+
+            <ImageView
+                android:id="@+id/trueColorHeart2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_heart"
+                android:contentDescription="@string/heart2" />
+
+            <ImageView
+                android:id="@+id/trueColorHeart1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_heart"
+                android:contentDescription="@string/heart3" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/trueColorColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/true_colors_game"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutColors"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trueColorMaxPoints" />
+
+    <ProgressBar
+        android:id="@+id/trueColorProgressBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@id/linearLayoutColors"
+        app:layout_constraintTop_toBottomOf="@id/trueColorColor" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutColors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout2">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/trueColorPurple"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/purple"
+            android:contentDescription="@string/purple" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/trueColorGreen"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/green"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/green" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/trueColorRed"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/red"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/red" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/trueColorYellow"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/yellow"
+            android:contentDescription="@string/yellow" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/trueColorBlue"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/blue"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/blue" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/trueColorBrown"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/brown"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/brown" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/trueColorOrange"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/orange"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/orange" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/trueColorPink"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/pink"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/pink" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

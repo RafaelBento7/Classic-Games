@@ -1,0 +1,91 @@
+<resources>
+    <!-- General-->
+    <string name="app_name">Classic Games</string>
+    <string name="points">Points:</string>
+    <string name="max_points">Max Points:</string>
+    <string name="game_over">Game Over</string>
+    <string name="cancel">Cancel</string>
+    <string name="play_again">Restart</string>
+    <string name="error">Something went wrong</string>
+    <string name="game_over_points">You lost with a score of</string>
+    <string name="back_menu">Back to menu</string>
+    <string name="choose_game">Choose a game</string>
+    <string name="help">Help?</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="resume">Resume</string>
+    <string name="next">Next</string>
+    <string name="lives_left">Lives Left:</string>
+    <string name="attempts_left">Attempts Left:</string>
+    <string name="question_mark">\?</string>
+    <string name="restart">restart</string>
+    <string name="lets_try">Let\'s try!</string>
+
+    <!--Numbers-->
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="ten">10</string>
+
+    <!-- Colors -->
+    <string name="purple">Purple</string>
+    <string name="green">Green</string>
+    <string name="red">Red</string>
+    <string name="yellow">Yellow</string>
+    <string name="blue">Blue</string>
+    <string name="brown">Brown</string>
+    <string name="orange">Orange</string>
+    <string name="pink">Pink</string>
+
+    <!-- Games -->
+    <string name="snake_game">Snake game</string>
+    <string name="true_colors_game">True Colors</string>
+    <string name="mastermind_game">Mastermind</string>
+
+    <!-- Snake Game-->
+    <string name="snake_speed">Next point speed:</string>
+    <string name="golden_point_timer">Golden Point Moves:</string>
+    <string name="no_golden_point">Golden Point OFF</string>
+    <string name="snake_map_size_number">What\'s the map size you want?(1,2,3)</string>
+    <string name="map_size">Map Size</string>
+    <string name="snake_obstacles_number">How many obstacles do you want?</string>
+    <string name="snake_obstacles">Obstacles</string>
+    <string name="snake_create_obstacles">Create Obstacles</string>
+    <string name="snake_rules">Eat every green and yellow point you can with the snake! And do not forget, avoid the red!</string>
+    <string name="speed">How does speed works?</string>
+    <string name="snake_speed_level1">0–5 = 10%</string>
+    <string name="snake_speed_level2">6–10 = 30%</string>
+    <string name="snake_speed_level3">11–25 = 50%</string>
+    <string name="snake_speed_level4">26–50 = 70%</string>
+    <string name="snake_speed_level5">51–100 = 85%</string>
+    <string name="snake_speed_level6">101+ = 100%</string>
+
+    <!-- True Colors -->
+    <string name="true_colors_color">Color</string>
+    <string name="heart1">true_colors_heart</string>
+    <string name="heart2">true_colors_heart2</string>
+    <string name="heart3">true_colors_heart3</string>
+    <string name="true_colors_rules">It\'s an easy game you just have to choose the color you READ instead of what your eyes SEE! </string>
+
+    <!-- Mastermind -->
+    <string name="mastermind_help">Objective of the game? Find the solution within 10 attempts!</string>
+    <string name="mastermind_help2">You will pick a sequence of four colors, and the colors must be at the same position as the solution.</string>
+    <string name="mastermind_help3">You have two little circles next to your attempt to help you.</string>
+    <string name="mastermind_help4">Red circle - Gives you the number of the correct colors and position you have in that attempt.</string>
+    <string name="mastermind_help5">Black circle - Gives you the number of the correct colors but WRONG position you have in that attempt.</string>
+    <string name="mastermind_help6">One tip for you, the game does NOT allow repetitive colors!</string>
+
+    <!-- Tic Tac Toe -->
+    <string name="tictactoe_player_one">Player One:</string>
+    <string name="tictactoe_player_two">Player Two:</string>
+    <string name="tictactoe_turn_player_one">It\'s your turn player one</string>
+    <string name="tictactoe_turn_player_two">It\'s your turn player two</string>
+    <string name="tictactoe_draw">Draw! No winners!</string>
+    <string name="tictactoe_win">Victory! Congratulations player </string>
+</resources>
