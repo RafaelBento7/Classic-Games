@@ -1,4 +1,4 @@
-package com.classicgames.myapplication;
+package com.classicgames.myapplication.ui.views.activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.classicgames.myapplication.R;
 
 import java.util.Random;
 

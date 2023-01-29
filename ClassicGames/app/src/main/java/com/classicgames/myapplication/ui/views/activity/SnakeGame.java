@@ -1,4 +1,4 @@
-package com.classicgames.myapplication;
+package com.classicgames.myapplication.ui.views.activity;
 
 import static java.lang.Math.abs;
 
@@ -18,6 +18,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.classicgames.myapplication.MainActivity;
+import com.classicgames.myapplication.R;
+import com.classicgames.myapplication.data.models.SnakePart;
 
 import java.util.ArrayList;
 import java.util.List;

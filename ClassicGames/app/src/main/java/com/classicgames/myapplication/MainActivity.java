@@ -11,6 +11,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.classicgames.myapplication.ui.views.activity.MastermindGame;
+import com.classicgames.myapplication.ui.views.activity.SnakeGame;
+import com.classicgames.myapplication.ui.views.activity.TicTacToe;
+import com.classicgames.myapplication.ui.views.activity.TrueColorGame;
+
 public class MainActivity extends AppCompatActivity {
 
     ImageButton bSnakeGame,bTrueColorsGame,bMastermindGame,bTictactoeGame;
@@ -73,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                     if (snakeObstacles >= 0 && snakeObstacles <= 20 && snakeMapSize == 1
                             || snakeObstacles >= 0 && snakeObstacles <= 50 && snakeMapSize == 2
                             || snakeObstacles >= 0 && snakeObstacles <= 75 && snakeMapSize == 3){
-                        Intent intent = new Intent(MainActivity.this,SnakeGame.class);
+                        Intent intent = new Intent(MainActivity.this, SnakeGame.class);
                         startActivity(intent);
                     } else Toast.makeText(this, "Too many obstacles", Toast.LENGTH_SHORT).show();
 

@@ -1,4 +1,4 @@
-package com.classicgames.myapplication;
+package com.classicgames.myapplication.ui.views.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,12 +13,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.classicgames.myapplication.R;
+import com.classicgames.myapplication.data.models.MastermindAttemptModel;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 public class MastermindGame extends AppCompatActivity {
 
-    private ArrayList<MastermindColorAttempt> mastermindAttempts;
+    private ArrayList<MastermindAttemptModel> mastermindAttempts;
     private TextView tvAttemptsLeft,tvTimer;
     private int[] solutionColors,colorsPicked;
     private int attempt = 0,colorPicked = 0;
@@ -52,16 +55,16 @@ public class MastermindGame extends AppCompatActivity {
 
     private void initializeObjects() {
         mastermindAttempts = new ArrayList<>();
-        mastermindAttempts.add(new MastermindColorAttempt(findViewById(R.id.first_left_one), findViewById(R.id.first_left_two), findViewById(R.id.first_left_three), findViewById(R.id.first_left_four), findViewById(R.id.first_true_position), findViewById(R.id.first_wrong_position)));
-        mastermindAttempts.add(new MastermindColorAttempt(findViewById(R.id.second_left_one), findViewById(R.id.second_left_two), findViewById(R.id.second_left_three), findViewById(R.id.second_left_four), findViewById(R.id.second_true_position), findViewById(R.id.second_wrong_position)));
-        mastermindAttempts.add(new MastermindColorAttempt(findViewById(R.id.third_left_one), findViewById(R.id.third_left_two), findViewById(R.id.third_left_three), findViewById(R.id.third_left_four), findViewById(R.id.third_true_position), findViewById(R.id.third_wrong_position)));
-        mastermindAttempts.add(new MastermindColorAttempt(findViewById(R.id.forth_left_one), findViewById(R.id.forth_left_two), findViewById(R.id.forth_left_three), findViewById(R.id.forth_left_four), findViewById(R.id.forth_true_position), findViewById(R.id.forth_wrong_position)));
-        mastermindAttempts.add(new MastermindColorAttempt(findViewById(R.id.fifth_left_one), findViewById(R.id.fifth_left_two), findViewById(R.id.fifth_left_three), findViewById(R.id.fifth_left_four), findViewById(R.id.fifth_true_position), findViewById(R.id.fifth_wrong_position)));
-        mastermindAttempts.add(new MastermindColorAttempt(findViewById(R.id.sixth_left_one), findViewById(R.id.sixth_left_two), findViewById(R.id.sixth_left_three), findViewById(R.id.sixth_left_four), findViewById(R.id.sixth_true_position), findViewById(R.id.sixth_wrong_position)));
-        mastermindAttempts.add(new MastermindColorAttempt(findViewById(R.id.seventh_left_one), findViewById(R.id.seventh_left_two), findViewById(R.id.seventh_left_three), findViewById(R.id.seventh_left_four), findViewById(R.id.seventh_true_position), findViewById(R.id.seventh_wrong_position)));
-        mastermindAttempts.add(new MastermindColorAttempt(findViewById(R.id.eight_left_one), findViewById(R.id.eight_left_two), findViewById(R.id.eight_left_three), findViewById(R.id.eight_left_four), findViewById(R.id.eight_true_position), findViewById(R.id.eight_wrong_position)));
-        mastermindAttempts.add(new MastermindColorAttempt(findViewById(R.id.ninth_left_one), findViewById(R.id.ninth_left_two), findViewById(R.id.ninth_left_three), findViewById(R.id.ninth_left_four), findViewById(R.id.ninth_true_position), findViewById(R.id.ninth_wrong_position)));
-        mastermindAttempts.add(new MastermindColorAttempt(findViewById(R.id.tenth_left_one), findViewById(R.id.tenth_left_two), findViewById(R.id.tenth_left_three), findViewById(R.id.tenth_left_four), findViewById(R.id.tenth_true_position), findViewById(R.id.tenth_wrong_position)));
+        mastermindAttempts.add(new MastermindAttemptModel(findViewById(R.id.first_left_one), findViewById(R.id.first_left_two), findViewById(R.id.first_left_three), findViewById(R.id.first_left_four), findViewById(R.id.first_true_position), findViewById(R.id.first_wrong_position)));
+        mastermindAttempts.add(new MastermindAttemptModel(findViewById(R.id.second_left_one), findViewById(R.id.second_left_two), findViewById(R.id.second_left_three), findViewById(R.id.second_left_four), findViewById(R.id.second_true_position), findViewById(R.id.second_wrong_position)));
+        mastermindAttempts.add(new MastermindAttemptModel(findViewById(R.id.third_left_one), findViewById(R.id.third_left_two), findViewById(R.id.third_left_three), findViewById(R.id.third_left_four), findViewById(R.id.third_true_position), findViewById(R.id.third_wrong_position)));
+        mastermindAttempts.add(new MastermindAttemptModel(findViewById(R.id.forth_left_one), findViewById(R.id.forth_left_two), findViewById(R.id.forth_left_three), findViewById(R.id.forth_left_four), findViewById(R.id.forth_true_position), findViewById(R.id.forth_wrong_position)));
+        mastermindAttempts.add(new MastermindAttemptModel(findViewById(R.id.fifth_left_one), findViewById(R.id.fifth_left_two), findViewById(R.id.fifth_left_three), findViewById(R.id.fifth_left_four), findViewById(R.id.fifth_true_position), findViewById(R.id.fifth_wrong_position)));
+        mastermindAttempts.add(new MastermindAttemptModel(findViewById(R.id.sixth_left_one), findViewById(R.id.sixth_left_two), findViewById(R.id.sixth_left_three), findViewById(R.id.sixth_left_four), findViewById(R.id.sixth_true_position), findViewById(R.id.sixth_wrong_position)));
+        mastermindAttempts.add(new MastermindAttemptModel(findViewById(R.id.seventh_left_one), findViewById(R.id.seventh_left_two), findViewById(R.id.seventh_left_three), findViewById(R.id.seventh_left_four), findViewById(R.id.seventh_true_position), findViewById(R.id.seventh_wrong_position)));
+        mastermindAttempts.add(new MastermindAttemptModel(findViewById(R.id.eight_left_one), findViewById(R.id.eight_left_two), findViewById(R.id.eight_left_three), findViewById(R.id.eight_left_four), findViewById(R.id.eight_true_position), findViewById(R.id.eight_wrong_position)));
+        mastermindAttempts.add(new MastermindAttemptModel(findViewById(R.id.ninth_left_one), findViewById(R.id.ninth_left_two), findViewById(R.id.ninth_left_three), findViewById(R.id.ninth_left_four), findViewById(R.id.ninth_true_position), findViewById(R.id.ninth_wrong_position)));
+        mastermindAttempts.add(new MastermindAttemptModel(findViewById(R.id.tenth_left_one), findViewById(R.id.tenth_left_two), findViewById(R.id.tenth_left_three), findViewById(R.id.tenth_left_four), findViewById(R.id.tenth_true_position), findViewById(R.id.tenth_wrong_position)));
         btPurple = findViewById(R.id.trueColorPurple);
         btGreen = findViewById(R.id.trueColorGreen);
         btRed = findViewById(R.id.trueColorRed);

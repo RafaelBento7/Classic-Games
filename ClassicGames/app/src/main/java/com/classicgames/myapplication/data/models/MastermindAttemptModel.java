@@ -1,14 +1,14 @@
-package com.classicgames.myapplication;
+package com.classicgames.myapplication.data.models;
 
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MastermindColorAttempt {
+public class MastermindAttemptModel {
     private ImageView first, second, third, forth;
     private TextView truePosition, wrongPosition;
 
     // Attempt Constructor
-    public MastermindColorAttempt(ImageView first, ImageView second,ImageView third,ImageView forth,TextView truePosition,TextView wrongPosition){
+    public MastermindAttemptModel(ImageView first, ImageView second, ImageView third, ImageView forth, TextView truePosition, TextView wrongPosition){
         this.setFirst(first);
         this.setSecond(second);
         this.setThird(third);

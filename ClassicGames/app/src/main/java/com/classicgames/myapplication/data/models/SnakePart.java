@@ -1,4 +1,4 @@
-package com.classicgames.myapplication;
+package com.classicgames.myapplication.data.models;
 
 public class SnakePart {
     private int positionX, positionY;
