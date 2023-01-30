@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.classicgames.myapplication.ui.views.activity.MastermindGame;
 import com.classicgames.myapplication.ui.views.activity.SnakeGame;
-import com.classicgames.myapplication.ui.views.activity.TicTacToe;
+import com.classicgames.myapplication.ui.views.activity.TicTacToeActivity;
 import com.classicgames.myapplication.ui.views.activity.TrueColorGame;
 
 public class MainActivity extends AppCompatActivity {
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void tictactoeGame(){
-        Intent intent = new Intent(MainActivity.this, TicTacToe.class);
+        Intent intent = new Intent(MainActivity.this, TicTacToeActivity.class);
         startActivity(intent);
     }
 
