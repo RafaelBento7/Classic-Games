@@ -27,9 +27,9 @@ public class TicTacToeActivity extends AppCompatActivity {
         binding.setActivity(this);
 
         String pointsTextPlayerOne = getResources().getString(R.string.tictactoe_player_one)+" 0";
-        binding.tictactoePlayerOne.setText(pointsTextPlayerOne);
+        binding.TictactoeTvPlayerOne.setText(pointsTextPlayerOne);
         String pointsTextPlayerTwo = getResources().getString(R.string.tictactoe_player_two)+" 0";
-        binding.tictactoePlayerTwo.setText(pointsTextPlayerTwo);
+        binding.TictactoeTvPlayerTwo.setText(pointsTextPlayerTwo);
         initGame();
     }
 
@@ -63,21 +63,22 @@ public class TicTacToeActivity extends AppCompatActivity {
             return;
         }
 
-        if (currentPlayer == 1) binding.tictactoePlayerTurn.setText(getResources().getString(R.string.tictactoe_turn_player_two));
-        else binding.tictactoePlayerTurn.setText(getResources().getString(R.string.tictactoe_turn_player_one));
+        if (currentPlayer == 1) binding.TictactoeTvPlayerTurn.setText(getResources().getString(R.string.tictactoe_turn_player_two));
+        else binding.TictactoeTvPlayerTurn.setText(getResources().getString(R.string.tictactoe_turn_player_one));
         viewModel.changePlayerTurn();
     }
 
     private void clearImages(){
-        binding.tictactoeOne.setImageResource(0);
-        binding.tictactoeTwo.setImageResource(0);
-        binding.tictactoeThree.setImageResource(0);
-        binding.tictactoeFour.setImageResource(0);
-        binding.tictactoeFive.setImageResource(0);
-        binding.tictactoeSix.setImageResource(0);
-        binding.tictactoeSeven.setImageResource(0);
-        binding.tictactoeEight.setImageResource(0);
-        binding.tictactoeNine.setImageResource(0);
+        binding.TictactoeIv00.setImageResource(0);
+        binding.TictactoeIv01.setImageResource(0);
+        binding.TictactoeIv02.setImageResource(0);
+        binding.TictactoeIv10.setImageResource(0);
+        binding.TictactoeIv11.setImageResource(0);
+        binding.TictactoeIv12.setImageResource(0);
+        binding.TictactoeIv20.setImageResource(0);
+        binding.TictactoeIv21.setImageResource(0);
+        binding.TictactoeIv22.setImageResource(0);
+
     }
 
     private void draw() {
@@ -92,13 +93,13 @@ public class TicTacToeActivity extends AppCompatActivity {
             Toast.makeText(this, getResources().getString(R.string.tictactoe_win)+" 1!", Toast.LENGTH_SHORT).show();
             playerOnePoints++;
             String pointsText = getResources().getString(R.string.tictactoe_player_one)+" "+playerOnePoints;
-            binding.tictactoePlayerOne.setText(pointsText);
+            binding.TictactoeTvPlayerOne.setText(pointsText);
         }
         else{
 
             playerTwoPoints++;
             String pointsText = getResources().getString(R.string.tictactoe_player_two)+" "+playerTwoPoints;
-            binding.tictactoePlayerTwo.setText(pointsText);
+            binding.TictactoeTvPlayerTwo.setText(pointsText);
         }
         initGame();
     }
