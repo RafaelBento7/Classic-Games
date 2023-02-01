@@ -48,8 +48,8 @@ public class TicTacToeActivity extends AppCompatActivity {
 
         // Add X or O to ImageView
         ImageView imageView = (ImageView) view;
-        if (currentPlayer == 1) imageView.setImageResource(R.drawable.tictactoe_x);
-        else imageView.setImageResource(R.drawable.tictactoe_o);
+        if (currentPlayer == 1) imageView.setImageResource(R.drawable.tic_tac_toe_ic_x);
+        else imageView.setImageResource(R.drawable.tic_tac_toe_ic_o);
 
         viewModel.newPlayerMove(row, col);
 
