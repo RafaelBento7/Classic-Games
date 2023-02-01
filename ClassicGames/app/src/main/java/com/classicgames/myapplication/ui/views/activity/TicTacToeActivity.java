@@ -83,6 +83,7 @@ public class TicTacToeActivity extends AppCompatActivity {
 
     private void draw() {
         Toast.makeText(this, getResources().getString(R.string.tictactoe_draw), Toast.LENGTH_SHORT).show();
+        viewModel.changePlayerTurn();
         initGame();
     }
 
