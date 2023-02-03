@@ -40,7 +40,7 @@ public class TicTacToeActivity extends AppCompatActivity {
 
     public void playerMove(View view, int row, int col){
         if (!viewModel.canPlay(row, col)){    // Checks if player can play
-            Toast.makeText(this, "You can not play there, you know it...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.can_not_play_there, Toast.LENGTH_SHORT).show();
             return;
         }
 

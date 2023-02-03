@@ -1,7 +1,5 @@
 package com.classicgames.myapplication.ui.viewmodels;
 
-import android.widget.Toast;
-
 import androidx.lifecycle.ViewModel;
 
 import com.classicgames.myapplication.data.models.TicTacToeModel;

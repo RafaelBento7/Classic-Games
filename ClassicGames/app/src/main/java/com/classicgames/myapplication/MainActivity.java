@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.classicgames.myapplication.ui.views.activity.MastermindGame;
 import com.classicgames.myapplication.ui.views.activity.SnakeGame;
 import com.classicgames.myapplication.ui.views.activity.TicTacToeActivity;
-import com.classicgames.myapplication.ui.views.activity.TrueColorGame;
+import com.classicgames.myapplication.ui.views.activity.TrueColorsActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void trueColorsGame(){
-        Intent intent = new Intent(MainActivity.this, TrueColorGame.class);
+        Intent intent = new Intent(MainActivity.this, TrueColorsActivity.class);
         startActivity(intent);
     }
 
