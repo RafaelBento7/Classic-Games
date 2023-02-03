@@ -18,7 +18,7 @@
     </style>
 
     <style name="GuideLineTop" parent="GuideLine">
-        <item name="layout_constraintGuide_begin">25dp</item>
+        <item name="layout_constraintGuide_begin">35dp</item>
     </style>
 
     <style name="TicTacToe_ImageView">
@@ -26,5 +26,23 @@
         <item name="android:layout_height">0dp</item>
         <item name="android:adjustViewBounds">true</item>
         <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="CustomTextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="TitleTextView" parent="CustomTextView">
+        <item name="android:textSize">50sp</item>
+    </style>
+
+    <style name="TextView" parent="CustomTextView">
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="SmallTextView" parent="CustomTextView">
+        <item name="android:textSize">20sp</item>
     </style>
 </resources>

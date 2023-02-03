@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.views.activity.TrueColorsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/backgroundColor">
+
+        <TextView
+            android:id="@+id/TrueColors_Tv_MaxPoints"
+            style="@style/TextView"
+            android:text="@string/max_points"
+            app:layout_constraintEnd_toStartOf="@+id/TrueColors_GuidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/TrueColors_GuidelineStart"
+            app:layout_constraintTop_toTopOf="@+id/TrueColors_GuidelineTop" />
+
+        <TextView
+            android:id="@+id/TrueColors_Tv_Corrects"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/points"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@+id/TrueColors_GuidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/TrueColors_GuidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/TrueColors_Tv_Points" />
+
+        <TextView
+            android:id="@+id/TrueColors_Tv_Points"
+            style="@style/TextView"
+            android:layout_marginTop="20dp"
+            android:text="@string/points"
+            app:layout_constraintStart_toStartOf="@+id/TrueColors_GuidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/TrueColors_Tv_MaxPoints" />
+
+        <ImageView
+            android:id="@+id/TrueColors_Iv_Heart3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_heart"
+            android:contentDescription="@string/heart1"
+            app:layout_constraintBottom_toBottomOf="@+id/TrueColors_Tv_Points"
+            app:layout_constraintEnd_toStartOf="@+id/TrueColors_GuidelineEnd"
+            app:layout_constraintTop_toTopOf="@+id/TrueColors_Tv_Points" />
+
+        <ImageView
+            android:id="@+id/TrueColors_Iv_Heart2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_heart"
+            android:contentDescription="@string/heart2"
+            app:layout_constraintEnd_toStartOf="@+id/TrueColors_Iv_Heart3"
+            app:layout_constraintTop_toTopOf="@+id/TrueColors_Iv_Heart3" />
+
+        <ImageView
+            android:id="@+id/TrueColors_Iv_Heart1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_heart"
+            android:contentDescription="@string/heart3"
+            app:layout_constraintEnd_toStartOf="@+id/TrueColors_Iv_Heart2"
+            app:layout_constraintTop_toTopOf="@+id/TrueColors_Iv_Heart2" />
+
+        <TextView
+            android:id="@+id/TrueColors_Tv_Color"
+            style="@style/TitleTextView"
+            android:text="@string/true_colors_game"
+            app:layout_constraintBottom_toTopOf="@+id/TrueColors_ProgressBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TrueColors_Tv_Corrects" />
+
+        <ProgressBar
+            android:id="@+id/TrueColors_ProgressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@drawable/round_button"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayoutColors"
+            app:layout_constraintEnd_toStartOf="@+id/TrueColors_GuidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/TrueColors_GuidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/TrueColors_Tv_Color" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutColors"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toStartOf="@+id/TrueColors_GuidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/TrueColors_GuidelineStart">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/TrueColors_Bt_Purple"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/purple"
+                android:contentDescription="@string/purple" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/TrueColors_Bt_Green"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/green"
+                android:contentDescription="@string/green" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/TrueColors_Bt_Red"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/red"
+                android:contentDescription="@string/red" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/TrueColors_Bt_Yellow"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/yellow"
+                android:contentDescription="@string/yellow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/TrueColors_GuidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/TrueColors_GuidelineStart">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/TrueColors_Bt_Blue"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/blue"
+                android:contentDescription="@string/blue" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/TrueColors_Bt_Brown"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/brown"
+                android:contentDescription="@string/brown" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/TrueColors_Bt_Orange"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/orange"
+                android:contentDescription="@string/orange" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/TrueColors_Bt_Pink"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/pink"
+                android:contentDescription="@string/pink" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/TrueColors_GuidelineStart"
+            android:orientation="vertical"
+            style="@style/GuideLineStart" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/TrueColors_GuidelineEnd"
+            android:orientation="vertical"
+            style="@style/GuideLineEnd" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/TrueColors_GuidelineTop"
+            android:orientation="horizontal"
+            style="@style/GuideLineTop" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/TrueColors_GuidelineBottom"
+            android:orientation="horizontal"
+            style="@style/GuideLineBottom" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

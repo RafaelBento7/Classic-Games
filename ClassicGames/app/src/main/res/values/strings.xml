@@ -88,4 +88,5 @@
     <string name="tictactoe_turn_player_two">It\'s your turn player two</string>
     <string name="tictactoe_draw">Draw! No winners!</string>
     <string name="tictactoe_win">Victory! Congratulations player </string>
+    <string name="can_not_play_there">You can not play there, you know it...</string>
 </resources>
