@@ -29,7 +29,7 @@ public class TrueColorsActivity extends AppCompatActivity {
         mViewModel.getTrueColor().observe(this, this::changeTrueColorText);
         mViewModel.getFalseColor().observe(this, this::changeFalseColors);
         mViewModel.getCorrectColorsPicked().observe(this, correctColorsPicked -> binding.TrueColorsTvCorrects.setText(String.valueOf(correctColorsPicked)));
-        mViewModel.getPoints().observe(this, points -> binding.TrueColorsTvPoints.setText(String.valueOf(getResources().getString(R.string.points) +  points)));
+        mViewModel.getPoints().observe(this, points -> binding.TrueColorsTvPoints.setText(String.valueOf(getResources().getString(R.string.points) + " " + points)));
         mViewModel.getLives().observe(this, this::livesChanged);
         mViewModel.getRecord().observe(this, this::loadRecord);
         mViewModel.isGameOver().observe(this, isGameOver -> {
@@ -50,7 +50,7 @@ public class TrueColorsActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(TrueColorsActivity.this);
         builder.setTitle(getResources().getString(R.string.game_over));
         builder.setCancelable(false);
-        builder.setMessage(getResources().getString(R.string.game_over_points)+" "+mViewModel.getPoints().getValue());
+        builder.setMessage(getResources().getString(R.string.game_over_points) + " " + mViewModel.getPoints().getValue());
         builder.setPositiveButton(getResources().getString(R.string.play_again), (dialog, which) -> startGame());
         builder.setNegativeButton(getResources().getString(R.string.back_menu),(dialog, which)-> finish());
         builder.show();

@@ -15,7 +15,6 @@ public class TrueColorsModel {
 
     public TrueColorsModel(){
         colors = MyApplication.getInstance().getTrueColorsColors();
-        System.out.println(colors.length);
         maxPoints = MyApplication.getInstance().getRecords().getTrueColorsRecord();
     }
 

@@ -5,6 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.views.activity.TrueColorsActivity">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.classicgames.myapplication.ui.viewmodels.TrueColorsViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,9 +20,9 @@
             android:id="@+id/TrueColors_Tv_MaxPoints"
             style="@style/TextView"
             android:text="@string/max_points"
-            app:layout_constraintEnd_toStartOf="@+id/TrueColors_GuidelineEnd"
-            app:layout_constraintStart_toStartOf="@+id/TrueColors_GuidelineStart"
-            app:layout_constraintTop_toTopOf="@+id/TrueColors_GuidelineTop" />
+            app:layout_constraintEnd_toStartOf="@id/TrueColors_GuidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/TrueColors_GuidelineStart"
+            app:layout_constraintTop_toTopOf="@id/TrueColors_GuidelineTop" />
 
         <TextView
             android:id="@+id/TrueColors_Tv_Corrects"
@@ -26,17 +32,17 @@
             android:text="@string/points"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="25sp"
-            app:layout_constraintEnd_toStartOf="@+id/TrueColors_GuidelineEnd"
-            app:layout_constraintStart_toStartOf="@+id/TrueColors_GuidelineStart"
-            app:layout_constraintTop_toBottomOf="@+id/TrueColors_Tv_Points" />
+            app:layout_constraintEnd_toStartOf="@id/TrueColors_GuidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/TrueColors_GuidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/TrueColors_Tv_Points" />
 
         <TextView
             android:id="@+id/TrueColors_Tv_Points"
             style="@style/TextView"
             android:layout_marginTop="20dp"
             android:text="@string/points"
-            app:layout_constraintStart_toStartOf="@+id/TrueColors_GuidelineStart"
-            app:layout_constraintTop_toBottomOf="@+id/TrueColors_Tv_MaxPoints" />
+            app:layout_constraintStart_toStartOf="@id/TrueColors_GuidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/TrueColors_Tv_MaxPoints" />
 
         <ImageView
             android:id="@+id/TrueColors_Iv_Heart3"
@@ -44,9 +50,9 @@
             android:layout_height="wrap_content"
             android:background="@drawable/ic_heart"
             android:contentDescription="@string/heart1"
-            app:layout_constraintBottom_toBottomOf="@+id/TrueColors_Tv_Points"
-            app:layout_constraintEnd_toStartOf="@+id/TrueColors_GuidelineEnd"
-            app:layout_constraintTop_toTopOf="@+id/TrueColors_Tv_Points" />
+            app:layout_constraintBottom_toBottomOf="@id/TrueColors_Tv_Points"
+            app:layout_constraintEnd_toStartOf="@id/TrueColors_GuidelineEnd"
+            app:layout_constraintTop_toTopOf="@id/TrueColors_Tv_Points" />
 
         <ImageView
             android:id="@+id/TrueColors_Iv_Heart2"
@@ -54,8 +60,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/ic_heart"
             android:contentDescription="@string/heart2"
-            app:layout_constraintEnd_toStartOf="@+id/TrueColors_Iv_Heart3"
-            app:layout_constraintTop_toTopOf="@+id/TrueColors_Iv_Heart3" />
+            app:layout_constraintEnd_toStartOf="@id/TrueColors_Iv_Heart3"
+            app:layout_constraintTop_toTopOf="@id/TrueColors_Iv_Heart3" />
 
         <ImageView
             android:id="@+id/TrueColors_Iv_Heart1"
@@ -63,17 +69,17 @@
             android:layout_height="wrap_content"
             android:background="@drawable/ic_heart"
             android:contentDescription="@string/heart3"
-            app:layout_constraintEnd_toStartOf="@+id/TrueColors_Iv_Heart2"
-            app:layout_constraintTop_toTopOf="@+id/TrueColors_Iv_Heart2" />
+            app:layout_constraintEnd_toStartOf="@id/TrueColors_Iv_Heart2"
+            app:layout_constraintTop_toTopOf="@id/TrueColors_Iv_Heart2" />
 
         <TextView
             android:id="@+id/TrueColors_Tv_Color"
             style="@style/TitleTextView"
             android:text="@string/true_colors_game"
-            app:layout_constraintBottom_toTopOf="@+id/TrueColors_ProgressBar"
+            app:layout_constraintBottom_toTopOf="@id/TrueColors_ProgressBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TrueColors_Tv_Corrects" />
+            app:layout_constraintTop_toBottomOf="@id/TrueColors_Tv_Corrects" />
 
         <ProgressBar
             android:id="@+id/TrueColors_ProgressBar"
@@ -81,103 +87,88 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:background="@drawable/round_button"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayoutColors"
-            app:layout_constraintEnd_toStartOf="@+id/TrueColors_GuidelineEnd"
-            app:layout_constraintStart_toStartOf="@+id/TrueColors_GuidelineStart"
-            app:layout_constraintTop_toBottomOf="@+id/TrueColors_Tv_Color" />
+            app:layout_constraintBottom_toTopOf="@id/TrueColors_LinearLayout_Above"
+            app:layout_constraintEnd_toStartOf="@id/TrueColors_GuidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/TrueColors_GuidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/TrueColors_Tv_Color" />
 
         <LinearLayout
-            android:id="@+id/linearLayoutColors"
+            android:id="@+id/TrueColors_LinearLayout_Above"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:gravity="center"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-            app:layout_constraintEnd_toStartOf="@+id/TrueColors_GuidelineEnd"
-            app:layout_constraintStart_toStartOf="@+id/TrueColors_GuidelineStart">
+            app:layout_constraintBottom_toTopOf="@id/TrueColors_LinearLayout_Bellow"
+            app:layout_constraintEnd_toStartOf="@id/TrueColors_GuidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/TrueColors_GuidelineStart">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/TrueColors_Bt_Purple"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
+                style="@style/TrueColors_ColorButton"
                 android:backgroundTint="@color/purple"
+                android:onClick="@{(view) -> viewModel.colorPressed(view)}"
                 android:contentDescription="@string/purple" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/TrueColors_Bt_Green"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/round_button"
+                style="@style/TrueColors_ColorButton"
                 android:backgroundTint="@color/green"
+                android:onClick="@{(view) -> viewModel.colorPressed(view)}"
                 android:contentDescription="@string/green" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/TrueColors_Bt_Red"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/round_button"
+                style="@style/TrueColors_ColorButton"
                 android:backgroundTint="@color/red"
+                android:onClick="@{(view) -> viewModel.colorPressed(view)}"
                 android:contentDescription="@string/red" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/TrueColors_Bt_Yellow"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
+                style="@style/TrueColors_ColorButton"
                 android:backgroundTint="@color/yellow"
+                android:onClick="@{(view) -> viewModel.colorPressed(view)}"
                 android:contentDescription="@string/yellow" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout2"
+            android:id="@+id/TrueColors_LinearLayout_Bellow"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
             android:gravity="center"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/TrueColors_GuidelineEnd"
-            app:layout_constraintStart_toStartOf="@+id/TrueColors_GuidelineStart">
+            app:layout_constraintBottom_toTopOf="@+id/TrueColors_GuidelineBottom"
+            app:layout_constraintEnd_toStartOf="@id/TrueColors_GuidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/TrueColors_GuidelineStart">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/TrueColors_Bt_Blue"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
+                style="@style/TrueColors_ColorButton"
                 android:backgroundTint="@color/blue"
+                android:onClick="@{(view) -> viewModel.colorPressed(view)}"
                 android:contentDescription="@string/blue" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/TrueColors_Bt_Brown"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/round_button"
+                style="@style/TrueColors_ColorButton"
                 android:backgroundTint="@color/brown"
+                android:onClick="@{(view) -> viewModel.colorPressed(view)}"
                 android:contentDescription="@string/brown" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/TrueColors_Bt_Orange"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/round_button"
+                style="@style/TrueColors_ColorButton"
                 android:backgroundTint="@color/orange"
+                android:onClick="@{(view) -> viewModel.colorPressed(view)}"
                 android:contentDescription="@string/orange" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/TrueColors_Bt_Pink"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
+                style="@style/TrueColors_ColorButton"
                 android:backgroundTint="@color/pink"
-                android:contentDescription="@string/pink" />
+                android:onClick="@{(view) -> viewModel.colorPressed(view)}"
+                android:contentDescription="@string/pink"/>
         </LinearLayout>
 
         <androidx.constraintlayout.widget.Guideline

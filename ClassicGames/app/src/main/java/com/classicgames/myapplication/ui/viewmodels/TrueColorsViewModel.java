@@ -28,14 +28,13 @@ public class TrueColorsViewModel extends ViewModel {
         lives = new MutableLiveData<>();
         gameOver = new MutableLiveData<>();
         record = new MutableLiveData<>();
-
         record.setValue(game.getRecord());
-        correctColorsPicked.setValue(0);
-        points.setValue(0);
     }
 
     public void startGame(){
         game.startGame();
+        correctColorsPicked.setValue(0);
+        points.setValue(0);
         lives.setValue(game.getLives());
         gameOver.setValue(false);
         startRound();
@@ -70,7 +69,6 @@ public class TrueColorsViewModel extends ViewModel {
     public void colorPressed(View view){
         ColorStateList colorStateList = view.getBackgroundTintList();
         int color = colorStateList.getDefaultColor();
-        System.out.println(color);
         stopTimer();
         if (game.scoredPoint(color)) winPoint();
         else loseLife();
@@ -86,10 +84,10 @@ public class TrueColorsViewModel extends ViewModel {
 
     private void loseLife(){
         game.loseLife();
+        lives.setValue(game.getLives());
 
         if (game.isGameOver()) gameOver();
         else {
-            lives.setValue(game.getLives());
             startRound();
         }
     }
