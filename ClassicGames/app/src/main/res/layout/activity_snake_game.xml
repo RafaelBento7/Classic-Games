@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RelativeLayout
+    <FrameLayout
         android:id="@+id/snakeScreenLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,12 +33,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/snakePoints">
 
-        <SurfaceView
+       <!-- <SurfaceView
             android:id="@+id/snakeScreen"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" />-->
 
-    </RelativeLayout>
+    </FrameLayout>
 
     <TextView
         android:id="@+id/snakeMaxPoints"

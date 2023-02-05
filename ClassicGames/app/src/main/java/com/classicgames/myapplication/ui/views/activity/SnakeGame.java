@@ -9,9 +9,12 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,7 +42,7 @@ public class SnakeGame extends AppCompatActivity implements SurfaceHolder.Callba
 
     private final List<SnakePart> obstacles = new ArrayList<>();
     private String direction = "right";
-    private int bodySize;
+    private int bodySize, rectsPerRow;
     private int snakeSpeed, goldenPointCounter, score=0,maxPoints,speedLevel=1;
     private final List<SnakePart> snakeBody = new ArrayList<>();
     private Canvas canvas = null;
@@ -55,24 +58,45 @@ public class SnakeGame extends AppCompatActivity implements SurfaceHolder.Callba
         bodySizeChooser();
         createPaints();
         loadRecord();
-        surfaceView.getHolder().addCallback(this);
+
+        FrameLayout frameLayout = findViewById(R.id.snakeScreenLayout);
+        ViewTreeObserver viewTreeObserver = frameLayout.getViewTreeObserver();
+        viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                bodySize = frameLayout.getWidth() / rectsPerRow;
+                int widthSize = frameLayout.getWidth() - (frameLayout.getWidth() % (bodySize*2));
+                int heightSize = frameLayout.getHeight() - (frameLayout.getHeight() % (bodySize*2));
+
+                surfaceView = new SurfaceView(SnakeGame.this);
+                FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(widthSize, heightSize);
+                layoutParams.gravity = Gravity.CENTER;
+                surfaceView.setLayoutParams(layoutParams);
+                frameLayout.addView(surfaceView);
+
+                surfaceView.getHolder().addCallback(SnakeGame.this);
+
+                frameLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+            }
+        });
     }
 
     private void getComponents(){
         textViewPoints = findViewById(R.id.snakePoints);
         textViewMaxPoints = findViewById(R.id.snakeMaxPoints);
         textViewSpeed = findViewById(R.id.snakeCurrentSpeed);
-        surfaceView = findViewById(R.id.snakeScreen);
         textViewSnakeGoldenPoint = findViewById(R.id.snakeGoldenPointTimer);
         save = getSharedPreferences("SnakeGame", Context.MODE_PRIVATE);
         load = getApplicationContext().getSharedPreferences("SnakeGame",Context.MODE_PRIVATE);
     }
 
     private void bodySizeChooser(){
-        bodySize = MainActivity.getSnakeMapSize();
-        if (bodySize==1) bodySize = 28;
-        else if (bodySize==2) bodySize = 22;
-        else bodySize = 16;
+        rectsPerRow = MainActivity.getSnakeMapSize();
+        if (rectsPerRow==1) {
+            rectsPerRow = 20;
+        }
+        else if (rectsPerRow==2) rectsPerRow = 30;
+        else rectsPerRow = 40;
     }
 
     @Override
@@ -80,12 +104,21 @@ public class SnakeGame extends AppCompatActivity implements SurfaceHolder.Callba
         this.surfaceHolder = holder;
         if (!canPlay) return;
         createObstacles();
+
+        System.out.println("ola");
+        //bodySize = surfaceView.getWidth() / 20;
+        //System.out.println(surfaceView.getWidth());
+        //bodySize1 = surfaceView.getWidth() / 20;
+        //bodySize2 = surfaceView.getWidth() / 40;
+        //bodySize3 = surfaceView.getWidth() / 60;
+        //surfaceHolder.setFixedSize(bodySize * 20, bodySize * 40);
+        //surfaceView.getHolder().setFixedSize(bodySize * 20, bodySize * 40);
         start();
     }
 
     @Override
     public void surfaceChanged(@NonNull SurfaceHolder holder, int format, int width, int height) {
-
+        System.out.println("passei cá");
     }
 
     @Override

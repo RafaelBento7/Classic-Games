@@ -5,8 +5,8 @@ import android.content.SharedPreferences;
 
 public class RecordsPreferences {
 
-    private SharedPreferences sp;
-    private SharedPreferences.Editor editor;
+    private final SharedPreferences sp;
+    private final SharedPreferences.Editor editor;
 
     public RecordsPreferences(Context context){
         sp = context.getSharedPreferences("GameRecords", Context.MODE_PRIVATE);
