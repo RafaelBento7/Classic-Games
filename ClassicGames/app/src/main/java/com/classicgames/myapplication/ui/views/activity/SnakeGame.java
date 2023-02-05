@@ -13,6 +13,7 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -25,6 +26,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.classicgames.myapplication.MainActivity;
 import com.classicgames.myapplication.R;
 import com.classicgames.myapplication.data.models.SnakePart;
+import com.classicgames.myapplication.utils.BorderView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,6 +76,12 @@ public class SnakeGame extends AppCompatActivity implements SurfaceHolder.Callba
                 surfaceView.setLayoutParams(layoutParams);
                 frameLayout.addView(surfaceView);
 
+                BorderView borderView = new BorderView(SnakeGame.this);
+                FrameLayout.LayoutParams borderLayoutParams = new FrameLayout.LayoutParams(widthSize-BorderView.STROKE_WIDTH+2, heightSize);
+                borderLayoutParams.gravity = Gravity.CENTER;
+                borderView.setLayoutParams(borderLayoutParams);
+                frameLayout.addView(borderView);
+
                 surfaceView.getHolder().addCallback(SnakeGame.this);
 
                 frameLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
@@ -104,15 +112,6 @@ public class SnakeGame extends AppCompatActivity implements SurfaceHolder.Callba
         this.surfaceHolder = holder;
         if (!canPlay) return;
         createObstacles();
-
-        System.out.println("ola");
-        //bodySize = surfaceView.getWidth() / 20;
-        //System.out.println(surfaceView.getWidth());
-        //bodySize1 = surfaceView.getWidth() / 20;
-        //bodySize2 = surfaceView.getWidth() / 40;
-        //bodySize3 = surfaceView.getWidth() / 60;
-        //surfaceHolder.setFixedSize(bodySize * 20, bodySize * 40);
-        //surfaceView.getHolder().setFixedSize(bodySize * 20, bodySize * 40);
         start();
     }
 
