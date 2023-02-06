@@ -13,7 +13,6 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -66,7 +65,7 @@ public class SnakeGame extends AppCompatActivity implements SurfaceHolder.Callba
         viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                bodySize = frameLayout.getWidth() / rectsPerRow;
+                bodySize = frameLayout.getWidth() / (rectsPerRow * 2);  // multiply per 2, BodySize
                 int widthSize = frameLayout.getWidth() - (frameLayout.getWidth() % (bodySize*2));
                 int heightSize = frameLayout.getHeight() - (frameLayout.getHeight() % (bodySize*2));
 
@@ -99,12 +98,12 @@ public class SnakeGame extends AppCompatActivity implements SurfaceHolder.Callba
     }
 
     private void bodySizeChooser(){
-        rectsPerRow = MainActivity.getSnakeMapSize();
+        /*rectsPerRow = MainActivity.getSnakeMapSize();*/
         if (rectsPerRow==1) {
-            rectsPerRow = 20;
+            rectsPerRow = 10;
         }
-        else if (rectsPerRow==2) rectsPerRow = 30;
-        else rectsPerRow = 40;
+        else if (rectsPerRow==2) rectsPerRow = 15;
+        else rectsPerRow = 20;
     }
 
     @Override
@@ -117,7 +116,7 @@ public class SnakeGame extends AppCompatActivity implements SurfaceHolder.Callba
 
     @Override
     public void surfaceChanged(@NonNull SurfaceHolder holder, int format, int width, int height) {
-        System.out.println("passei cá");
+
     }
 
     @Override
@@ -500,7 +499,8 @@ public class SnakeGame extends AppCompatActivity implements SurfaceHolder.Callba
     }
 
     private void createObstacles(){
-        int obstaclesNr = MainActivity.getSnakeObstacles();
+        /*int obstaclesNr = MainActivity.getSnakeObstacles();*/
+        int obstaclesNr = 0;
         for (int i=0;i<obstaclesNr;i++){
             generateObstacle();
         }

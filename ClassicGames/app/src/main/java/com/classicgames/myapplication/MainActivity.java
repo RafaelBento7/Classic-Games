@@ -3,24 +3,26 @@ package com.classicgames.myapplication;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
+import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.classicgames.myapplication.ui.views.activity.MastermindGame;
-import com.classicgames.myapplication.ui.views.activity.SnakeGame;
 import com.classicgames.myapplication.ui.views.activity.TicTacToeActivity;
 import com.classicgames.myapplication.ui.views.activity.TrueColorsActivity;
+import com.classicgames.myapplication.utils.CustomDialog;
+import com.classicgames.myapplication.utils.SnakeMapSizeDialog;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CustomDialog.DialogButtonClick {
 
     ImageButton bSnakeGame,bTrueColorsGame,bMastermindGame,bTictactoeGame;
     Button bSnakeHelp, bTrueColorsHelp,bMastermindHelp,bTictacoeHelp;
-    private static int snakeObstacles=0,snakeMapSize=1;
+    private int snakeMapSize;
+    private boolean snakeObstacles;
+    private CustomDialog obstaclesDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,50 +50,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void snakeGame(){
-        EditText mapSizeET = new EditText(this);
-        mapSizeET.setHint("Map size");
-        mapSizeET.setInputType(InputType.TYPE_CLASS_NUMBER);
-        AlertDialog.Builder builderMapLevel = new AlertDialog.Builder(MainActivity.this);
-        builderMapLevel.setView(mapSizeET);
-        builderMapLevel.setTitle(getResources().getString(R.string.map_size));
-        builderMapLevel.setCancelable(false);
-        builderMapLevel.setMessage(getResources().getString(R.string.snake_map_size_number));
-        builderMapLevel.setPositiveButton(getResources().getString(R.string.next), (dialog, which) -> {
-            String mapSizeValue = mapSizeET.getText().toString();
-            if (mapSizeValue.equals("")) snakeMapSize = 1;
-            else snakeMapSize = Integer.parseInt(mapSizeValue);
-            if (snakeMapSize > 0 && snakeMapSize <= 3){
-                EditText obstaclesET = new EditText(this);
-                obstaclesET.setHint("Obstacles");
-                obstaclesET.setInputType(InputType.TYPE_CLASS_NUMBER);
-                AlertDialog.Builder builderObstacles = new AlertDialog.Builder(MainActivity.this);
-                builderObstacles.setView(obstaclesET);
-                builderObstacles.setTitle(getResources().getString(R.string.snake_obstacles));
-                builderObstacles.setCancelable(false);
-                if(snakeMapSize==1) builderObstacles.setMessage(getResources().getString(R.string.snake_obstacles_number)+" (0-20)");
-                else if (snakeMapSize==2) builderObstacles.setMessage(getResources().getString(R.string.snake_obstacles_number)+" (0-40)");
-                else builderObstacles.setMessage(getResources().getString(R.string.snake_obstacles_number)+" (0-75)");
-                builderObstacles.setPositiveButton(getResources().getString(R.string.snake_create_obstacles), (Dialog, Which) -> {
-                    String obstaclesValue = obstaclesET.getText().toString();
-                    if (obstaclesValue.equals("")) snakeObstacles = 0;
-                    else snakeObstacles = Integer.parseInt(obstaclesValue);
-                    if (snakeObstacles >= 0 && snakeObstacles <= 20 && snakeMapSize == 1
-                            || snakeObstacles >= 0 && snakeObstacles <= 50 && snakeMapSize == 2
-                            || snakeObstacles >= 0 && snakeObstacles <= 75 && snakeMapSize == 3){
-                        Intent intent = new Intent(MainActivity.this, SnakeGame.class);
-                        startActivity(intent);
-                    } else Toast.makeText(this, "Too many obstacles", Toast.LENGTH_SHORT).show();
-
-                });
-                builderObstacles.setNegativeButton(getResources().getString(R.string.cancel),(Dialog, Which) -> Toast.makeText(this, getResources().getString(R.string.choose_game), Toast.LENGTH_SHORT).show());
-
-                builderObstacles.show();
-            } else Toast.makeText(this, "Please choose 1, 2 or 3", Toast.LENGTH_SHORT).show();
-
+        snakeMapSize = 0;
+        SnakeMapSizeDialog snakeMapSizeDialog = new SnakeMapSizeDialog(this);
+        snakeMapSizeDialog.show();
+        snakeMapSizeDialog.setOnDismissListener(dialog -> {
+            snakeMapSize = snakeMapSizeDialog.getMapLevel();
+            if (snakeMapSize != 0){
+                obstaclesDialog = new CustomDialog(this, getString(R.string.snake_obstacles), this);
+                obstaclesDialog.show();
+            }
         });
-        builderMapLevel.setNegativeButton(getResources().getString(R.string.cancel),(dialog, which) -> Toast.makeText(this, getResources().getString(R.string.choose_game), Toast.LENGTH_SHORT).show());
-
-        builderMapLevel.show();
     }
 
     private void snakeHelp(){
@@ -147,10 +115,17 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public static int getSnakeObstacles(){
-        return snakeObstacles;
+    @Override
+    public void onPositiveButtonClicked() {
+        snakeObstacles = true;
+        obstaclesDialog.dismiss();
+        System.out.println("Com obstaculos");
     }
-    public static int getSnakeMapSize(){
-        return snakeMapSize;
+
+    @Override
+    public void onNegativeButtonClicked() {
+        snakeObstacles = false;
+        obstaclesDialog.dismiss();
+        System.out.println("Sem obstaculos");
     }
 }

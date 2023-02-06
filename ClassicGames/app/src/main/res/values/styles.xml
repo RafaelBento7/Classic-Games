@@ -39,6 +39,20 @@
         <item name="android:textSize">20sp</item>
     </style>
 
+    <style name="Dialog_TextView" parent="CustomTextView">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Dialog_Button" parent="CustomTextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:backgroundTint">@color/dialog_button_background</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
     <!--  TIC TAC TOE  -->
 
     <style name="TicTacToe_ImageView">
@@ -57,5 +71,20 @@
         <item name="android:background">@drawable/round_button</item>
         <item name="android:layout_marginStart">5dp</item>
         <item name="android:layout_marginEnd">5dp</item>
+    </style>
+
+    <!--  Snake  -->
+
+    <!--  Snake Dialogs  -->
+    <style name="SnakeDialog_RadioButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:background">@drawable/snake_radio_selector</item>
+        <item name="android:button">@color/dark_blue_700</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>

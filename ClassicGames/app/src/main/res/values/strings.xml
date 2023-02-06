@@ -19,6 +19,12 @@
     <string name="question_mark">\?</string>
     <string name="restart">restart</string>
     <string name="lets_try">Let\'s try!</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="big">Big</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="message">Message</string>
 
     <!--Numbers-->
     <string name="zero">0</string>
@@ -47,16 +53,14 @@
     <string name="snake_game">Snake game</string>
     <string name="true_colors_game">True Colors</string>
     <string name="mastermind_game">Mastermind</string>
+    <string name="tic_tac_toe">Tic Tac Toe</string>
 
     <!-- Snake Game-->
     <string name="snake_speed">Next point speed:</string>
     <string name="golden_point_timer">Golden Point Moves:</string>
     <string name="no_golden_point">Golden Point OFF</string>
-    <string name="snake_map_size_number">What\'s the map size you want?(1,2,3)</string>
-    <string name="map_size">Map Size</string>
-    <string name="snake_obstacles_number">How many obstacles do you want?</string>
-    <string name="snake_obstacles">Obstacles</string>
-    <string name="snake_create_obstacles">Create Obstacles</string>
+    <string name="snake_select_map_size">Select a Map Size!</string>
+    <string name="snake_obstacles">Do you want to add obstacles?</string>
     <string name="snake_rules">Eat every green and yellow point you can with the snake! And do not forget, avoid the red!</string>
     <string name="speed">How does speed works?</string>
     <string name="snake_speed_level1">0–5 = 10%</string>
@@ -88,5 +92,5 @@
     <string name="tictactoe_turn_player_two">It\'s your turn player two</string>
     <string name="tictactoe_draw">Draw! No winners!</string>
     <string name="tictactoe_win">Victory! Congratulations player </string>
-    <string name="can_not_play_there">You can not play there, you know it...</string>
+    <string name="can_not_play_there">You can not play there, you know it!</string>
 </resources>

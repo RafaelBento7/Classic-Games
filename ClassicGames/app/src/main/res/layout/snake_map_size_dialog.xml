@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dark_blue_700"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/SnakeMapSize_Tv_MapSize"
+        style="@style/Dialog_TextView"
+        android:layout_margin="10dp"
+        android:text="@string/snake_select_map_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/SnakeMapSize_RadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SnakeMapSize_Tv_MapSize">
+
+        <RadioButton
+            android:id="@+id/SnakeMapSize_Rb_Small"
+            style="@style/SnakeDialog_RadioButton"
+            android:text="@string/small" />
+
+        <RadioButton
+            android:id="@+id/SnakeMapSize_Rb_Medium"
+            style="@style/SnakeDialog_RadioButton"
+            android:text="@string/medium"
+            android:layout_marginHorizontal="10dp"/>
+
+        <RadioButton
+            android:id="@+id/SnakeMapSize_Rb_Big"
+            style="@style/SnakeDialog_RadioButton"
+            android:text="@string/big" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/SnakeMapSize_Bt_Next"
+        style="@style/Dialog_Button"
+        android:text="@string/next"
+        app:layout_constraintEnd_toEndOf="@+id/SnakeMapSize_RadioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/SnakeMapSize_RadioGroup" />
+
+    <Button
+        android:id="@+id/SnakeMapSize_Bt_Cancel"
+        style="@style/Dialog_Button"
+        android:text="@string/cancel"
+        app:layout_constraintStart_toStartOf="@+id/SnakeMapSize_RadioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/SnakeMapSize_RadioGroup" />
+</androidx.constraintlayout.widget.ConstraintLayout>
