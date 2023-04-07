@@ -1,8 +1,8 @@
 <resources>
     <!-- General-->
     <string name="app_name">Classic Games</string>
-    <string name="points">Points:</string>
-    <string name="max_points">Max Points:</string>
+    <string name="points">Points: %1$d</string>
+    <string name="max_points">Max Points: %1$d</string>
     <string name="game_over">Game Over</string>
     <string name="cancel">Cancel</string>
     <string name="play_again">Restart</string>
@@ -56,8 +56,8 @@
     <string name="tic_tac_toe">Tic Tac Toe</string>
 
     <!-- Snake Game-->
-    <string name="snake_speed">Next point speed:</string>
-    <string name="golden_point_timer">Golden Point Moves:</string>
+    <string name="snake_speed">Next point speed: %1$d</string>
+    <string name="golden_point_timer">Golden Point Moves: %1$d</string>
     <string name="no_golden_point">Golden Point OFF</string>
     <string name="snake_select_map_size">Select a Map Size!</string>
     <string name="snake_obstacles">Do you want to add obstacles?</string>

@@ -31,9 +31,15 @@ public class CustomDialog extends Dialog {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.custom_dialog);
         btPositive = findViewById(R.id.CustomDialog_Bt_Positive);
-        btPositive.setOnClickListener(v -> listener.onPositiveButtonClicked());
+        btPositive.setOnClickListener(v -> {
+            listener.onPositiveButtonClicked();
+            dismiss();
+        });
         btNegative = findViewById(R.id.CustomDialog_Bt_Negative);
-        btNegative.setOnClickListener(v -> listener.onNegativeButtonClicked());
+        btNegative.setOnClickListener(v -> {
+            listener.onNegativeButtonClicked();
+            dismiss();
+        });
         tvMessage = findViewById(R.id.CustomDialog_Tv_Message);
         tvMessage.setText(message);
     }

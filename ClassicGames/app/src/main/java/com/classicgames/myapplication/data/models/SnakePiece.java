@@ -1,8 +1,8 @@
 package com.classicgames.myapplication.data.models;
 
-public class SnakePart {
+public class SnakePiece {
     private int positionX, positionY;
-    public SnakePart(int x, int y){
+    public SnakePiece(int x, int y){
         this.positionX = x;
         this.positionY = y;
     }

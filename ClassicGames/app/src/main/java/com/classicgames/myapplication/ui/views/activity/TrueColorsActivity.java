@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.app.AlertDialog;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +11,7 @@ import android.view.View;
 import com.classicgames.myapplication.R;
 import com.classicgames.myapplication.databinding.ActivityTrueColorsBinding;
 import com.classicgames.myapplication.ui.viewmodels.TrueColorsViewModel;
+import com.classicgames.myapplication.utils.CustomDialog;
 
 public class TrueColorsActivity extends AppCompatActivity {
 
@@ -29,7 +29,7 @@ public class TrueColorsActivity extends AppCompatActivity {
         mViewModel.getTrueColor().observe(this, this::changeTrueColorText);
         mViewModel.getFalseColor().observe(this, this::changeFalseColors);
         mViewModel.getCorrectColorsPicked().observe(this, correctColorsPicked -> binding.TrueColorsTvCorrects.setText(String.valueOf(correctColorsPicked)));
-        mViewModel.getPoints().observe(this, points -> binding.TrueColorsTvPoints.setText(String.valueOf(getResources().getString(R.string.points) + " " + points)));
+        mViewModel.getPoints().observe(this, points -> binding.TrueColorsTvPoints.setText(getResources().getString(R.string.points, points)));
         mViewModel.getLives().observe(this, this::livesChanged);
         mViewModel.getRecord().observe(this, this::loadRecord);
         mViewModel.isGameOver().observe(this, isGameOver -> {
@@ -47,13 +47,30 @@ public class TrueColorsActivity extends AppCompatActivity {
     }
 
     private void gameOver() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(TrueColorsActivity.this);
-        builder.setTitle(getResources().getString(R.string.game_over));
-        builder.setCancelable(false);
-        builder.setMessage(getResources().getString(R.string.game_over_points) + " " + mViewModel.getPoints().getValue());
-        builder.setPositiveButton(getResources().getString(R.string.play_again), (dialog, which) -> startGame());
-        builder.setNegativeButton(getResources().getString(R.string.back_menu),(dialog, which)-> finish());
-        builder.show();
+        runOnUiThread(() -> {
+            CustomDialog.DialogButtonClick gameOverDialog = new CustomDialog.DialogButtonClick() {
+                @Override
+                public void onPositiveButtonClicked() {
+                    startGame();
+                }
+
+                @Override
+                public void onNegativeButtonClicked() {
+                    finish();
+                }
+            };
+            CustomDialog dialog = new CustomDialog(
+                    this,
+                    getResources().getString(R.string.game_over_points) + " " + mViewModel.getPoints().getValue(),
+                    gameOverDialog
+            );
+            dialog.setCancelable(false);
+            dialog.setOnShowListener(dialogInterface -> {
+                dialog.getBtPositive().setText(getResources().getString(R.string.play_again));
+                dialog.getBtNegative().setText(getResources().getString(R.string.back_menu));
+            });
+            dialog.show();
+        });
     }
 
     private void livesChanged(int lives){
@@ -109,7 +126,7 @@ public class TrueColorsActivity extends AppCompatActivity {
     }
 
     private void loadRecord(int maxPoints){
-        String Points = getResources().getString(R.string.max_points) + " " + maxPoints;
+        String Points = getResources().getString(R.string.max_points, maxPoints);
         binding.TrueColorsTvMaxPoints.setText(Points);
     }
 

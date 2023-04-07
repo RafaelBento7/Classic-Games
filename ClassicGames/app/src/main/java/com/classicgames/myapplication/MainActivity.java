@@ -3,26 +3,24 @@ package com.classicgames.myapplication;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.classicgames.myapplication.ui.views.activity.MastermindGame;
+import com.classicgames.myapplication.ui.views.activity.SnakeActivity;
 import com.classicgames.myapplication.ui.views.activity.TicTacToeActivity;
 import com.classicgames.myapplication.ui.views.activity.TrueColorsActivity;
 import com.classicgames.myapplication.utils.CustomDialog;
 import com.classicgames.myapplication.utils.SnakeMapSizeDialog;
 
-public class MainActivity extends AppCompatActivity implements CustomDialog.DialogButtonClick {
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class MainActivity extends AppCompatActivity {
 
     ImageButton bSnakeGame,bTrueColorsGame,bMastermindGame,bTictactoeGame;
     Button bSnakeHelp, bTrueColorsHelp,bMastermindHelp,bTictacoeHelp;
-    private int snakeMapSize;
-    private boolean snakeObstacles;
-    private CustomDialog obstaclesDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,16 +48,35 @@ public class MainActivity extends AppCompatActivity implements CustomDialog.Dial
     }
 
     private void snakeGame(){
-        snakeMapSize = 0;
+        AtomicInteger snakeMapSize = new AtomicInteger(0);
         SnakeMapSizeDialog snakeMapSizeDialog = new SnakeMapSizeDialog(this);
         snakeMapSizeDialog.show();
         snakeMapSizeDialog.setOnDismissListener(dialog -> {
-            snakeMapSize = snakeMapSizeDialog.getMapLevel();
-            if (snakeMapSize != 0){
-                obstaclesDialog = new CustomDialog(this, getString(R.string.snake_obstacles), this);
+            snakeMapSize.set(snakeMapSizeDialog.getMapLevel());
+            if (snakeMapSize.get() != 0){
+                CustomDialog.DialogButtonClick dialogButtonClick = new CustomDialog.DialogButtonClick() {
+                    @Override
+                    public void onPositiveButtonClicked() {
+                        openSnakeGame(snakeMapSize.get(), true);
+                    }
+
+                    @Override
+                    public void onNegativeButtonClicked() {
+                        openSnakeGame(snakeMapSize.get(), false);
+                    }
+                };
+
+                CustomDialog obstaclesDialog = new CustomDialog(this, getString(R.string.snake_obstacles), dialogButtonClick);
                 obstaclesDialog.show();
             }
         });
+    }
+
+    private void openSnakeGame(int snakeMapSize, boolean obstaclesGame) {
+        Intent intent = new Intent(this, SnakeActivity.class);
+        intent.putExtra(SnakeActivity.MAP_SIZE, snakeMapSize);
+        intent.putExtra(SnakeActivity.OBSTACLES_GAME, obstaclesGame);
+        startActivity(intent);
     }
 
     private void snakeHelp(){
@@ -113,19 +130,5 @@ public class MainActivity extends AppCompatActivity implements CustomDialog.Dial
     private void tictactoeGame(){
         Intent intent = new Intent(MainActivity.this, TicTacToeActivity.class);
         startActivity(intent);
-    }
-
-    @Override
-    public void onPositiveButtonClicked() {
-        snakeObstacles = true;
-        obstaclesDialog.dismiss();
-        System.out.println("Com obstaculos");
-    }
-
-    @Override
-    public void onNegativeButtonClicked() {
-        snakeObstacles = false;
-        obstaclesDialog.dismiss();
-        System.out.println("Sem obstaculos");
     }
 }

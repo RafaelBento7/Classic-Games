@@ -27,7 +27,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.views.activity.SnakeGame"
+            android:name=".ui.views.activity.SnakeActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
