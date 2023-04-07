@@ -17,14 +17,14 @@
 
         <TextView
             android:id="@+id/Tictactoe_Tv_PlayerOne"
-            style="@style/TextView"
+            style="@style/BigTextView"
             android:text="@string/tictactoe_player_one"
             app:layout_constraintStart_toStartOf="@+id/Tictactoe_GuidelineStart"
             app:layout_constraintTop_toTopOf="@+id/Tictactoe_GuidelineTop" />
 
         <TextView
             android:id="@+id/Tictactoe_Tv_PlayerTwo"
-            style="@style/TextView"
+            style="@style/BigTextView"
             android:text="@string/tictactoe_player_two"
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="@+id/Tictactoe_GuidelineStart"
@@ -32,7 +32,7 @@
 
         <TextView
             android:id="@+id/Tictactoe_Tv_PlayerTurn"
-            style="@style/SmallTextView"
+            style="@style/TextView"
             android:text="@string/tictactoe_turn_player_one"
             android:layout_marginTop="30dp"
             app:layout_constraintStart_toStartOf="@+id/Tictactoe_GuidelineStart"

@@ -18,7 +18,7 @@
 
         <TextView
             android:id="@+id/TrueColors_Tv_MaxPoints"
-            style="@style/TextView"
+            style="@style/BigTextView"
             android:text="@string/max_points"
             app:layout_constraintEnd_toStartOf="@id/TrueColors_GuidelineEnd"
             app:layout_constraintStart_toStartOf="@id/TrueColors_GuidelineStart"
@@ -38,7 +38,7 @@
 
         <TextView
             android:id="@+id/TrueColors_Tv_Points"
-            style="@style/TextView"
+            style="@style/BigTextView"
             android:layout_marginTop="20dp"
             android:text="@string/points"
             app:layout_constraintStart_toStartOf="@id/TrueColors_GuidelineStart"

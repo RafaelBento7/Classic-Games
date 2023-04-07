@@ -31,12 +31,16 @@
         <item name="android:textSize">50sp</item>
     </style>
 
-    <style name="TextView" parent="CustomTextView">
+    <style name="BigTextView" parent="CustomTextView">
         <item name="android:textSize">25sp</item>
     </style>
 
-    <style name="SmallTextView" parent="CustomTextView">
+    <style name="TextView" parent="CustomTextView">
         <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="SmallTextView" parent="CustomTextView">
+        <item name="android:textSize">15sp</item>
     </style>
 
     <style name="Dialog_TextView" parent="CustomTextView">

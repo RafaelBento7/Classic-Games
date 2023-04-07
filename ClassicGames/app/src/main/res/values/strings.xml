@@ -56,7 +56,7 @@
     <string name="tic_tac_toe">Tic Tac Toe</string>
 
     <!-- Snake Game-->
-    <string name="snake_speed">Next point speed: %1$d</string>
+    <string name="snake_speed">Current speed: %1$d</string>
     <string name="golden_point_timer">Golden Point Moves: %1$d</string>
     <string name="no_golden_point">Golden Point OFF</string>
     <string name="snake_select_map_size">Select a Map Size!</string>

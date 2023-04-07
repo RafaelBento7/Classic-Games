@@ -50,53 +50,51 @@ public class SnakeActivity extends AppCompatActivity implements SurfaceHolder.Ca
         getExtras();
         createPaints();
 
-        ViewTreeObserver viewTreeObserver = binding.snakeScreenLayout.getViewTreeObserver();
+        ViewTreeObserver viewTreeObserver = binding.SnakeFrameLayoutGame.getViewTreeObserver();
         viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                bodyRadiusSize = binding.snakeScreenLayout.getWidth() / (colsPerRow * 2);  // multiply per 2, BodySize
-                int widthSize = binding.snakeScreenLayout.getWidth() - (binding.snakeScreenLayout.getWidth() % (bodyRadiusSize * 2));
-                int heightSize = binding.snakeScreenLayout.getHeight() - (binding.snakeScreenLayout.getHeight() % (bodyRadiusSize * 2));
+                bodyRadiusSize = binding.SnakeFrameLayoutGame.getWidth() / (colsPerRow * 2);  // multiply per 2, BodySize
+                int widthSize = binding.SnakeFrameLayoutGame.getWidth() - (binding.SnakeFrameLayoutGame.getWidth() % (bodyRadiusSize * 2));
+                int heightSize = binding.SnakeFrameLayoutGame.getHeight() - (binding.SnakeFrameLayoutGame.getHeight() % (bodyRadiusSize * 2));
 
                 surfaceView = new SurfaceView(SnakeActivity.this);
                 FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(widthSize, heightSize);
                 layoutParams.gravity = Gravity.CENTER;
                 surfaceView.setLayoutParams(layoutParams);
-                binding.snakeScreenLayout.addView(surfaceView);
+                binding.SnakeFrameLayoutGame.addView(surfaceView);
 
                 BorderView borderView = new BorderView(SnakeActivity.this);
                 FrameLayout.LayoutParams borderLayoutParams = new FrameLayout.LayoutParams(widthSize, heightSize);
                 borderLayoutParams.gravity = Gravity.CENTER;
                 borderView.setLayoutParams(borderLayoutParams);
-                binding.snakeScreenLayout.addView(borderView);
+                binding.SnakeFrameLayoutGame.addView(borderView);
 
                 surfaceView.getHolder().addCallback(SnakeActivity.this);
 
-                binding.snakeScreenLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                binding.SnakeFrameLayoutGame.getViewTreeObserver().removeOnGlobalLayoutListener(this);
 
                 initializeViewModel(widthSize, heightSize);
             }
         });
-
-
     }
 
     private void initializeViewModel(int surfaceWidthSize, int SurfaceHeightSize) {
         viewModel = new SnakeViewModel(mapSize, bodyRadiusSize, surfaceWidthSize, SurfaceHeightSize, obstaclesGame);
 
-        viewModel.getScore().observe(this, score -> binding.snakePoints.setText(getResources().getString(R.string.points, score)));
-        viewModel.getRecord().observe(this, record -> binding.snakeMaxPoints.setText(getResources().getString(R.string.max_points, record)));
+        viewModel.getScore().observe(this, score -> binding.SnakeTvPoints.setText(getResources().getString(R.string.points, score)));
+        viewModel.getRecord().observe(this, record -> binding.SnakeTvMaxPoints.setText(getResources().getString(R.string.max_points, record)));
         viewModel.getGoldenPointCounter().observe(this, goldenPointCounter -> {
             if (viewModel.isGoldenPointActive())
-                binding.snakeGoldenPointTimer.setText(getResources().getString(R.string.golden_point_timer, goldenPointCounter));
-            else binding.snakeGoldenPointTimer.setText(getResources().getString(R.string.no_golden_point));
+                binding.SnakeTvGoldenPointTimer.setText(getResources().getString(R.string.golden_point_timer, goldenPointCounter));
+            else binding.SnakeTvGoldenPointTimer.setText(getResources().getString(R.string.no_golden_point));
         });
         viewModel.getCurrentSpeed().observe(this, currentSpeed -> {
             stopTimer();
             startTimer(currentSpeed);
         });
         viewModel.getCurrentSpeedPercentage().observe(this, currentSpeedPercentage ->
-                binding.snakeCurrentSpeed.setText(getResources().getString(R.string.snake_speed, currentSpeedPercentage)));
+                binding.SnakeTvCurrentSpeed.setText(getResources().getString(R.string.snake_speed, currentSpeedPercentage)));
     }
 
     private void getExtras(){
