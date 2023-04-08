@@ -9,14 +9,14 @@ import java.util.Random;
 
 public class SnakeModel {
 
-    private final int DEFAULT_SNAKE_SIZE = 3;
+    private static final int DEFAULT_SNAKE_SIZE = 3;
     private final int SURFACE_VIEW_WIDTH, SURFACE_VIEW_HEIGHT, MAP_SIZE;
 
     private final ArrayList<SnakePiece> snakeBody, obstacles;
-    private SnakePiece point, goldenPoint;
+    private final SnakePiece point, goldenPoint;
     private int goldenPointCounter;
 
-    private boolean obstaclesGame;
+    private final boolean obstaclesGame;
     private int maxPoints, score;
     private int snakeSpeed, speedLevel;
     private final int bodyRadiusSize;
@@ -74,7 +74,7 @@ public class SnakeModel {
     }
 
     private void createObstacles() {
-        int obstaclesNr = 0;
+        int obstaclesNr;
         if (MAP_SIZE == 1) obstaclesNr = 15;
         else if (MAP_SIZE == 2) obstaclesNr = 30;
         else obstaclesNr = 50;

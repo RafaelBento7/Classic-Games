@@ -12,7 +12,7 @@ public class MyApplication extends Application {
         return instance;
     }
 
-    private int[] trueColorsColors;
+    private int[] colors;
 
     private RecordsPreferences recordsPreferences;
 
@@ -21,23 +21,23 @@ public class MyApplication extends Application {
         super.onCreate();
         instance = this;
         recordsPreferences = new RecordsPreferences(this);
-        initializeTrueColorsColors();
+        initializeColors();
     }
 
-    private void initializeTrueColorsColors() {
-        trueColorsColors = new int[8];
-        trueColorsColors[0] = getResources().getColor(R.color.purple);
-        trueColorsColors[1] = getResources().getColor(R.color.green);
-        trueColorsColors[2] = getResources().getColor(R.color.red);
-        trueColorsColors[3] = getResources().getColor(R.color.yellow);
-        trueColorsColors[4] = getResources().getColor(R.color.blue);
-        trueColorsColors[5] = getResources().getColor(R.color.brown);
-        trueColorsColors[6] = getResources().getColor(R.color.orange);
-        trueColorsColors[7] = getResources().getColor(R.color.pink);
+    private void initializeColors() {
+        colors = new int[8];
+        colors[0] = getResources().getColor(R.color.purple);
+        colors[1] = getResources().getColor(R.color.green);
+        colors[2] = getResources().getColor(R.color.red);
+        colors[3] = getResources().getColor(R.color.yellow);
+        colors[4] = getResources().getColor(R.color.blue);
+        colors[5] = getResources().getColor(R.color.brown);
+        colors[6] = getResources().getColor(R.color.orange);
+        colors[7] = getResources().getColor(R.color.pink);
     }
 
-    public int[] getTrueColorsColors() {
-        return trueColorsColors;
+    public int[] getColors() {
+        return colors;
     }
 
     public RecordsPreferences getRecords() {

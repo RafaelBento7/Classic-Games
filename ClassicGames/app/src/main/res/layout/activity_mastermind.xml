@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.views.activity.MastermindGame">
+    tools:context=".ui.views.activity.MastermindActivity">
 
     <TextView
         android:id="@+id/mastermindAttempts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/attempts_left"
         android:layout_marginStart="20dp"
-        android:textSize="25sp"
         android:layout_marginTop="30dp"
+        android:text="@string/attempts_left"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,6 +22,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/restart"
+        android:onClick="startGame"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
         app:layout_constraintStart_toStartOf="@+id/linearLayout3"
@@ -35,15 +36,15 @@
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
         app:layout_constraintStart_toStartOf="@+id/linearLayout3"
-        app:layout_constraintTop_toTopOf="@id/mastermindAttempts"/>
+        app:layout_constraintTop_toTopOf="@id/mastermindAttempts" />
 
     <!-- Solution -->
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginBottom="30dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@id/scrollViewAttempts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/scrollViewAttempts">
@@ -105,9 +106,9 @@
         android:id="@+id/mastermindColors1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/mastermindColors2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/mastermindColors2">
@@ -117,6 +118,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/round_button"
+            android:onClick="checkPlay"
             android:backgroundTint="@color/purple"
             android:contentDescription="@string/purple" />
 
@@ -126,23 +128,26 @@
             android:layout_height="50dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:contentDescription="@string/green"
+            android:onClick="checkPlay"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/green" />
+            android:backgroundTint="@color/green"
+            android:contentDescription="@string/green" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/trueColorRed"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="10dp"
-            android:contentDescription="@string/red"
+            android:onClick="checkPlay"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/red" />
+            android:backgroundTint="@color/red"
+            android:contentDescription="@string/red" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/trueColorYellow"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:onClick="checkPlay"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/yellow"
             android:contentDescription="@string/yellow" />
@@ -152,9 +157,9 @@
         android:id="@+id/mastermindColors2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -163,9 +168,10 @@
             android:id="@+id/trueColorBlue"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:contentDescription="@string/blue"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/blue" />
+            android:onClick="checkPlay"
+            android:backgroundTint="@color/blue"
+            android:contentDescription="@string/blue" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/trueColorBrown"
@@ -173,26 +179,29 @@
             android:layout_height="50dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:contentDescription="@string/brown"
+            android:onClick="checkPlay"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/brown" />
+            android:backgroundTint="@color/brown"
+            android:contentDescription="@string/brown" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/trueColorOrange"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="10dp"
-            android:contentDescription="@string/orange"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/orange" />
+            android:onClick="checkPlay"
+            android:backgroundTint="@color/orange"
+            android:contentDescription="@string/orange" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/trueColorPink"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:contentDescription="@string/pink"
+            android:onClick="checkPlay"
             android:background="@drawable/round_button"
-            android:backgroundTint="@color/pink" />
+            android:backgroundTint="@color/pink"
+            android:contentDescription="@string/pink" />
     </LinearLayout>
     <!-- Attempts -->
     <ScrollView
@@ -218,8 +227,9 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/one"
+                android:onClick="checkPlay"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/first_left_two"
@@ -260,27 +270,27 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="3dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/red"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/first_left_four"
-                app:layout_constraintStart_toEndOf="@id/first_left_four"/>
+                android:text="@string/zero"
+                android:textAlignment="center"
+                app:layout_constraintStart_toEndOf="@id/first_left_four"
+                app:layout_constraintTop_toTopOf="@id/first_left_four" />
 
             <TextView
                 android:id="@+id/first_wrong_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="5dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/gray"
-                android:textColor="@color/white"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toBottomOf="@id/first_true_position"
-                app:layout_constraintStart_toStartOf="@id/first_true_position"/>
+                android:text="@string/zero"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/first_true_position"
+                app:layout_constraintTop_toBottomOf="@id/first_true_position" />
             <!--Second Attempt -->
             <ImageView
                 android:id="@+id/second_left_one"
@@ -312,7 +322,7 @@
                 android:contentDescription="@string/three"
 
                 app:layout_constraintStart_toStartOf="@+id/first_left_three"
-                app:layout_constraintTop_toTopOf="@id/second_left_two"/>
+                app:layout_constraintTop_toTopOf="@id/second_left_two" />
 
             <ImageView
                 android:id="@+id/second_left_four"
@@ -322,8 +332,8 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/second_left_three"
-                app:layout_constraintStart_toStartOf="@+id/first_left_four" />
+                app:layout_constraintStart_toStartOf="@+id/first_left_four"
+                app:layout_constraintTop_toTopOf="@id/second_left_three" />
 
             <TextView
                 android:id="@+id/second_true_position"
@@ -335,8 +345,8 @@
                 android:contentDescription="@string/four"
                 android:text="@string/zero"
                 android:textAlignment="center"
-                app:layout_constraintTop_toTopOf="@id/second_left_four"
-                app:layout_constraintStart_toStartOf="@id/first_true_position" />
+                app:layout_constraintStart_toStartOf="@id/first_true_position"
+                app:layout_constraintTop_toTopOf="@id/second_left_four" />
 
             <TextView
                 android:id="@+id/second_wrong_position"
@@ -345,13 +355,12 @@
                 android:layout_marginTop="5dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/gray"
-                android:textColor="@color/white"
                 android:contentDescription="@string/four"
                 android:text="@string/zero"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="@id/second_true_position"
-                app:layout_constraintTop_toBottomOf="@id/second_true_position"
-                />
+                app:layout_constraintTop_toBottomOf="@id/second_true_position" />
             <!--Third Attempt-->
             <ImageView
                 android:id="@+id/third_left_one"
@@ -361,8 +370,8 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/one"
-                app:layout_constraintTop_toBottomOf="@+id/second_left_one"
-                app:layout_constraintStart_toStartOf="@id/second_left_one" />
+                app:layout_constraintStart_toStartOf="@id/second_left_one"
+                app:layout_constraintTop_toBottomOf="@+id/second_left_one" />
 
             <ImageView
                 android:id="@+id/third_left_two"
@@ -372,7 +381,7 @@
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/two"
                 app:layout_constraintStart_toStartOf="@id/second_left_two"
-                app:layout_constraintTop_toTopOf="@id/third_left_one"/>
+                app:layout_constraintTop_toTopOf="@id/third_left_one" />
 
             <ImageView
                 android:id="@+id/third_left_three"
@@ -381,8 +390,8 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/three"
-                app:layout_constraintTop_toTopOf="@id/third_left_two"
-                app:layout_constraintStart_toStartOf="@id/second_left_three" />
+                app:layout_constraintStart_toStartOf="@id/second_left_three"
+                app:layout_constraintTop_toTopOf="@id/third_left_two" />
 
             <ImageView
                 android:id="@+id/third_left_four"
@@ -391,46 +400,46 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/third_left_three"
-                app:layout_constraintStart_toStartOf="@id/second_left_four"/>
+                app:layout_constraintStart_toStartOf="@id/second_left_four"
+                app:layout_constraintTop_toTopOf="@id/third_left_three" />
 
             <TextView
                 android:id="@+id/third_true_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/red"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/third_left_four"
-                app:layout_constraintStart_toStartOf="@id/second_true_position"/>
+                android:text="@string/zero"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="@id/second_true_position"
+                app:layout_constraintTop_toTopOf="@id/third_left_four" />
 
             <TextView
                 android:id="@+id/third_wrong_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="5dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/gray"
-                android:textColor="@color/white"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toBottomOf="@id/third_true_position"
-                app:layout_constraintStart_toStartOf="@id/third_true_position"/>
+                android:text="@string/zero"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/third_true_position"
+                app:layout_constraintTop_toBottomOf="@id/third_true_position" />
             <!-- Forth Attempt-->
             <ImageView
                 android:id="@+id/forth_left_one"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/one"
-                android:layout_marginTop="5dp"
-                app:layout_constraintTop_toBottomOf="@id/third_left_one"
-                app:layout_constraintStart_toStartOf="@id/third_left_one"/>
+                app:layout_constraintStart_toStartOf="@id/third_left_one"
+                app:layout_constraintTop_toBottomOf="@id/third_left_one" />
 
             <ImageView
                 android:id="@+id/forth_left_two"
@@ -439,8 +448,8 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/two"
-                app:layout_constraintTop_toTopOf="@id/forth_left_one"
-                app:layout_constraintStart_toStartOf="@id/third_left_two"/>
+                app:layout_constraintStart_toStartOf="@id/third_left_two"
+                app:layout_constraintTop_toTopOf="@id/forth_left_one" />
 
             <ImageView
                 android:id="@+id/forth_left_three"
@@ -449,8 +458,8 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/three"
-                app:layout_constraintTop_toTopOf="@id/forth_left_one"
-                app:layout_constraintStart_toStartOf="@id/third_left_three"/>
+                app:layout_constraintStart_toStartOf="@id/third_left_three"
+                app:layout_constraintTop_toTopOf="@id/forth_left_one" />
 
             <ImageView
                 android:id="@+id/forth_left_four"
@@ -459,47 +468,47 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/forth_left_one"
-                app:layout_constraintStart_toStartOf="@id/third_left_four"/>
+                app:layout_constraintStart_toStartOf="@id/third_left_four"
+                app:layout_constraintTop_toTopOf="@id/forth_left_one" />
 
             <TextView
                 android:id="@+id/forth_true_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/red"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/forth_left_one"
-                app:layout_constraintStart_toStartOf="@id/third_true_position"/>
+                android:text="@string/zero"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="@id/third_true_position"
+                app:layout_constraintTop_toTopOf="@id/forth_left_one" />
 
             <TextView
                 android:id="@+id/forth_wrong_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="5dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/gray"
-                android:textColor="@color/white"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toBottomOf="@id/forth_true_position"
-                app:layout_constraintStart_toStartOf="@id/forth_true_position"/>
+                android:text="@string/zero"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/forth_true_position"
+                app:layout_constraintTop_toBottomOf="@id/forth_true_position" />
 
             <!--Fifth Attempt-->
             <ImageView
                 android:id="@+id/fifth_left_one"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/one"
-                android:layout_marginTop="5dp"
-                app:layout_constraintTop_toBottomOf="@id/forth_left_one"
-                app:layout_constraintStart_toStartOf="@id/forth_left_one"/>
+                app:layout_constraintStart_toStartOf="@id/forth_left_one"
+                app:layout_constraintTop_toBottomOf="@id/forth_left_one" />
 
             <ImageView
                 android:id="@+id/fifth_left_two"
@@ -508,8 +517,8 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/two"
-                app:layout_constraintTop_toTopOf="@id/fifth_left_one"
-                app:layout_constraintStart_toStartOf="@id/forth_left_two"/>
+                app:layout_constraintStart_toStartOf="@id/forth_left_two"
+                app:layout_constraintTop_toTopOf="@id/fifth_left_one" />
 
             <ImageView
                 android:id="@+id/fifth_left_three"
@@ -518,8 +527,8 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/three"
-                app:layout_constraintTop_toTopOf="@id/fifth_left_one"
-                app:layout_constraintStart_toStartOf="@id/forth_left_three"/>
+                app:layout_constraintStart_toStartOf="@id/forth_left_three"
+                app:layout_constraintTop_toTopOf="@id/fifth_left_one" />
 
             <ImageView
                 android:id="@+id/fifth_left_four"
@@ -528,46 +537,46 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/fifth_left_one"
-                app:layout_constraintStart_toStartOf="@id/forth_left_four"/>
+                app:layout_constraintStart_toStartOf="@id/forth_left_four"
+                app:layout_constraintTop_toTopOf="@id/fifth_left_one" />
 
             <TextView
                 android:id="@+id/fifth_true_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/red"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/fifth_left_one"
-                app:layout_constraintStart_toStartOf="@id/third_true_position"/>
+                android:text="@string/zero"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="@id/third_true_position"
+                app:layout_constraintTop_toTopOf="@id/fifth_left_one" />
 
             <TextView
                 android:id="@+id/fifth_wrong_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="5dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/gray"
-                android:textColor="@color/white"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toBottomOf="@id/fifth_true_position"
-                app:layout_constraintStart_toStartOf="@id/fifth_true_position"/>
+                android:text="@string/zero"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/fifth_true_position"
+                app:layout_constraintTop_toBottomOf="@id/fifth_true_position" />
             <!-- Sixth Attempt -->
             <ImageView
                 android:id="@+id/sixth_left_one"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/one"
-                android:layout_marginTop="5dp"
-                app:layout_constraintTop_toBottomOf="@id/fifth_left_one"
-                app:layout_constraintStart_toStartOf="@id/fifth_left_one"/>
+                app:layout_constraintStart_toStartOf="@id/fifth_left_one"
+                app:layout_constraintTop_toBottomOf="@id/fifth_left_one" />
 
             <ImageView
                 android:id="@+id/sixth_left_two"
@@ -576,8 +585,8 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/two"
-                app:layout_constraintTop_toTopOf="@id/sixth_left_one"
-                app:layout_constraintStart_toStartOf="@id/fifth_left_two"/>
+                app:layout_constraintStart_toStartOf="@id/fifth_left_two"
+                app:layout_constraintTop_toTopOf="@id/sixth_left_one" />
 
             <ImageView
                 android:id="@+id/sixth_left_three"
@@ -586,8 +595,8 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/three"
-                app:layout_constraintTop_toTopOf="@id/sixth_left_one"
-                app:layout_constraintStart_toStartOf="@id/fifth_left_three"/>
+                app:layout_constraintStart_toStartOf="@id/fifth_left_three"
+                app:layout_constraintTop_toTopOf="@id/sixth_left_one" />
 
             <ImageView
                 android:id="@+id/sixth_left_four"
@@ -596,48 +605,47 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/sixth_left_one"
-                app:layout_constraintStart_toStartOf="@id/fifth_left_four"/>
+                app:layout_constraintStart_toStartOf="@id/fifth_left_four"
+                app:layout_constraintTop_toTopOf="@id/sixth_left_one" />
 
             <TextView
                 android:id="@+id/sixth_true_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/red"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/sixth_left_one"
+                android:text="@string/zero"
+                android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="@id/third_true_position"
-                />
+                app:layout_constraintTop_toTopOf="@id/sixth_left_one" />
 
             <TextView
                 android:id="@+id/sixth_wrong_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="5dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/gray"
-                android:textColor="@color/white"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toBottomOf="@id/sixth_true_position"
-                app:layout_constraintStart_toStartOf="@id/sixth_true_position"/>
+                android:text="@string/zero"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/sixth_true_position"
+                app:layout_constraintTop_toBottomOf="@id/sixth_true_position" />
 
             <!-- Seventh Attempt -->
             <ImageView
                 android:id="@+id/seventh_left_one"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/one"
-                android:layout_marginTop="5dp"
-                app:layout_constraintTop_toBottomOf="@id/sixth_left_one"
-                app:layout_constraintStart_toStartOf="@id/sixth_left_one"/>
+                app:layout_constraintStart_toStartOf="@id/sixth_left_one"
+                app:layout_constraintTop_toBottomOf="@id/sixth_left_one" />
 
             <ImageView
                 android:id="@+id/seventh_left_two"
@@ -646,8 +654,8 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/two"
-                app:layout_constraintTop_toTopOf="@id/seventh_left_one"
-                app:layout_constraintStart_toStartOf="@id/sixth_left_two"/>
+                app:layout_constraintStart_toStartOf="@id/sixth_left_two"
+                app:layout_constraintTop_toTopOf="@id/seventh_left_one" />
 
             <ImageView
                 android:id="@+id/seventh_left_three"
@@ -656,8 +664,8 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/three"
-                app:layout_constraintTop_toTopOf="@id/seventh_left_one"
-                app:layout_constraintStart_toStartOf="@id/sixth_left_three"/>
+                app:layout_constraintStart_toStartOf="@id/sixth_left_three"
+                app:layout_constraintTop_toTopOf="@id/seventh_left_one" />
 
             <ImageView
                 android:id="@+id/seventh_left_four"
@@ -666,118 +674,116 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/seventh_left_one"
-                app:layout_constraintStart_toStartOf="@id/sixth_left_four"/>
+                app:layout_constraintStart_toStartOf="@id/sixth_left_four"
+                app:layout_constraintTop_toTopOf="@id/seventh_left_one" />
 
             <TextView
                 android:id="@+id/seventh_true_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/red"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/seventh_left_one"
+                android:text="@string/zero"
+                android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="@id/third_true_position"
-                />
+                app:layout_constraintTop_toTopOf="@id/seventh_left_one" />
 
             <TextView
                 android:id="@+id/seventh_wrong_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="5dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/gray"
-                android:textColor="@color/white"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toBottomOf="@id/seventh_true_position"
-                app:layout_constraintStart_toStartOf="@id/seventh_true_position"/>
+                android:text="@string/zero"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/seventh_true_position"
+                app:layout_constraintTop_toBottomOf="@id/seventh_true_position" />
 
             <!-- Eight Attempt-->
             <ImageView
-                android:id="@+id/eight_left_one"
+                android:id="@+id/eighth_left_one"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/one"
-                android:layout_marginTop="5dp"
-                app:layout_constraintTop_toBottomOf="@id/seventh_left_one"
-                app:layout_constraintStart_toStartOf="@id/seventh_left_one"/>
+                app:layout_constraintStart_toStartOf="@id/seventh_left_one"
+                app:layout_constraintTop_toBottomOf="@id/seventh_left_one" />
 
             <ImageView
-                android:id="@+id/eight_left_two"
+                android:id="@+id/eighth_left_two"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/two"
-                app:layout_constraintTop_toTopOf="@id/eight_left_one"
-                app:layout_constraintStart_toStartOf="@id/seventh_left_two"/>
+                app:layout_constraintStart_toStartOf="@id/seventh_left_two"
+                app:layout_constraintTop_toTopOf="@id/eighth_left_one" />
 
             <ImageView
-                android:id="@+id/eight_left_three"
+                android:id="@+id/eighth_left_three"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/three"
-                app:layout_constraintTop_toTopOf="@id/eight_left_one"
-                app:layout_constraintStart_toStartOf="@id/seventh_left_three"/>
+                app:layout_constraintStart_toStartOf="@id/seventh_left_three"
+                app:layout_constraintTop_toTopOf="@id/eighth_left_one" />
 
             <ImageView
-                android:id="@+id/eight_left_four"
+                android:id="@+id/eighth_left_four"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/eight_left_one"
-                app:layout_constraintStart_toStartOf="@id/seventh_left_four"/>
+                app:layout_constraintStart_toStartOf="@id/seventh_left_four"
+                app:layout_constraintTop_toTopOf="@id/eighth_left_one" />
 
             <TextView
-                android:id="@+id/eight_true_position"
+                android:id="@+id/eighth_true_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/red"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/eight_left_one"
+                android:text="@string/zero"
+                android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="@id/third_true_position"
-                />
+                app:layout_constraintTop_toTopOf="@id/eighth_left_one" />
 
             <TextView
-                android:id="@+id/eight_wrong_position"
+                android:id="@+id/eighth_wrong_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="5dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/gray"
-                android:textColor="@color/white"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toBottomOf="@id/eight_true_position"
-                app:layout_constraintStart_toStartOf="@id/eight_true_position"/>
+                android:text="@string/zero"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/eighth_true_position"
+                app:layout_constraintTop_toBottomOf="@id/eighth_true_position" />
 
             <!-- Ninth Attempt -->
             <ImageView
                 android:id="@+id/ninth_left_one"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/one"
-                android:layout_marginTop="5dp"
-                app:layout_constraintTop_toBottomOf="@id/eight_left_one"
-                app:layout_constraintStart_toStartOf="@id/eight_left_one"/>
+                app:layout_constraintStart_toStartOf="@id/eighth_left_one"
+                app:layout_constraintTop_toBottomOf="@id/eighth_left_one" />
 
             <ImageView
                 android:id="@+id/ninth_left_two"
@@ -786,8 +792,8 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/two"
-                app:layout_constraintTop_toTopOf="@id/ninth_left_one"
-                app:layout_constraintStart_toStartOf="@id/eight_left_two"/>
+                app:layout_constraintStart_toStartOf="@id/eighth_left_two"
+                app:layout_constraintTop_toTopOf="@id/ninth_left_one" />
 
             <ImageView
                 android:id="@+id/ninth_left_three"
@@ -796,8 +802,8 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/three"
-                app:layout_constraintTop_toTopOf="@id/ninth_left_one"
-                app:layout_constraintStart_toStartOf="@id/eight_left_three"/>
+                app:layout_constraintStart_toStartOf="@id/eighth_left_three"
+                app:layout_constraintTop_toTopOf="@id/ninth_left_one" />
 
             <ImageView
                 android:id="@+id/ninth_left_four"
@@ -806,48 +812,47 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/ninth_left_one"
-                app:layout_constraintStart_toStartOf="@id/eight_left_four"/>
+                app:layout_constraintStart_toStartOf="@id/eighth_left_four"
+                app:layout_constraintTop_toTopOf="@id/ninth_left_one" />
 
             <TextView
                 android:id="@+id/ninth_true_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/red"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/ninth_left_one"
+                android:text="@string/zero"
+                android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="@id/third_true_position"
-                />
+                app:layout_constraintTop_toTopOf="@id/ninth_left_one" />
 
             <TextView
                 android:id="@+id/ninth_wrong_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="5dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/gray"
-                android:textColor="@color/white"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toBottomOf="@id/ninth_true_position"
-                app:layout_constraintStart_toStartOf="@id/ninth_true_position"/>
+                android:text="@string/zero"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/ninth_true_position"
+                app:layout_constraintTop_toBottomOf="@id/ninth_true_position" />
 
             <!-- Tenth Attempt-->
             <ImageView
                 android:id="@+id/tenth_left_one"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/one"
-                android:layout_marginTop="5dp"
-                app:layout_constraintTop_toBottomOf="@id/ninth_left_one"
-                app:layout_constraintStart_toStartOf="@id/ninth_left_one"/>
+                app:layout_constraintStart_toStartOf="@id/ninth_left_one"
+                app:layout_constraintTop_toBottomOf="@id/ninth_left_one" />
 
             <ImageView
                 android:id="@+id/tenth_left_two"
@@ -856,8 +861,8 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/two"
-                app:layout_constraintTop_toTopOf="@id/tenth_left_one"
-                app:layout_constraintStart_toStartOf="@id/ninth_left_two"/>
+                app:layout_constraintStart_toStartOf="@id/ninth_left_two"
+                app:layout_constraintTop_toTopOf="@id/tenth_left_one" />
 
             <ImageView
                 android:id="@+id/tenth_left_three"
@@ -866,8 +871,8 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/three"
-                app:layout_constraintTop_toTopOf="@id/tenth_left_one"
-                app:layout_constraintStart_toStartOf="@id/ninth_left_three"/>
+                app:layout_constraintStart_toStartOf="@id/ninth_left_three"
+                app:layout_constraintTop_toTopOf="@id/tenth_left_one" />
 
             <ImageView
                 android:id="@+id/tenth_left_four"
@@ -876,39 +881,35 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/black"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/tenth_left_one"
-                app:layout_constraintStart_toStartOf="@id/ninth_left_four"/>
+                app:layout_constraintStart_toStartOf="@id/ninth_left_four"
+                app:layout_constraintTop_toTopOf="@id/tenth_left_one" />
 
             <TextView
                 android:id="@+id/tenth_true_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/red"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toTopOf="@id/tenth_left_one"
+                android:text="@string/zero"
+                android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="@id/third_true_position"
-                />
+                app:layout_constraintTop_toTopOf="@id/tenth_left_one" />
 
             <TextView
                 android:id="@+id/tenth_wrong_position"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="5dp"
-                android:text="@string/zero"
-                android:textAlignment="center"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/gray"
-                android:textColor="@color/white"
                 android:contentDescription="@string/four"
-                app:layout_constraintTop_toBottomOf="@id/tenth_true_position"
-                app:layout_constraintStart_toStartOf="@id/tenth_true_position"/>
+                android:text="@string/zero"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/tenth_true_position"
+                app:layout_constraintTop_toBottomOf="@id/tenth_true_position" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

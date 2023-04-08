@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.classicgames.myapplication.ui.views.activity.MastermindGame;
+import com.classicgames.myapplication.ui.views.activity.MastermindActivity;
 import com.classicgames.myapplication.ui.views.activity.SnakeActivity;
 import com.classicgames.myapplication.ui.views.activity.TicTacToeActivity;
 import com.classicgames.myapplication.ui.views.activity.TrueColorsActivity;
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void mastermindGame() {
-        Intent intent = new Intent(MainActivity.this, MastermindGame.class);
+        Intent intent = new Intent(MainActivity.this, MastermindActivity.class);
         startActivity(intent);
     }
 

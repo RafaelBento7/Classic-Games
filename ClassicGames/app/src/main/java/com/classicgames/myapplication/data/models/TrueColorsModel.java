@@ -14,7 +14,7 @@ public class TrueColorsModel {
     private final int[] colors;
 
     public TrueColorsModel(){
-        colors = MyApplication.getInstance().getTrueColorsColors();
+        colors = MyApplication.getInstance().getColors();
         maxPoints = MyApplication.getInstance().getRecords().getTrueColorsRecord();
     }
 

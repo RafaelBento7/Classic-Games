@@ -15,7 +15,7 @@
     <string name="resume">Resume</string>
     <string name="next">Next</string>
     <string name="lives_left">Lives Left:</string>
-    <string name="attempts_left">Attempts Left:</string>
+    <string name="attempts_left">Attempts Left: %1$d</string>
     <string name="question_mark">\?</string>
     <string name="restart">restart</string>
     <string name="lets_try">Let\'s try!</string>
@@ -84,6 +84,8 @@
     <string name="mastermind_help4">Red circle - Gives you the number of the correct colors and position you have in that attempt.</string>
     <string name="mastermind_help5">Black circle - Gives you the number of the correct colors but WRONG position you have in that attempt.</string>
     <string name="mastermind_help6">One tip for you, the game does NOT allow repetitive colors!</string>
+    <string name="mastermind_new_record">NEW RECORD! %1$d:%2$d in %3$d attempts!</string>
+    <string name="mastermind_no_record">It\'s not a record, but you still won!</string>
 
     <!-- Tic Tac Toe -->
     <string name="tictactoe_player_one">Player One:</string>

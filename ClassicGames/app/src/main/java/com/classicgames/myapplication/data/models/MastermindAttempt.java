@@ -3,12 +3,12 @@ package com.classicgames.myapplication.data.models;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MastermindAttemptModel {
+public class MastermindAttempt {
     private ImageView first, second, third, forth;
     private TextView truePosition, wrongPosition;
 
     // Attempt Constructor
-    public MastermindAttemptModel(ImageView first, ImageView second, ImageView third, ImageView forth, TextView truePosition, TextView wrongPosition){
+    public MastermindAttempt(ImageView first, ImageView second, ImageView third, ImageView forth, TextView truePosition, TextView wrongPosition){
         this.setFirst(first);
         this.setSecond(second);
         this.setThird(third);

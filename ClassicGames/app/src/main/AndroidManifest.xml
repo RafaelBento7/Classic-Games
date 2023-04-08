@@ -23,7 +23,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.views.activity.MastermindGame"
+            android:name=".ui.views.activity.MastermindActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
