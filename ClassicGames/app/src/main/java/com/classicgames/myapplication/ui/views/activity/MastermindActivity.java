@@ -35,21 +35,21 @@ public class MastermindActivity extends AppCompatActivity {
     private void initializeViewModel() {
         viewModel = new MastermindViewModel();
 
-        viewModel.setNewAttemptImages(binding.firstLeftOne, binding.firstLeftTwo, binding.firstLeftThree, binding.firstLeftFour, binding.firstTruePosition, binding.firstWrongPosition);
-        viewModel.setNewAttemptImages(binding.secondLeftOne, binding.secondLeftTwo, binding.secondLeftThree, binding.secondLeftFour, binding.secondTruePosition, binding.secondWrongPosition);
-        viewModel.setNewAttemptImages(binding.thirdLeftOne, binding.thirdLeftTwo, binding.thirdLeftThree, binding.thirdLeftFour, binding.thirdTruePosition, binding.thirdWrongPosition);
-        viewModel.setNewAttemptImages(binding.forthLeftOne, binding.forthLeftTwo, binding.forthLeftThree, binding.forthLeftFour, binding.forthTruePosition, binding.forthWrongPosition);
-        viewModel.setNewAttemptImages(binding.fifthLeftOne, binding.fifthLeftTwo, binding.fifthLeftThree, binding.fifthLeftFour, binding.fifthTruePosition, binding.fifthWrongPosition);
-        viewModel.setNewAttemptImages(binding.sixthLeftOne, binding.sixthLeftTwo, binding.sixthLeftThree, binding.sixthLeftFour, binding.sixthTruePosition, binding.sixthWrongPosition);
-        viewModel.setNewAttemptImages(binding.seventhLeftOne, binding.seventhLeftTwo, binding.seventhLeftThree, binding.seventhLeftFour, binding.seventhTruePosition, binding.seventhWrongPosition);
-        viewModel.setNewAttemptImages(binding.eighthLeftOne, binding.eighthLeftTwo, binding.eighthLeftThree, binding.eighthLeftFour, binding.eighthTruePosition, binding.eighthWrongPosition);
-        viewModel.setNewAttemptImages(binding.ninthLeftOne, binding.ninthLeftTwo, binding.ninthLeftThree, binding.ninthLeftFour, binding.ninthTruePosition, binding.ninthWrongPosition);
-        viewModel.setNewAttemptImages(binding.tenthLeftOne, binding.tenthLeftTwo, binding.tenthLeftThree, binding.tenthLeftFour, binding.tenthTruePosition, binding.tenthWrongPosition);
+        viewModel.setNewAttemptImages(binding.MastermindIvFirstFirst, binding.MastermindIvFirstSecond, binding.MastermindIvFirstThird, binding.MastermindIvFirstFourth, binding.MastermindTvFirstTrue, binding.MastermindTvFirstWrong);
+        viewModel.setNewAttemptImages(binding.MastermindIvSecondFirst, binding.MastermindIvSecondSecond, binding.MastermindIvSecondThird, binding.MastermindIvSecondFourth, binding.MastermindTvSecondTrue, binding.MastermindTvSecondWrong);
+        viewModel.setNewAttemptImages(binding.MastermindIvThirdFirst, binding.MastermindIvThirdSecond, binding.MastermindIvThirdThird, binding.MastermindIvThirdFourth, binding.MastermindTvThirdTrue, binding.MastermindTvThirdWrong);
+        viewModel.setNewAttemptImages(binding.MastermindIvFourthFirst, binding.MastermindIvFourthSecond, binding.MastermindIvFourthThird, binding.MastermindIvFourthFourth, binding.MastermindTvFourthTrue, binding.MastermindTvFourthWrong);
+        viewModel.setNewAttemptImages(binding.MastermindIvFifthFirst, binding.MastermindIvFifthSecond, binding.MastermindIvFifthThird, binding.MastermindIvFifthFourth, binding.MastermindTvFifthTrue, binding.MastermindTvFifthWrong);
+        viewModel.setNewAttemptImages(binding.MastermindIvSixthFirst, binding.MastermindIvSixthSecond, binding.MastermindIvSixthThird, binding.MastermindIvSixthFourth, binding.MastermindTvSixthTrue, binding.MastermindTvSixthWrong);
+        viewModel.setNewAttemptImages(binding.MastermindIvSeventhFirst, binding.MastermindIvSeventhSecond, binding.MastermindIvSeventhThird, binding.MastermindIvSeventhFourth, binding.MastermindTvSeventhTrue, binding.MastermindTvSeventhWrong);
+        viewModel.setNewAttemptImages(binding.MastermindIvEighthFirst, binding.MastermindIvEighthSecond, binding.MastermindIvEighthThird, binding.MastermindIvEighthFourth, binding.MastermindTvEighthTrue, binding.MastermindTvEighthWrong);
+        viewModel.setNewAttemptImages(binding.MastermindIvNinthFirst, binding.MastermindIvNinthSecond, binding.MastermindIvNinthThird, binding.MastermindIvNinthFourth, binding.MastermindTvNinthTrue, binding.MastermindTvNinthWrong);
+        viewModel.setNewAttemptImages(binding.MastermindIvTenthFirst, binding.MastermindIvTenthSecond, binding.MastermindIvTenthThird, binding.MastermindIvTenthFourth, binding.MastermindTvTenthTrue, binding.MastermindTvTenthWrong);
 
-        viewModel.getAttempt().observe(this, attempt -> binding.mastermindAttempts.setText(getResources().getString(R.string.attempts_left, (10 - attempt))));
+        viewModel.getAttempt().observe(this, attempt -> binding.MastermindTvAttempts.setText(getResources().getString(R.string.attempts_left, (10 - attempt))));
         viewModel.getSeconds().observe(this, seconds -> {
             Integer minutes = viewModel.getMinutes().getValue();
-            binding.mastermindTimer.setText(String.format(Locale.getDefault(), "%d:%02d", minutes, seconds));
+            binding.MastermindTvTimer.setText(String.format(Locale.getDefault(), "%d:%02d", minutes, seconds));
         });
         viewModel.getCurrentAttemptTruePosition().observe(this, truePosition -> {
             if (viewModel.getAttempt().getValue() == null) return;
@@ -100,25 +100,25 @@ public class MastermindActivity extends AppCompatActivity {
 
     private void showSolution() {
         int[] solution = viewModel.getSolution();
-        binding.solutionOne.setBackgroundTintList(ColorStateList.valueOf(solution[0]));
-        binding.solutionTwo.setBackgroundTintList(ColorStateList.valueOf(solution[1]));
-        binding.solutionThree.setBackgroundTintList(ColorStateList.valueOf(solution[2]));
-        binding.solutionFour.setBackgroundTintList(ColorStateList.valueOf(solution[3]));
-        binding.solutionOne.setText("");
-        binding.solutionTwo.setText("");
-        binding.solutionThree.setText("");
-        binding.solutionFour.setText("");
+        binding.MastermindTvSolutionFirst.setBackgroundTintList(ColorStateList.valueOf(solution[0]));
+        binding.MastermindTvSolutionSecond.setBackgroundTintList(ColorStateList.valueOf(solution[1]));
+        binding.MastermindTvSolutionThird.setBackgroundTintList(ColorStateList.valueOf(solution[2]));
+        binding.MastermindTvSolutionFourth.setBackgroundTintList(ColorStateList.valueOf(solution[3]));
+        binding.MastermindTvSolutionFirst.setText("");
+        binding.MastermindTvSolutionSecond.setText("");
+        binding.MastermindTvSolutionThird.setText("");
+        binding.MastermindTvSolutionFourth.setText("");
     }
 
     private void hideSolution() {
-        binding.solutionOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
-        binding.solutionTwo.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
-        binding.solutionThree.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
-        binding.solutionFour.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
-        binding.solutionOne.setText("?");
-        binding.solutionTwo.setText("?");
-        binding.solutionThree.setText("?");
-        binding.solutionFour.setText("?");
+        binding.MastermindTvSolutionFirst.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
+        binding.MastermindTvSolutionSecond.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
+        binding.MastermindTvSolutionThird.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
+        binding.MastermindTvSolutionFourth.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
+        binding.MastermindTvSolutionFirst.setText("?");
+        binding.MastermindTvSolutionSecond.setText("?");
+        binding.MastermindTvSolutionThird.setText("?");
+        binding.MastermindTvSolutionFourth.setText("?");
     }
 
     public void checkPlay(View view) {

@@ -4,912 +4,570 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.views.activity.MastermindActivity">
+    tools:context=".ui.views.activity.MastermindActivity"
+    android:background="@color/background_color">
 
     <TextView
-        android:id="@+id/mastermindAttempts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:id="@+id/Mastermind_Tv_Attempts"
+        style="@style/BigTextView"
         android:text="@string/attempts_left"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/Mastermind_GuidelineStart"
+        app:layout_constraintTop_toTopOf="@+id/Mastermind_GuidelineTop" />
 
     <Button
-        android:id="@+id/mastermindRestart"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/restart"
         android:onClick="startGame"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/mastermindTimer"
-        tools:ignore="TouchTargetSizeCheck" />
+        android:text="@string/restart"
+        app:layout_constraintEnd_toEndOf="@+id/Mastermind_LinearLayout_Solution"
+        app:layout_constraintStart_toStartOf="@+id/Mastermind_LinearLayout_Solution"
+        app:layout_constraintTop_toTopOf="@+id/Mastermind_ScrollView" />
 
     <TextView
-        android:id="@+id/mastermindTimer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
-        app:layout_constraintTop_toTopOf="@id/mastermindAttempts" />
+        android:id="@+id/Mastermind_Tv_Timer"
+        style="@style/TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/Mastermind_Tv_Attempts"
+        app:layout_constraintEnd_toEndOf="@+id/Mastermind_LinearLayout_Solution"
+        app:layout_constraintStart_toStartOf="@+id/Mastermind_LinearLayout_Solution"
+        app:layout_constraintTop_toTopOf="@+id/Mastermind_GuidelineTop" />
 
     <!-- Solution -->
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/Mastermind_LinearLayout_Solution"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@id/scrollViewAttempts"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/scrollViewAttempts">
+        app:layout_constraintBottom_toBottomOf="@id/Mastermind_ScrollView"
+        app:layout_constraintEnd_toStartOf="@+id/Mastermind_GuidelineEnd"
+        app:layout_constraintStart_toEndOf="@id/Mastermind_ScrollView">
 
         <TextView
-            android:id="@+id/solution_one"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:background="@drawable/round_button"
-            android:backgroundTint="@color/black"
-            android:contentDescription="@string/one"
-            android:text="@string/question_mark"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp" />
-
-        <TextView
-            android:id="@+id/solution_two"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:id="@+id/Mastermind_Tv_SolutionFirst"
+            style="@style/Mastermind_SolutionCircle"
             android:layout_marginTop="5dp"
-            android:background="@drawable/round_button"
-            android:backgroundTint="@color/black"
-            android:contentDescription="@string/two"
-            android:text="@string/question_mark"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:text="@string/question_mark" />
 
         <TextView
-            android:id="@+id/solution_three"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:id="@+id/Mastermind_Tv_SolutionSecond"
+            style="@style/Mastermind_SolutionCircle"
             android:layout_marginTop="5dp"
-            android:background="@drawable/round_button"
-            android:backgroundTint="@color/black"
-            android:contentDescription="@string/three"
-            android:text="@string/question_mark"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:text="@string/question_mark" />
 
         <TextView
-            android:id="@+id/solution_four"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:id="@+id/Mastermind_Tv_SolutionThird"
+            style="@style/Mastermind_SolutionCircle"
             android:layout_marginTop="5dp"
-            android:background="@drawable/round_button"
-            android:backgroundTint="@color/black"
-            android:contentDescription="@string/four"
-            android:text="@string/question_mark"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:text="@string/question_mark" />
+
+        <TextView
+            android:id="@+id/Mastermind_Tv_SolutionFourth"
+            style="@style/Mastermind_SolutionCircle"
+            android:layout_marginTop="5dp"
+            android:text="@string/question_mark" />
 
     </LinearLayout>
     <!-- Colors 1 -->
     <LinearLayout
-        android:id="@+id/mastermindColors1"
-        android:layout_width="match_parent"
+        android:id="@+id/Mastermind_LinearLayout_Colors"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/mastermindColors2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/mastermindColors2">
+        app:layout_constraintBottom_toTopOf="@+id/Mastermind_LinearLayout_Colors2"
+        app:layout_constraintEnd_toStartOf="@+id/Mastermind_GuidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/Mastermind_GuidelineStart">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/trueColorPurple"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/round_button"
-            android:onClick="checkPlay"
+            style="@style/TrueColors_ColorButton"
             android:backgroundTint="@color/purple"
-            android:contentDescription="@string/purple" />
+            android:onClick="checkPlay" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/trueColorGreen"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:onClick="checkPlay"
-            android:background="@drawable/round_button"
+            style="@style/TrueColors_ColorButton"
             android:backgroundTint="@color/green"
-            android:contentDescription="@string/green" />
+            android:onClick="checkPlay" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/trueColorRed"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="10dp"
-            android:onClick="checkPlay"
-            android:background="@drawable/round_button"
+            style="@style/TrueColors_ColorButton"
             android:backgroundTint="@color/red"
-            android:contentDescription="@string/red" />
+            android:onClick="checkPlay" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/trueColorYellow"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:onClick="checkPlay"
-            android:background="@drawable/round_button"
+            style="@style/TrueColors_ColorButton"
             android:backgroundTint="@color/yellow"
-            android:contentDescription="@string/yellow" />
+            android:onClick="checkPlay" />
     </LinearLayout>
     <!-- Colors 2 -->
     <LinearLayout
-        android:id="@+id/mastermindColors2"
-        android:layout_width="match_parent"
+        android:id="@+id/Mastermind_LinearLayout_Colors2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintBottom_toTopOf="@+id/Mastermind_GuidelineBottom"
+        app:layout_constraintEnd_toStartOf="@+id/Mastermind_GuidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/Mastermind_GuidelineStart">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/trueColorBlue"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/round_button"
-            android:onClick="checkPlay"
+            style="@style/TrueColors_ColorButton"
             android:backgroundTint="@color/blue"
-            android:contentDescription="@string/blue" />
+            android:onClick="checkPlay" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/trueColorBrown"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:onClick="checkPlay"
-            android:background="@drawable/round_button"
+            style="@style/TrueColors_ColorButton"
             android:backgroundTint="@color/brown"
-            android:contentDescription="@string/brown" />
+            android:onClick="checkPlay" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/trueColorOrange"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/round_button"
-            android:onClick="checkPlay"
+            style="@style/TrueColors_ColorButton"
             android:backgroundTint="@color/orange"
-            android:contentDescription="@string/orange" />
+            android:onClick="checkPlay" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/trueColorPink"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:onClick="checkPlay"
-            android:background="@drawable/round_button"
+            style="@style/TrueColors_ColorButton"
             android:backgroundTint="@color/pink"
-            android:contentDescription="@string/pink" />
+            android:onClick="checkPlay" />
     </LinearLayout>
     <!-- Attempts -->
     <ScrollView
-        android:id="@+id/scrollViewAttempts"
+        android:id="@+id/Mastermind_ScrollView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/mastermindColors1"
-        app:layout_constraintStart_toStartOf="@+id/mastermindAttempts"
-        app:layout_constraintTop_toBottomOf="@+id/mastermindAttempts"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/Mastermind_LinearLayout_Colors"
+        app:layout_constraintStart_toStartOf="@+id/Mastermind_Tv_Attempts"
+        app:layout_constraintTop_toBottomOf="@+id/Mastermind_Tv_Attempts"
         app:layout_constraintVertical_bias="1.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <!--First Attempt-->
             <ImageView
-                android:id="@+id/first_left_one"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/one"
-                android:onClick="checkPlay"
+                android:id="@+id/Mastermind_Iv_FirstFirst"
+                style="@style/Mastermind_AttemptCircle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/first_left_two"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/Mastermind_Iv_FirstSecond"
+                style="@style/Mastermind_AttemptCircle"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/two"
-                app:layout_constraintStart_toEndOf="@id/first_left_one"
-                app:layout_constraintTop_toTopOf="@id/first_left_one" />
+                app:layout_constraintStart_toEndOf="@id/Mastermind_Iv_FirstFirst"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_FirstFirst" />
 
             <ImageView
-                android:id="@+id/first_left_three"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/Mastermind_Iv_FirstThird"
+                style="@style/Mastermind_AttemptCircle"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/three"
-                app:layout_constraintStart_toEndOf="@id/first_left_two"
-                app:layout_constraintTop_toTopOf="@id/first_left_two" />
+                app:layout_constraintStart_toEndOf="@id/Mastermind_Iv_FirstSecond"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_FirstSecond" />
 
             <ImageView
-                android:id="@+id/first_left_four"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/Mastermind_Iv_FirstFourth"
+                style="@style/Mastermind_AttemptCircle"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/four"
-                app:layout_constraintStart_toEndOf="@id/first_left_three"
-                app:layout_constraintTop_toTopOf="@id/first_left_three" />
+                app:layout_constraintStart_toEndOf="@id/Mastermind_Iv_FirstThird"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_FirstThird" />
 
             <TextView
-                android:id="@+id/first_true_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:id="@+id/Mastermind_Tv_FirstTrue"
+                style="@style/Mastermind_TruePosition"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="3dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/red"
-                android:contentDescription="@string/four"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                app:layout_constraintStart_toEndOf="@id/first_left_four"
-                app:layout_constraintTop_toTopOf="@id/first_left_four" />
+                app:layout_constraintStart_toEndOf="@id/Mastermind_Iv_FirstFourth"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_FirstFourth" />
 
             <TextView
-                android:id="@+id/first_wrong_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/gray"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_FirstWrong"
+                style="@style/Mastermind_WrongPosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="@id/first_true_position"
-                app:layout_constraintTop_toBottomOf="@id/first_true_position" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Tv_FirstTrue" />
+
             <!--Second Attempt -->
             <ImageView
-                android:id="@+id/second_left_one"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/Mastermind_Iv_SecondFirst"
+                style="@style/Mastermind_AttemptCircle"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/one"
-                app:layout_constraintStart_toStartOf="@id/first_left_one"
-                app:layout_constraintTop_toBottomOf="@id/first_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFirst"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Iv_FirstFirst" />
 
             <ImageView
-                android:id="@+id/second_left_two"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/two"
-                app:layout_constraintStart_toStartOf="@+id/first_left_two"
-                app:layout_constraintTop_toTopOf="@id/second_left_one" />
+                android:id="@+id/Mastermind_Iv_SecondSecond"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@+id/Mastermind_Iv_FirstSecond"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_SecondFirst" />
 
             <ImageView
-                android:id="@+id/second_left_three"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/three"
-
-                app:layout_constraintStart_toStartOf="@+id/first_left_three"
-                app:layout_constraintTop_toTopOf="@id/second_left_two" />
+                android:id="@+id/Mastermind_Iv_SecondThird"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@+id/Mastermind_Iv_FirstThird"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_SecondFirst" />
 
             <ImageView
-                android:id="@+id/second_left_four"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/four"
-                app:layout_constraintStart_toStartOf="@+id/first_left_four"
-                app:layout_constraintTop_toTopOf="@id/second_left_three" />
+                android:id="@+id/Mastermind_Iv_SecondFourth"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@+id/Mastermind_Iv_FirstFourth"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_SecondFirst" />
 
             <TextView
-                android:id="@+id/second_true_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="3dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/red"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_SecondTrue"
+                style="@style/Mastermind_TruePosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                app:layout_constraintStart_toStartOf="@id/first_true_position"
-                app:layout_constraintTop_toTopOf="@id/second_left_four" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_SecondFirst" />
 
             <TextView
-                android:id="@+id/second_wrong_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/gray"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_SecondWrong"
+                style="@style/Mastermind_WrongPosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="@id/second_true_position"
-                app:layout_constraintTop_toBottomOf="@id/second_true_position" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Tv_SecondTrue" />
+
             <!--Third Attempt-->
             <ImageView
-                android:id="@+id/third_left_one"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/Mastermind_Iv_ThirdFirst"
+                style="@style/Mastermind_AttemptCircle"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/one"
-                app:layout_constraintStart_toStartOf="@id/second_left_one"
-                app:layout_constraintTop_toBottomOf="@+id/second_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFirst"
+                app:layout_constraintTop_toBottomOf="@+id/Mastermind_Iv_SecondFirst" />
 
             <ImageView
-                android:id="@+id/third_left_two"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/two"
-                app:layout_constraintStart_toStartOf="@id/second_left_two"
-                app:layout_constraintTop_toTopOf="@id/third_left_one" />
+                android:id="@+id/Mastermind_Iv_ThirdSecond"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstSecond"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_ThirdFirst" />
 
             <ImageView
-                android:id="@+id/third_left_three"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/three"
-                app:layout_constraintStart_toStartOf="@id/second_left_three"
-                app:layout_constraintTop_toTopOf="@id/third_left_two" />
+                android:id="@+id/Mastermind_Iv_ThirdThird"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstThird"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_ThirdFirst" />
 
             <ImageView
-                android:id="@+id/third_left_four"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/four"
-                app:layout_constraintStart_toStartOf="@id/second_left_four"
-                app:layout_constraintTop_toTopOf="@id/third_left_three" />
+                android:id="@+id/Mastermind_Iv_ThirdFourth"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFourth"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_ThirdFirst" />
 
             <TextView
-                android:id="@+id/third_true_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="3dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/red"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_ThirdTrue"
+                style="@style/Mastermind_TruePosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                app:layout_constraintStart_toStartOf="@id/second_true_position"
-                app:layout_constraintTop_toTopOf="@id/third_left_four" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_ThirdFirst" />
 
             <TextView
-                android:id="@+id/third_wrong_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/gray"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_ThirdWrong"
+                style="@style/Mastermind_WrongPosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="@id/third_true_position"
-                app:layout_constraintTop_toBottomOf="@id/third_true_position" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Tv_ThirdTrue" />
+
             <!-- Forth Attempt-->
             <ImageView
-                android:id="@+id/forth_left_one"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/Mastermind_Iv_FourthFirst"
+                style="@style/Mastermind_AttemptCircle"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/one"
-                app:layout_constraintStart_toStartOf="@id/third_left_one"
-                app:layout_constraintTop_toBottomOf="@id/third_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFirst"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Iv_ThirdFirst" />
 
             <ImageView
-                android:id="@+id/forth_left_two"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/two"
-                app:layout_constraintStart_toStartOf="@id/third_left_two"
-                app:layout_constraintTop_toTopOf="@id/forth_left_one" />
+                android:id="@+id/Mastermind_Iv_FourthSecond"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstSecond"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_FourthFirst" />
 
             <ImageView
-                android:id="@+id/forth_left_three"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/three"
-                app:layout_constraintStart_toStartOf="@id/third_left_three"
-                app:layout_constraintTop_toTopOf="@id/forth_left_one" />
+                android:id="@+id/Mastermind_Iv_FourthThird"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstThird"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_FourthFirst" />
 
             <ImageView
-                android:id="@+id/forth_left_four"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/four"
-                app:layout_constraintStart_toStartOf="@id/third_left_four"
-                app:layout_constraintTop_toTopOf="@id/forth_left_one" />
+                android:id="@+id/Mastermind_Iv_FourthFourth"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFourth"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_FourthFirst" />
 
             <TextView
-                android:id="@+id/forth_true_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="3dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/red"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_FourthTrue"
+                style="@style/Mastermind_TruePosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                app:layout_constraintStart_toStartOf="@id/third_true_position"
-                app:layout_constraintTop_toTopOf="@id/forth_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_FourthFirst" />
 
             <TextView
-                android:id="@+id/forth_wrong_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/gray"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_FourthWrong"
+                style="@style/Mastermind_WrongPosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="@id/forth_true_position"
-                app:layout_constraintTop_toBottomOf="@id/forth_true_position" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Tv_FourthTrue" />
 
             <!--Fifth Attempt-->
             <ImageView
-                android:id="@+id/fifth_left_one"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/Mastermind_Iv_FifthFirst"
+                style="@style/Mastermind_AttemptCircle"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/one"
-                app:layout_constraintStart_toStartOf="@id/forth_left_one"
-                app:layout_constraintTop_toBottomOf="@id/forth_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFirst"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Iv_FourthFirst" />
 
             <ImageView
-                android:id="@+id/fifth_left_two"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/two"
-                app:layout_constraintStart_toStartOf="@id/forth_left_two"
-                app:layout_constraintTop_toTopOf="@id/fifth_left_one" />
+                android:id="@+id/Mastermind_Iv_FifthSecond"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstSecond"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_FifthFirst" />
 
             <ImageView
-                android:id="@+id/fifth_left_three"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/three"
-                app:layout_constraintStart_toStartOf="@id/forth_left_three"
-                app:layout_constraintTop_toTopOf="@id/fifth_left_one" />
+                android:id="@+id/Mastermind_Iv_FifthThird"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstThird"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_FifthFirst" />
 
             <ImageView
-                android:id="@+id/fifth_left_four"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/four"
-                app:layout_constraintStart_toStartOf="@id/forth_left_four"
-                app:layout_constraintTop_toTopOf="@id/fifth_left_one" />
+                android:id="@+id/Mastermind_Iv_FifthFourth"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFourth"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_FifthFirst" />
 
             <TextView
-                android:id="@+id/fifth_true_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="3dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/red"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_FifthTrue"
+                style="@style/Mastermind_TruePosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                app:layout_constraintStart_toStartOf="@id/third_true_position"
-                app:layout_constraintTop_toTopOf="@id/fifth_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_FifthFirst" />
 
             <TextView
-                android:id="@+id/fifth_wrong_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/gray"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_FifthWrong"
+                style="@style/Mastermind_WrongPosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="@id/fifth_true_position"
-                app:layout_constraintTop_toBottomOf="@id/fifth_true_position" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Tv_FifthTrue" />
+
             <!-- Sixth Attempt -->
             <ImageView
-                android:id="@+id/sixth_left_one"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/Mastermind_Iv_SixthFirst"
+                style="@style/Mastermind_AttemptCircle"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/one"
-                app:layout_constraintStart_toStartOf="@id/fifth_left_one"
-                app:layout_constraintTop_toBottomOf="@id/fifth_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFirst"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Iv_FifthFirst" />
 
             <ImageView
-                android:id="@+id/sixth_left_two"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/two"
-                app:layout_constraintStart_toStartOf="@id/fifth_left_two"
-                app:layout_constraintTop_toTopOf="@id/sixth_left_one" />
+                android:id="@+id/Mastermind_Iv_SixthSecond"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstSecond"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_SixthFirst" />
 
             <ImageView
-                android:id="@+id/sixth_left_three"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/three"
-                app:layout_constraintStart_toStartOf="@id/fifth_left_three"
-                app:layout_constraintTop_toTopOf="@id/sixth_left_one" />
+                android:id="@+id/Mastermind_Iv_SixthThird"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstThird"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_SixthFirst" />
 
             <ImageView
-                android:id="@+id/sixth_left_four"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/four"
-                app:layout_constraintStart_toStartOf="@id/fifth_left_four"
-                app:layout_constraintTop_toTopOf="@id/sixth_left_one" />
+                android:id="@+id/Mastermind_Iv_SixthFourth"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFourth"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_SixthFirst" />
 
             <TextView
-                android:id="@+id/sixth_true_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="3dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/red"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_SixthTrue"
+                style="@style/Mastermind_TruePosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                app:layout_constraintStart_toStartOf="@id/third_true_position"
-                app:layout_constraintTop_toTopOf="@id/sixth_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_SixthFirst" />
 
             <TextView
-                android:id="@+id/sixth_wrong_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/gray"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_SixthWrong"
+                style="@style/Mastermind_WrongPosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="@id/sixth_true_position"
-                app:layout_constraintTop_toBottomOf="@id/sixth_true_position" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Tv_SixthTrue" />
 
             <!-- Seventh Attempt -->
             <ImageView
-                android:id="@+id/seventh_left_one"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/Mastermind_Iv_SeventhFirst"
+                style="@style/Mastermind_AttemptCircle"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/one"
-                app:layout_constraintStart_toStartOf="@id/sixth_left_one"
-                app:layout_constraintTop_toBottomOf="@id/sixth_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFirst"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Iv_SixthFirst" />
 
             <ImageView
-                android:id="@+id/seventh_left_two"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/two"
-                app:layout_constraintStart_toStartOf="@id/sixth_left_two"
-                app:layout_constraintTop_toTopOf="@id/seventh_left_one" />
+                android:id="@+id/Mastermind_Iv_SeventhSecond"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstSecond"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_SeventhFirst" />
 
             <ImageView
-                android:id="@+id/seventh_left_three"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/three"
-                app:layout_constraintStart_toStartOf="@id/sixth_left_three"
-                app:layout_constraintTop_toTopOf="@id/seventh_left_one" />
+                android:id="@+id/Mastermind_Iv_SeventhThird"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstThird"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_SeventhFirst" />
 
             <ImageView
-                android:id="@+id/seventh_left_four"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/four"
-                app:layout_constraintStart_toStartOf="@id/sixth_left_four"
-                app:layout_constraintTop_toTopOf="@id/seventh_left_one" />
+                android:id="@+id/Mastermind_Iv_SeventhFourth"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFourth"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_SeventhFirst" />
 
             <TextView
-                android:id="@+id/seventh_true_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="3dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/red"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_SeventhTrue"
+                style="@style/Mastermind_TruePosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                app:layout_constraintStart_toStartOf="@id/third_true_position"
-                app:layout_constraintTop_toTopOf="@id/seventh_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_SeventhFirst" />
 
             <TextView
-                android:id="@+id/seventh_wrong_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/gray"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_SeventhWrong"
+                style="@style/Mastermind_WrongPosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="@id/seventh_true_position"
-                app:layout_constraintTop_toBottomOf="@id/seventh_true_position" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Tv_SeventhTrue" />
 
             <!-- Eight Attempt-->
             <ImageView
-                android:id="@+id/eighth_left_one"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/Mastermind_Iv_EighthFirst"
+                style="@style/Mastermind_AttemptCircle"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/one"
-                app:layout_constraintStart_toStartOf="@id/seventh_left_one"
-                app:layout_constraintTop_toBottomOf="@id/seventh_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFirst"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Iv_SeventhFirst" />
 
             <ImageView
-                android:id="@+id/eighth_left_two"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/two"
-                app:layout_constraintStart_toStartOf="@id/seventh_left_two"
-                app:layout_constraintTop_toTopOf="@id/eighth_left_one" />
+                android:id="@+id/Mastermind_Iv_EighthSecond"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstSecond"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_EighthFirst" />
 
             <ImageView
-                android:id="@+id/eighth_left_three"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/three"
-                app:layout_constraintStart_toStartOf="@id/seventh_left_three"
-                app:layout_constraintTop_toTopOf="@id/eighth_left_one" />
+                android:id="@+id/Mastermind_Iv_EighthThird"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstThird"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_EighthFirst" />
 
             <ImageView
-                android:id="@+id/eighth_left_four"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/four"
-                app:layout_constraintStart_toStartOf="@id/seventh_left_four"
-                app:layout_constraintTop_toTopOf="@id/eighth_left_one" />
+                android:id="@+id/Mastermind_Iv_EighthFourth"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFourth"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_EighthFirst" />
 
             <TextView
-                android:id="@+id/eighth_true_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="3dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/red"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_EighthTrue"
+                style="@style/Mastermind_TruePosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                app:layout_constraintStart_toStartOf="@id/third_true_position"
-                app:layout_constraintTop_toTopOf="@id/eighth_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_EighthFirst" />
 
             <TextView
-                android:id="@+id/eighth_wrong_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/gray"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_EighthWrong"
+                style="@style/Mastermind_WrongPosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="@id/eighth_true_position"
-                app:layout_constraintTop_toBottomOf="@id/eighth_true_position" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Tv_EighthTrue" />
 
             <!-- Ninth Attempt -->
             <ImageView
-                android:id="@+id/ninth_left_one"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/Mastermind_Iv_NinthFirst"
+                style="@style/Mastermind_AttemptCircle"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/one"
-                app:layout_constraintStart_toStartOf="@id/eighth_left_one"
-                app:layout_constraintTop_toBottomOf="@id/eighth_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFirst"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Iv_EighthFirst" />
 
             <ImageView
-                android:id="@+id/ninth_left_two"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/two"
-                app:layout_constraintStart_toStartOf="@id/eighth_left_two"
-                app:layout_constraintTop_toTopOf="@id/ninth_left_one" />
+                android:id="@+id/Mastermind_Iv_NinthSecond"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstSecond"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_NinthFirst" />
 
             <ImageView
-                android:id="@+id/ninth_left_three"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/three"
-                app:layout_constraintStart_toStartOf="@id/eighth_left_three"
-                app:layout_constraintTop_toTopOf="@id/ninth_left_one" />
+                android:id="@+id/Mastermind_Iv_NinthThird"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstThird"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_NinthFirst" />
 
             <ImageView
-                android:id="@+id/ninth_left_four"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/four"
-                app:layout_constraintStart_toStartOf="@id/eighth_left_four"
-                app:layout_constraintTop_toTopOf="@id/ninth_left_one" />
+                android:id="@+id/Mastermind_Iv_NinthFourth"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFourth"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_NinthFirst" />
 
             <TextView
-                android:id="@+id/ninth_true_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="3dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/red"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_NinthTrue"
+                style="@style/Mastermind_TruePosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                app:layout_constraintStart_toStartOf="@id/third_true_position"
-                app:layout_constraintTop_toTopOf="@id/ninth_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_NinthFirst" />
 
             <TextView
-                android:id="@+id/ninth_wrong_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/gray"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_NinthWrong"
+                style="@style/Mastermind_WrongPosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="@id/ninth_true_position"
-                app:layout_constraintTop_toBottomOf="@id/ninth_true_position" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Tv_NinthTrue" />
 
             <!-- Tenth Attempt-->
             <ImageView
-                android:id="@+id/tenth_left_one"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/Mastermind_Iv_TenthFirst"
+                style="@style/Mastermind_AttemptCircle"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/one"
-                app:layout_constraintStart_toStartOf="@id/ninth_left_one"
-                app:layout_constraintTop_toBottomOf="@id/ninth_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFirst"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Iv_NinthFirst" />
 
             <ImageView
-                android:id="@+id/tenth_left_two"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/two"
-                app:layout_constraintStart_toStartOf="@id/ninth_left_two"
-                app:layout_constraintTop_toTopOf="@id/tenth_left_one" />
+                android:id="@+id/Mastermind_Iv_TenthSecond"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstSecond"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_TenthFirst" />
 
             <ImageView
-                android:id="@+id/tenth_left_three"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/three"
-                app:layout_constraintStart_toStartOf="@id/ninth_left_three"
-                app:layout_constraintTop_toTopOf="@id/tenth_left_one" />
+                android:id="@+id/Mastermind_Iv_TenthThird"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstThird"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_TenthFirst" />
 
             <ImageView
-                android:id="@+id/tenth_left_four"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/black"
-                android:contentDescription="@string/four"
-                app:layout_constraintStart_toStartOf="@id/ninth_left_four"
-                app:layout_constraintTop_toTopOf="@id/tenth_left_one" />
+                android:id="@+id/Mastermind_Iv_TenthFourth"
+                style="@style/Mastermind_AttemptCircle"
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Iv_FirstFourth"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_TenthFirst" />
 
             <TextView
-                android:id="@+id/tenth_true_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="3dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/red"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_TenthTrue"
+                style="@style/Mastermind_TruePosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                app:layout_constraintStart_toStartOf="@id/third_true_position"
-                app:layout_constraintTop_toTopOf="@id/tenth_left_one" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toTopOf="@id/Mastermind_Iv_TenthFirst" />
 
             <TextView
-                android:id="@+id/tenth_wrong_position"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/gray"
-                android:contentDescription="@string/four"
+                android:id="@+id/Mastermind_Tv_TenthWrong"
+                style="@style/Mastermind_WrongPosition"
                 android:text="@string/zero"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="@id/tenth_true_position"
-                app:layout_constraintTop_toBottomOf="@id/tenth_true_position" />
+                app:layout_constraintStart_toStartOf="@id/Mastermind_Tv_FirstTrue"
+                app:layout_constraintTop_toBottomOf="@id/Mastermind_Tv_TenthTrue" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Mastermind_GuidelineStart"
+        android:orientation="vertical"
+        style="@style/GuideLineStart" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Mastermind_GuidelineEnd"
+        android:orientation="vertical"
+        style="@style/GuideLineEnd" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Mastermind_GuidelineTop"
+        android:orientation="horizontal"
+        style="@style/GuideLineTop" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Mastermind_GuidelineBottom"
+        android:orientation="horizontal"
+        style="@style/GuideLineBottom" />
 </androidx.constraintlayout.widget.ConstraintLayout>

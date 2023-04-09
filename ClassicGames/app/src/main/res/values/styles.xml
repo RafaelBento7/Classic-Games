@@ -91,4 +91,40 @@
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <!--  Mastermind  -->
+    
+    <style name="Mastermind_AttemptCircle">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/round_button</item>
+        <item name="android:backgroundTint">@color/black</item>
+        <item name="android:contentDescription">Attempt Circle</item>
+    </style>
+    
+    <style name="Mastermind_SolutionCircle" parent="Mastermind_AttemptCircle">
+        <item name="android:text">@string/question_mark</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">35sp</item>
+    </style>
+    
+    <style name="Mastermind_PositionCircles">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:background">@drawable/round_button</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Mastermind_TruePosition" parent="Mastermind_PositionCircles">
+        <item name="android:backgroundTint">@color/red</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Mastermind_WrongPosition" parent="Mastermind_PositionCircles">
+        <item name="android:backgroundTint">@color/black</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>
