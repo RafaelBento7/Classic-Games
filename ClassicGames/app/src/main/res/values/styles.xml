@@ -43,9 +43,12 @@
         <item name="android:textSize">15sp</item>
     </style>
 
+    <!--  DIALOG  -->
+
     <style name="Dialog_TextView" parent="CustomTextView">
         <item name="android:textSize">15sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">0dp</item>
     </style>
 
     <style name="Dialog_Button" parent="CustomTextView">
@@ -56,6 +59,14 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Dialog_Title">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 
     <!--  TIC TAC TOE  -->
 

@@ -175,6 +175,7 @@ public class MastermindActivity extends AppCompatActivity {
         CustomDialog dialog = new CustomDialog(
                 this,
                 message,
+                getResources().getString(R.string.victory_title),
                 gameOverDialog
         );
         dialog.setCancelable(false);

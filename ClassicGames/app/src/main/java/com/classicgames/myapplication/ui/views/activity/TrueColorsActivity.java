@@ -62,6 +62,7 @@ public class TrueColorsActivity extends AppCompatActivity {
             CustomDialog dialog = new CustomDialog(
                     this,
                     getResources().getString(R.string.game_over_points) + " " + mViewModel.getPoints().getValue(),
+                    getResources().getString(R.string.game_over_title),
                     gameOverDialog
             );
             dialog.setCancelable(false);

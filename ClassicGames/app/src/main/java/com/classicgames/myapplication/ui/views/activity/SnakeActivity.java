@@ -227,7 +227,10 @@ public class SnakeActivity extends AppCompatActivity implements SurfaceHolder.Ca
                     finish();
                 }
             };
-            CustomDialog dialog = new CustomDialog(this, getResources().getString(R.string.game_over_points) + " " + viewModel.getScore().getValue(), gameOverDialog);
+            CustomDialog dialog = new CustomDialog(this,
+                    getResources().getString(R.string.game_over_points) + " " + viewModel.getScore().getValue(),
+                    getResources().getString(R.string.game_over_title),
+                    gameOverDialog);
             dialog.setCancelable(false);
             dialog.setOnShowListener(dialogInterface -> {
                 dialog.getBtPositive().setText(getResources().getString(R.string.play_again));

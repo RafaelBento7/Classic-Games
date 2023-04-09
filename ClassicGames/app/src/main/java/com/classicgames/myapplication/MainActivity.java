@@ -66,7 +66,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 };
 
-                CustomDialog obstaclesDialog = new CustomDialog(this, getString(R.string.snake_obstacles), dialogButtonClick);
+                CustomDialog obstaclesDialog = new CustomDialog(this,
+                        getString(R.string.snake_obstacles),
+                        null,
+                        dialogButtonClick);
                 obstaclesDialog.show();
             }
         });

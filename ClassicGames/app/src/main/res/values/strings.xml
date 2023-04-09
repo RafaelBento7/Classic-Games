@@ -26,6 +26,10 @@
     <string name="no">No</string>
     <string name="message">Message</string>
 
+    <!--Dialog Titles-->
+    <string name="game_over_title">GAME OVER</string>
+    <string name="victory_title">VICTORY</string>
+
     <!--Numbers-->
     <string name="zero">0</string>
     <string name="one">1</string>
