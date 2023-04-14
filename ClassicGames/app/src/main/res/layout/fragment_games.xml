@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.views.fragment.GamesFragment"
+    android:background="@color/background_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/GamesFragment_Tv_Title"
+            style="@style/TitleTextView"
+            android:text="@string/app_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/GamesFragment_IB_Snake"
+            style="@style/ImageButton_Games"
+            android:contentDescription="@string/snake_game"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GamesFragment_Tv_Title"
+            app:srcCompat="@drawable/snake" />
+
+        <ImageButton
+            android:id="@+id/GamesFragment_IB_TrueColors"
+            style="@style/ImageButton_Games"
+            app:srcCompat="@drawable/true_colors"
+            android:contentDescription="@string/true_colors_game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/GamesFragment_IB_Snake" />
+
+        <ImageButton
+            android:id="@+id/GamesFragment_IB_Mastermind"
+            style="@style/ImageButton_Games"
+            android:contentDescription="@string/mastermind_game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/GamesFragment_IB_TrueColors"
+            app:srcCompat="@drawable/mastermind" />
+
+        <ImageButton
+            android:id="@+id/GamesFragment_IB_TicTacToe"
+            style="@style/ImageButton_Games"
+            android:contentDescription="@string/tic_tac_toe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GamesFragment_IB_Mastermind"
+            app:srcCompat="@drawable/tic_tac_toe" />
+
+        <ImageButton
+            style="@style/ImageButton_Games"
+            app:srcCompat="@drawable/coming_soon"
+            android:contentDescription="@string/coming_soon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/GamesFragment_IB_TicTacToe" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

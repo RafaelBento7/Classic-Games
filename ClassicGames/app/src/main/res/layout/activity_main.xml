@@ -7,71 +7,57 @@
     android:background="@color/background_color"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/GamesFragment_Tv_Title"
-        style="@style/TitleTextView"
-        android:text="@string/app_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ScrollView
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/MainActivity_BottomNavView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GamesFragment_Tv_Title">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/GamesFragment_IB_Snake"
-                style="@style/ImageButton_Games"
-                android:layout_marginTop="0dp"
-                app:srcCompat="@drawable/snake"
-                android:contentDescription="@string/snake_game"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+            <FrameLayout
+                android:id="@+id/ActivityMain_Fragment"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:paddingTop="40dp"
+                android:paddingBottom="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/MainActivity_GuidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/MainActivity_GuidelineStart"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/GamesFragment_IB_TrueColors"
-                style="@style/ImageButton_Games"
-                app:srcCompat="@drawable/true_colors"
-                android:contentDescription="@string/true_colors_game"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/GamesFragment_IB_Snake" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/MainActivity_GuidelineStart"
+                style="@style/GuideLineStart"
+                android:orientation="vertical" />
 
-            <ImageButton
-                android:id="@+id/GamesFragment_IB_Mastermind"
-                style="@style/ImageButton_Games"
-                android:contentDescription="@string/mastermind_game"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/GamesFragment_IB_TrueColors"
-                app:srcCompat="@drawable/mastermind" />
-
-            <ImageButton
-                android:id="@+id/GamesFragment_IB_TicTacToe"
-                style="@style/ImageButton_Games"
-                android:contentDescription="@string/tic_tac_toe"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/GamesFragment_IB_Mastermind"
-                app:srcCompat="@drawable/tic_tac_toe" />
-
-            <ImageButton
-                style="@style/ImageButton_Games"
-                app:srcCompat="@drawable/coming_soon"
-                android:contentDescription="@string/coming_soon"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/GamesFragment_IB_TicTacToe" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/MainActivity_GuidelineEnd"
+                style="@style/GuideLineEnd"
+                android:orientation="vertical" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/MainActivity_BottomNavView"
+        app:menu="@menu/bottom_nav_menu"
+        android:background="#555555"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        app:itemIconTint="@drawable/bottom_nav_item"
+        app:itemTextColor="@drawable/bottom_nav_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:labelVisibilityMode="labeled"
+    />
 </androidx.constraintlayout.widget.ConstraintLayout>

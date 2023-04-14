@@ -1,19 +1,13 @@
 package com.classicgames.myapplication;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.classicgames.myapplication.databinding.ActivityMainBinding;
-import com.classicgames.myapplication.ui.views.activity.MastermindActivity;
-import com.classicgames.myapplication.ui.views.activity.SnakeActivity;
-import com.classicgames.myapplication.ui.views.activity.TicTacToeActivity;
-import com.classicgames.myapplication.ui.views.activity.TrueColorsActivity;
-import com.classicgames.myapplication.utils.CustomDialog;
-import com.classicgames.myapplication.utils.SnakeMapSizeDialog;
-
-import java.util.concurrent.atomic.AtomicInteger;
+import com.classicgames.myapplication.ui.views.fragment.GamesFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,45 +19,31 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.GamesFragmentIBSnake.setOnClickListener(view-> snakeGame());
-        binding.GamesFragmentIBTrueColors.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, TrueColorsActivity.class)));
-        binding.GamesFragmentIBMastermind.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, MastermindActivity.class)));
-        binding.GamesFragmentIBTicTacToe.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, TicTacToeActivity.class)));
-    }
+        replaceFragment(new GamesFragment());
 
-    private void snakeGame(){
-        AtomicInteger snakeMapSize = new AtomicInteger(0);
-        SnakeMapSizeDialog snakeMapSizeDialog = new SnakeMapSizeDialog(this);
-        snakeMapSizeDialog.show();
-        snakeMapSizeDialog.setOnDismissListener(dialog -> {
-            snakeMapSize.set(snakeMapSizeDialog.getMapLevel());
-            if (snakeMapSize.get() != 0){
-                CustomDialog.DialogButtonClick dialogButtonClick = new CustomDialog.DialogButtonClick() {
-                    @Override
-                    public void onPositiveButtonClicked() {
-                        openSnakeGame(snakeMapSize.get(), true);
-                    }
-
-                    @Override
-                    public void onNegativeButtonClicked() {
-                        openSnakeGame(snakeMapSize.get(), false);
-                    }
-                };
-
-                CustomDialog obstaclesDialog = new CustomDialog(this,
-                        getString(R.string.snake_obstacles),
-                        null,
-                        dialogButtonClick);
-                obstaclesDialog.show();
+        binding.MainActivityBottomNavView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.BottomNav_Games:
+                    replaceFragment(new GamesFragment());
+                    break;
+                case R.id.BottomNav_Leaderboard:
+                    //replaceFragment(new FlightSearchFragment());
+                    break;
+                case R.id.BottomNav_Help:
+                    //replaceFragment(new RestaurantsFragment());
+                    break;
+                case R.id.BottomNav_News:
+                    //replaceFragment(new StoresFragment());
+                    break;
             }
+
+            return true;
         });
     }
 
-    private void openSnakeGame(int snakeMapSize, boolean obstaclesGame) {
-        Intent intent = new Intent(this, SnakeActivity.class);
-        intent.putExtra(SnakeActivity.MAP_SIZE, snakeMapSize);
-        intent.putExtra(SnakeActivity.OBSTACLES_GAME, obstaclesGame);
-        startActivity(intent);
+    private void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.ActivityMain_Fragment,fragment).commit();
     }
 
     /* TODO

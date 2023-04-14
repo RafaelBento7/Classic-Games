@@ -59,6 +59,12 @@
     <string name="mastermind_game">Mastermind</string>
     <string name="tic_tac_toe">Tic Tac Toe</string>
 
+    <!-- Menu Item Text -->
+    <string name="menu_video_games">Games</string>
+    <string name="menu_leaderboard">Leaderboard</string>
+    <string name="menu_help">Help</string>
+    <string name="menu_news">Patch Notes</string>
+
     <!-- Snake Game-->
     <string name="snake_speed">Current speed: %1$d</string>
     <string name="golden_point_timer">Golden Point Moves: %1$d</string>
@@ -99,4 +105,5 @@
     <string name="tictactoe_draw">Draw! No winners!</string>
     <string name="tictactoe_win">Victory! Congratulations player </string>
     <string name="can_not_play_there">You can not play there, you know it!</string>
+
 </resources>
