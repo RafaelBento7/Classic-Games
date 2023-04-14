@@ -7,140 +7,71 @@
     android:background="@color/background_color"
     tools:context=".MainActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="150dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/background_color">
-
-            <ImageButton
-                android:id="@+id/snakeGame"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginEnd="100dp"
-                android:adjustViewBounds="true"
-                android:background="@color/background_color"
-                android:contentDescription="@string/snake_game"
-                android:scaleType="fitCenter"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/snake" />
-
-            <Button
-                android:id="@+id/snakeHelp"
-                android:layout_width="100dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/round_button"
-                android:text="@string/help"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="@id/snakeGame"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/snakeGame"
-                app:layout_constraintTop_toTopOf="@id/snakeGame" />
-
-            <ImageButton
-                android:id="@+id/trueColorGame"
-                android:layout_width="0dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="20dp"
-                android:adjustViewBounds="true"
-                android:background="@color/background_color"
-                android:scaleType="fitCenter"
-                android:contentDescription="@string/true_colors_game"
-                app:layout_constraintEnd_toEndOf="@id/snakeGame"
-                app:layout_constraintStart_toStartOf="@id/snakeGame"
-                app:layout_constraintTop_toBottomOf="@id/snakeGame"
-                app:srcCompat="@drawable/true_colors" />
-
-            <Button
-                android:id="@+id/trueColorHelp"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@drawable/round_button"
-                android:text="@string/help"
-                app:layout_constraintBottom_toBottomOf="@id/trueColorGame"
-                app:layout_constraintEnd_toEndOf="@id/snakeHelp"
-                app:layout_constraintStart_toStartOf="@id/snakeHelp"
-                app:layout_constraintTop_toTopOf="@id/trueColorGame" />
-
-            <ImageButton
-                android:id="@+id/mastermindGame"
-                android:layout_width="0dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="20dp"
-                android:adjustViewBounds="true"
-                android:background="@color/background_color"
-                android:scaleType="fitCenter"
-                android:contentDescription="@string/true_colors_game"
-                app:layout_constraintEnd_toEndOf="@id/snakeGame"
-                app:layout_constraintStart_toStartOf="@id/snakeGame"
-                app:layout_constraintTop_toBottomOf="@id/trueColorGame"
-                app:srcCompat="@drawable/mastermind" />
-
-            <Button
-                android:id="@+id/mastermindHelp"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@drawable/round_button"
-                android:text="@string/help"
-                app:layout_constraintBottom_toBottomOf="@id/mastermindGame"
-                app:layout_constraintEnd_toEndOf="@id/trueColorHelp"
-                app:layout_constraintStart_toStartOf="@id/trueColorHelp"
-                app:layout_constraintTop_toTopOf="@id/mastermindGame" />
-
-            <ImageButton
-                android:id="@+id/tictactoeGame"
-                android:layout_width="0dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="20dp"
-                android:adjustViewBounds="true"
-                android:background="@color/background_color"
-                android:scaleType="fitCenter"
-                android:contentDescription="@string/true_colors_game"
-                app:layout_constraintEnd_toEndOf="@id/snakeGame"
-                app:layout_constraintStart_toStartOf="@id/snakeGame"
-                app:layout_constraintTop_toBottomOf="@id/mastermindGame"
-                app:srcCompat="@drawable/tic_tac_toe" />
-
-            <Button
-                android:id="@+id/tictactoeHelp"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@drawable/round_button"
-                android:text="@string/help"
-                app:layout_constraintBottom_toBottomOf="@id/tictactoeGame"
-                app:layout_constraintEnd_toEndOf="@id/mastermindHelp"
-                app:layout_constraintStart_toStartOf="@id/mastermindHelp"
-                app:layout_constraintTop_toTopOf="@id/tictactoeGame" />
-
-            <Button
-                android:id="@+id/soon"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/purple"
-                android:text="@string/coming_soon"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@id/snakeHelp"
-                app:layout_constraintStart_toStartOf="@id/tictactoeGame"
-                app:layout_constraintTop_toBottomOf="@id/tictactoeGame" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:id="@+id/GamesFragment_Tv_Title"
+        style="@style/TitleTextView"
         android:text="@string/app_name"
-        android:textColor="@color/white"
-        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GamesFragment_Tv_Title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/GamesFragment_IB_Snake"
+                style="@style/ImageButton_Games"
+                android:layout_marginTop="0dp"
+                app:srcCompat="@drawable/snake"
+                android:contentDescription="@string/snake_game"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/GamesFragment_IB_TrueColors"
+                style="@style/ImageButton_Games"
+                app:srcCompat="@drawable/true_colors"
+                android:contentDescription="@string/true_colors_game"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/GamesFragment_IB_Snake" />
+
+            <ImageButton
+                android:id="@+id/GamesFragment_IB_Mastermind"
+                style="@style/ImageButton_Games"
+                android:contentDescription="@string/mastermind_game"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/GamesFragment_IB_TrueColors"
+                app:srcCompat="@drawable/mastermind" />
+
+            <ImageButton
+                android:id="@+id/GamesFragment_IB_TicTacToe"
+                style="@style/ImageButton_Games"
+                android:contentDescription="@string/tic_tac_toe"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/GamesFragment_IB_Mastermind"
+                app:srcCompat="@drawable/tic_tac_toe" />
+
+            <ImageButton
+                style="@style/ImageButton_Games"
+                app:srcCompat="@drawable/coming_soon"
+                android:contentDescription="@string/coming_soon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/GamesFragment_IB_TicTacToe" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

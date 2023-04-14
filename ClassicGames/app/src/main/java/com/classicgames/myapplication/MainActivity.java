@@ -1,13 +1,11 @@
 package com.classicgames.myapplication;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.ImageButton;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.classicgames.myapplication.databinding.ActivityMainBinding;
 import com.classicgames.myapplication.ui.views.activity.MastermindActivity;
 import com.classicgames.myapplication.ui.views.activity.SnakeActivity;
 import com.classicgames.myapplication.ui.views.activity.TicTacToeActivity;
@@ -19,32 +17,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton bSnakeGame,bTrueColorsGame,bMastermindGame,bTictactoeGame;
-    Button bSnakeHelp, bTrueColorsHelp,bMastermindHelp,bTictacoeHelp;
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initializeObjects();
-        bSnakeGame.setOnClickListener(view-> snakeGame());
-        bSnakeHelp.setOnClickListener(view -> snakeHelp());
-        bTrueColorsGame.setOnClickListener(view -> trueColorsGame());
-        bTrueColorsHelp.setOnClickListener(view -> trueColorsHelp());
-        bMastermindGame.setOnClickListener(view -> mastermindGame());
-        bMastermindHelp.setOnClickListener(view -> mastermindHelp());
-        bTictactoeGame.setOnClickListener(view -> tictactoeGame());
-    }
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-    private void initializeObjects(){
-        bSnakeGame = findViewById(R.id.snakeGame);
-        bSnakeHelp = findViewById(R.id.snakeHelp);
-        bTrueColorsGame = findViewById(R.id.trueColorGame);
-        bTrueColorsHelp = findViewById(R.id.trueColorHelp);
-        bMastermindGame = findViewById(R.id.mastermindGame);
-        bMastermindHelp = findViewById(R.id.mastermindHelp);
-        bTictactoeGame = findViewById(R.id.tictactoeGame);
-        bTictacoeHelp = findViewById(R.id.tictactoeHelp);
+        binding.GamesFragmentIBSnake.setOnClickListener(view-> snakeGame());
+        binding.GamesFragmentIBTrueColors.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, TrueColorsActivity.class)));
+        binding.GamesFragmentIBMastermind.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, MastermindActivity.class)));
+        binding.GamesFragmentIBTicTacToe.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, TicTacToeActivity.class)));
     }
 
     private void snakeGame(){
@@ -82,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /* TODO
+        TO CHANGE TO HELP FRAGMENT
     private void snakeHelp(){
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(getResources().getString(R.string.snake_game));
@@ -96,11 +82,6 @@ public class MainActivity extends AppCompatActivity {
                 getResources().getString(R.string.snake_speed_level6)+"\n");
         builder.setPositiveButton(getResources().getString(R.string.lets_try), (dialog, which) -> {});
         builder.show();
-    }
-
-    private void trueColorsGame(){
-        Intent intent = new Intent(MainActivity.this, TrueColorsActivity.class);
-        startActivity(intent);
     }
 
     private void trueColorsHelp() {
@@ -123,15 +104,5 @@ public class MainActivity extends AppCompatActivity {
                 getResources().getString(R.string.mastermind_help6)+"\n");
         builder.setPositiveButton(getResources().getString(R.string.lets_try), (dialog, which) -> {});
         builder.show();
-    }
-
-    private void mastermindGame() {
-        Intent intent = new Intent(MainActivity.this, MastermindActivity.class);
-        startActivity(intent);
-    }
-
-    private void tictactoeGame(){
-        Intent intent = new Intent(MainActivity.this, TicTacToeActivity.class);
-        startActivity(intent);
-    }
+    }*/
 }

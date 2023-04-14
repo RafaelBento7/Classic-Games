@@ -15,10 +15,11 @@
         app:layout_constraintTop_toTopOf="@+id/Mastermind_GuidelineTop" />
 
     <Button
-        android:layout_width="0dp"
+        android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:onClick="startGame"
         android:text="@string/restart"
+        android:fontFamily="@font/boogaloo"
         app:layout_constraintEnd_toEndOf="@+id/Mastermind_LinearLayout_Solution"
         app:layout_constraintStart_toStartOf="@+id/Mastermind_LinearLayout_Solution"
         app:layout_constraintTop_toTopOf="@+id/Mastermind_ScrollView" />

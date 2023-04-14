@@ -25,6 +25,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:fontFamily">@font/boogaloo</item>
     </style>
 
     <style name="TitleTextView" parent="CustomTextView">
@@ -62,10 +63,21 @@
     <style name="Dialog_Title">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
+        <item name="android:fontFamily">@font/boogaloo</item>
         <item name="android:textSize">23sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--  Games Fragment  -->
+    <style name="ImageButton_Games">
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:background">@color/background_color</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:layout_marginTop">40dp</item>
     </style>
 
     <!--  TIC TAC TOE  -->
@@ -96,6 +108,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingStart">10dp</item>
         <item name="android:paddingEnd">10dp</item>
+        <item name="android:fontFamily">@font/boogaloo</item>
         <item name="android:background">@drawable/snake_radio_selector</item>
         <item name="android:button">@color/dark_blue_700</item>
         <item name="android:gravity">center</item>
