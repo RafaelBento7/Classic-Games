@@ -16,6 +16,8 @@
     <string name="next">Next</string>
     <string name="lives_left">Lives Left:</string>
     <string name="attempts_left">Attempts Left: %1$d</string>
+    <string name="timer_minutes_seconds">%1$s:%2$s</string>
+    <string name="timer_hour_minutes_seconds">%1$s:%2$s:%3$s</string>
     <string name="question_mark">\?</string>
     <string name="restart">restart</string>
     <string name="lets_try">Let\'s try!</string>
@@ -25,6 +27,13 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="message">Message</string>
+    <string name="how_to_play">How To Play?</string>
+    <string name="how_to_move">How to Move</string>
+    <string name="how_speed_works">How does speed works</string>
+    <string name="objective">Objective</string>
+    <string name="swipe_left"><![CDATA[Swipe Left ->]]></string>
+    <string name="swipe_right"><![CDATA[<- Swipe Right]]></string>
+
 
     <!--Dialog Titles-->
     <string name="game_over_title">GAME OVER</string>
@@ -54,14 +63,14 @@
     <string name="pink">Pink</string>
 
     <!-- Games -->
-    <string name="snake_game">Snake game</string>
+    <string name="snake_game">Snake</string>
     <string name="true_colors_game">True Colors</string>
     <string name="mastermind_game">Mastermind</string>
-    <string name="tic_tac_toe">Tic Tac Toe</string>
+    <string name="tic_tac_toe_game">Tic Tac Toe</string>
 
     <!-- Menu Item Text -->
     <string name="menu_video_games">Games</string>
-    <string name="menu_leaderboard">Leaderboard</string>
+    <string name="menu_leaderboard">Records</string>
     <string name="menu_help">Help</string>
     <string name="menu_news">Patch Notes</string>
 
@@ -71,29 +80,22 @@
     <string name="no_golden_point">Golden Point OFF</string>
     <string name="snake_select_map_size">Select a Map Size!</string>
     <string name="snake_obstacles">Do you want to add obstacles?</string>
-    <string name="snake_rules">Eat every green and yellow point you can with the snake! And do not forget, avoid the red!</string>
-    <string name="speed">How does speed works?</string>
-    <string name="snake_speed_level1">0–5 = 10%</string>
-    <string name="snake_speed_level2">6–10 = 30%</string>
-    <string name="snake_speed_level3">11–25 = 50%</string>
-    <string name="snake_speed_level4">26–50 = 70%</string>
-    <string name="snake_speed_level5">51–100 = 85%</string>
-    <string name="snake_speed_level6">101+ = 100%</string>
+    <string name="snake_objective">"Eat every green and yellow point you can with the snake! And do not forget, avoid the red!\nEach point you eat will make you grow and get faster so take the advantage of yellow points!"</string>
+    <string name="snake_how_to_move">Easy, just swipe in the direction you want to go</string>
+    <string name="snake_speed_level">"00–05 = 10%\n06–10 = 30%\n11–25 = 50%\n26–50 = 70%\n51–100 = 85%\n101+ = 100%"</string>
 
     <!-- True Colors -->
     <string name="true_colors_color">Color</string>
     <string name="heart1">true_colors_heart</string>
     <string name="heart2">true_colors_heart2</string>
     <string name="heart3">true_colors_heart3</string>
-    <string name="true_colors_rules">It\'s an easy game you just have to choose the color you READ instead of what your eyes SEE! </string>
-
+    <string name="true_colors_objective">It\'s an easy game you just have to choose the color you READ instead of the color your eyes SEE! Oh and be careful with time!</string>
+    <string name="true_colors_speed">"00–04 = 4s\n05–09 = 3.5s\n10–14 = 3s\n15–19 = 2.5s\n20–24 = 2s\n25–50 = 1.5s\n20–24 = 2s\n50+ = 1s"</string>
     <!-- Mastermind -->
-    <string name="mastermind_help">Objective of the game? Find the solution within 10 attempts!</string>
-    <string name="mastermind_help2">You will pick a sequence of four colors, and the colors must be at the same position as the solution.</string>
-    <string name="mastermind_help3">You have two little circles next to your attempt to help you.</string>
-    <string name="mastermind_help4">Red circle - Gives you the number of the correct colors and position you have in that attempt.</string>
-    <string name="mastermind_help5">Black circle - Gives you the number of the correct colors but WRONG position you have in that attempt.</string>
-    <string name="mastermind_help6">One tip for you, the game does NOT allow repetitive colors!</string>
+    <string name="mastermind_objective">"Find the solution in 10 tries!\nYou are going to choose a sequence of four colors, and the colors must be the same as the solution and must be in the same position.\nTo help you, you will have two small circles next to the attempt!
+        Red circle - Gives you the number of totally correct colors.
+        Black circle - Gives you the number of correct colors that are in the WRONG position.\nA tip for you, the game does NOT allow repeated colors!"
+    </string>
     <string name="mastermind_new_record">NEW RECORD! %1$d:%2$d in %3$d attempts!</string>
     <string name="mastermind_no_record">It\'s not a record, but you still won!</string>
 
@@ -105,5 +107,18 @@
     <string name="tictactoe_draw">Draw! No winners!</string>
     <string name="tictactoe_win">Victory! Congratulations player </string>
     <string name="can_not_play_there">You can not play there, you know it!</string>
+    <string name="tictactoe_objective">"Everyone knows what the objective is… 3 in a row let's go!"</string>
+
+    <!-- Patch Notes -->
+    <string name="patch_notes">Patch Notes</string>
+    <string name="patch_notes_v2_0">New app structure\nNew app Design\nRecords Page\nHelp Page\nSnake Game now has 3 different records (Small Map; Medium Map; Big Map)\nNew custom dialog\nFix Mastermind random solution (can no longer be 2 equal colors)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="leaderboard_snake_big_map">Big Map</string>
+    <string name="leaderboard_snake_medium_map">Medium Map</string>
+    <string name="leaderboard_snake_small_map">Small map</string>
+    <string name="record">Record</string>
+    <string name="time">Time</string>
+    <string name="attempts">Attempts</string>
 
 </resources>

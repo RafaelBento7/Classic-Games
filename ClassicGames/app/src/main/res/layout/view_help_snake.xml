@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="40dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/ViewHelpSnake_Tv_SwipeLeft"
+                style="@style/TextView"
+                android:text="@string/swipe_left"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ViewHelpSnake_Title"
+                style="@style/TitleTextView"
+                android:text="@string/snake_game"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpSnake_Tv_SwipeLeft" />
+
+            <ImageView
+                android:id="@+id/ViewHelpSnake_Iv_Snake"
+                style="@style/ImageButton_Games"
+                android:contentDescription="@string/snake_game"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpSnake_Title"
+                app:srcCompat="@drawable/snake" />
+
+            <TextView
+                android:id="@+id/ViewHelpSnake_Tv_ObjectiveTitle"
+                style="@style/BigTextView"
+                android:layout_marginTop="40dp"
+                android:text="@string/objective"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpSnake_Iv_Snake" />
+
+            <TextView
+                android:id="@+id/ViewHelpSnake_Tv_Objective"
+                style="@style/TextView"
+                android:layout_marginTop="20dp"
+                android:text="@string/snake_objective"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpSnake_Tv_ObjectiveTitle" />
+
+            <TextView
+                android:id="@+id/ViewHelpSnake_Tv_HowMoveTitle"
+                style="@style/BigTextView"
+                android:layout_marginTop="40dp"
+                android:text="@string/how_to_move"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpSnake_Tv_Objective" />
+
+            <TextView
+                android:id="@+id/ViewHelpSnake_Tv_HowMove"
+                style="@style/TextView"
+                android:layout_marginTop="20dp"
+                android:text="@string/snake_how_to_move"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpSnake_Tv_HowMoveTitle" />
+
+            <TextView
+                android:id="@+id/ViewHelpSnake_Tv_HowSpeedTitle"
+                style="@style/BigTextView"
+                android:layout_marginTop="40dp"
+                android:text="@string/how_speed_works"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpSnake_Tv_HowMove" />
+
+            <TextView
+                android:id="@+id/ViewHelpSnake_Tv_HowSpeed"
+                style="@style/TextView"
+                android:layout_marginTop="20dp"
+                android:text="@string/snake_speed_level"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpSnake_Tv_HowSpeedTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

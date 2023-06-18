@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="40dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/ViewHelpTrueColors_Tv_SwipeLeft"
+                style="@style/TextView"
+                android:text="@string/swipe_left"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ViewHelpTrueColors_Tv_SwipeRight"
+                style="@style/TextView"
+                android:text="@string/swipe_right"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ViewHelpTrueColors_Title"
+                style="@style/TitleTextView"
+                android:text="@string/true_colors_game"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpTrueColors_Tv_SwipeLeft" />
+
+            <ImageView
+                android:id="@+id/ViewHelpTrueColors_Iv_TrueColors"
+                style="@style/ImageButton_Games"
+                android:contentDescription="@string/true_colors_game"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpTrueColors_Title"
+                app:srcCompat="@drawable/true_colors" />
+
+            <TextView
+                android:id="@+id/ViewHelpTrueColors_Tv_ObjectiveTitle"
+                style="@style/BigTextView"
+                android:layout_marginTop="40dp"
+                android:text="@string/objective"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpTrueColors_Iv_TrueColors" />
+
+            <TextView
+                android:id="@+id/ViewHelpTrueColors_Tv_Objective"
+                style="@style/TextView"
+                android:layout_marginTop="20dp"
+                android:text="@string/true_colors_objective"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpTrueColors_Tv_ObjectiveTitle" />
+
+            <TextView
+                android:id="@+id/ViewHelpTrueColors_Tv_HowSpeedTitle"
+                style="@style/BigTextView"
+                android:layout_marginTop="40dp"
+                android:text="@string/how_speed_works"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpTrueColors_Tv_Objective" />
+
+            <TextView
+                android:id="@+id/ViewHelpTrueColors_Tv_HowSpeed"
+                style="@style/TextView"
+                android:layout_marginTop="20dp"
+                android:text="@string/true_colors_speed"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpTrueColors_Tv_HowSpeedTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

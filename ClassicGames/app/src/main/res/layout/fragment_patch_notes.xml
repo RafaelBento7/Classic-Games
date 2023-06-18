@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.views.fragment.PatchNotesFragment"
+    android:background="@color/background_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="40dp">
+
+        <TextView
+            android:id="@+id/PatchNotes_Title"
+            style="@style/TitleTextView"
+            android:layout_marginTop="20dp"
+            android:text="@string/patch_notes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/PatchNotes_V2_0"
+            style="@style/BigTextView"
+            android:text="V 2.0"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/PatchNotes_Title" />
+
+        <TextView
+            android:id="@+id/PatchNotes_V2_Changes"
+            style="@style/TextView"
+            android:layout_width="match_parent"
+            android:text="@string/patch_notes_v2_0"
+            android:layout_marginTop="20dp"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/PatchNotes_V2_0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

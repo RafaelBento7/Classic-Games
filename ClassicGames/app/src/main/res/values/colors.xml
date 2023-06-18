@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background_color">#333333</color>
+    <color name="nav_bar">#555555</color>
 
     <color name="dialog_background">#3E80B4</color>
 

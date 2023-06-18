@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.views.fragment.LeaderboardFragment"
+    android:background="@color/background_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/Leaderboard_Tv_Title"
+            style="@style/TitleTextView"
+            android:layout_marginTop="20dp"
+            android:text="@string/menu_leaderboard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/Leaderboard_Tv_Snake"
+            style="@style/BigTextView"
+            android:layout_marginTop="40dp"
+            android:text="@string/snake_game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Leaderboard_Tv_Title" />
+
+        <TableLayout
+            android:id="@+id/Leaderboard_Tb_Snake"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            android:paddingHorizontal="50dp"
+            android:stretchColumns="*"
+            app:layout_constraintTop_toBottomOf="@+id/Leaderboard_Tv_Snake">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+                <TextView
+                    style="@style/TextView"
+                    android:layout_width="0dp"
+                    android:text="@string/leaderboard_snake_small_map"
+                    android:layout_column="0"/>
+                <TextView
+                    android:id="@+id/Leaderboard_Tv_SnakeBigMapRecord"
+                    style="@style/TextView"
+                    android:textAlignment="viewEnd"
+                    android:layout_width="0dp"
+                    android:text="@string/zero"
+                    android:layout_column="1" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="1">
+                <TextView
+                    style="@style/TextView"
+                    android:layout_width="0dp"
+                    android:text="@string/leaderboard_snake_medium_map"
+                    android:layout_column="0"/>
+                <TextView
+                    android:id="@+id/Leaderboard_Tv_SnakeMediumMapRecord"
+                    style="@style/TextView"
+                    android:textAlignment="viewEnd"
+                    android:layout_width="0dp"
+                    android:text="@string/zero"
+                    android:layout_column="1" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="1">
+                <TextView
+                    style="@style/TextView"
+                    android:layout_width="0dp"
+                    android:text="@string/leaderboard_snake_big_map"
+                    android:layout_column="0"/>
+                <TextView
+                    android:id="@+id/Leaderboard_Tv_SnakeSmallMapRecord"
+                    style="@style/TextView"
+                    android:textAlignment="viewEnd"
+                    android:layout_width="0dp"
+                    android:text="@string/zero"
+                    android:layout_column="1" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/Leaderboard_Tv_TrueColors"
+            style="@style/BigTextView"
+            android:layout_marginTop="40dp"
+            android:text="@string/true_colors_game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Leaderboard_Tb_Snake" />
+
+        <TableLayout
+            android:id="@+id/Leaderboard_Tb_TrueColors"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            android:paddingHorizontal="50dp"
+            android:stretchColumns="*"
+            app:layout_constraintTop_toBottomOf="@+id/Leaderboard_Tv_TrueColors">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+                <TextView
+                    style="@style/TextView"
+                    android:layout_width="0dp"
+                    android:text="@string/record"
+                    android:layout_column="0"/>
+                <TextView
+                    android:id="@+id/Leaderboard_Tv_TrueColorsRecord"
+                    style="@style/TextView"
+                    android:textAlignment="viewEnd"
+                    android:layout_width="0dp"
+                    android:text="@string/zero"
+                    android:layout_column="1" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/Leaderboard_Tv_Mastermind"
+            style="@style/BigTextView"
+            android:layout_marginTop="40dp"
+            android:text="@string/mastermind_game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Leaderboard_Tb_TrueColors" />
+
+        <TableLayout
+            android:id="@+id/Leaderboard_Tb_Mastermind"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            android:paddingHorizontal="50dp"
+            android:stretchColumns="*"
+            app:layout_constraintTop_toBottomOf="@+id/Leaderboard_Tv_Mastermind">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+                <TextView
+                    style="@style/TextView"
+                    android:layout_width="0dp"
+                    android:text="@string/time"
+                    android:layout_column="0"/>
+                <TextView
+                    android:id="@+id/Leaderboard_Tv_MastermindTimeRecord"
+                    style="@style/TextView"
+                    android:textAlignment="viewEnd"
+                    android:layout_width="0dp"
+                    android:text="@string/zero"
+                    android:layout_column="1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+                <TextView
+                    style="@style/TextView"
+                    android:layout_width="0dp"
+                    android:text="@string/attempts"
+                    android:layout_column="0"/>
+                <TextView
+                    android:id="@+id/Leaderboard_Tv_MastermindAttemptsRecord"
+                    style="@style/TextView"
+                    android:textAlignment="viewEnd"
+                    android:layout_width="0dp"
+                    android:text="@string/zero"
+                    android:layout_column="1" />
+            </TableRow>
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
