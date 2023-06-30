@@ -15,6 +15,14 @@
         android:theme="@style/Theme.ClassicGames"
         tools:targetApi="31">
         <activity
+            android:name=".ui.views.activity.WordleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.views.activity.HangmanActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ui.views.activity.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
@@ -43,8 +51,7 @@
         <activity
             android:name=".ui.views.activity.MainActivity"
             android:exported="false"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -120,5 +120,8 @@
     <string name="record">Record</string>
     <string name="time">Time</string>
     <string name="attempts">Attempts</string>
+    <string name="check">Check</string>
+    <string name="skip">Skip (-1)</string>
+    <string name="symbol_backspace">\u232b</string>
 
 </resources>

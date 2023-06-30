@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".ui.views.activity.WordleActivity">
+
+    <TextView
+        android:id="@+id/Wordle_Tv_Points"
+        style="@style/BigTextView"
+        android:text="@string/points"
+        app:layout_constraintStart_toStartOf="@+id/Wordle_GuidelineStart"
+        app:layout_constraintTop_toTopOf="@+id/Wordle_GuidelineTop" />
+
+    <TextView
+        android:id="@+id/Wordle_Tv_Timer"
+        style="@style/BigTextView"
+        android:text="@string/timer_minutes_seconds"
+        app:layout_constraintEnd_toStartOf="@id/Wordle_GuidelineEnd"
+        app:layout_constraintTop_toBottomOf="@id/Wordle_GuidelineTop" />
+
+    <!-- Attempts -->
+
+    <LinearLayout
+        android:id="@+id/Wordle_Attempts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/Wordle_Bt_Check"
+        app:layout_constraintEnd_toStartOf="@+id/Wordle_GuidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/Wordle_GuidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/Wordle_Tv_Points">
+
+        <LinearLayout style="@style/Wordle_Letter_Layout">
+
+            <TextView
+                android:id="@+id/Wordle_FirstAttempt_First"
+                style="@style/Wordle_Letter" />
+
+            <TextView
+                android:id="@+id/Wordle_FirstAttempt_Second"
+                style="@style/Wordle_Letter"
+                android:layout_marginHorizontal="10dp" />
+
+            <TextView
+                android:id="@+id/Wordle_FirstAttempt_Third"
+                style="@style/Wordle_Letter" />
+
+            <TextView
+                android:id="@+id/Wordle_FirstAttempt_Forth"
+                style="@style/Wordle_Letter"
+                android:layout_marginHorizontal="10dp" />
+
+            <TextView
+                android:id="@+id/Wordle_FirstAttempt_Fifth"
+                style="@style/Wordle_Letter" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/Wordle_Letter_Layout">
+
+            <TextView
+                android:id="@+id/Wordle_SecondAttempt_First"
+                style="@style/Wordle_Letter" />
+
+            <TextView
+                android:id="@+id/Wordle_SecondAttempt_Second"
+                style="@style/Wordle_Letter"
+                android:layout_marginHorizontal="10dp" />
+
+            <TextView
+                android:id="@+id/Wordle_SecondAttempt_Third"
+                style="@style/Wordle_Letter" />
+
+            <TextView
+                android:id="@+id/Wordle_SecondAttempt_Forth"
+                style="@style/Wordle_Letter"
+                android:layout_marginHorizontal="10dp" />
+
+            <TextView
+                android:id="@+id/Wordle_SecondAttempt_Fifth"
+                style="@style/Wordle_Letter" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/Wordle_Letter_Layout">
+
+            <TextView
+                android:id="@+id/Wordle_ThirdAttempt_First"
+                style="@style/Wordle_Letter" />
+
+            <TextView
+                android:id="@+id/Wordle_ThirdAttempt_Second"
+                style="@style/Wordle_Letter"
+                android:layout_marginHorizontal="10dp" />
+
+            <TextView
+                android:id="@+id/Wordle_ThirdAttempt_Third"
+                style="@style/Wordle_Letter" />
+
+            <TextView
+                android:id="@+id/Wordle_ThirdAttempt_Forth"
+                style="@style/Wordle_Letter"
+                android:layout_marginHorizontal="10dp" />
+
+            <TextView
+                android:id="@+id/Wordle_ThirdAttempt_Fifth"
+                style="@style/Wordle_Letter" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/Wordle_Letter_Layout">
+
+            <TextView
+                android:id="@+id/Wordle_ForthAttempt_First"
+                style="@style/Wordle_Letter" />
+
+            <TextView
+                android:id="@+id/Wordle_ForthAttempt_Second"
+                style="@style/Wordle_Letter"
+                android:layout_marginHorizontal="10dp" />
+
+            <TextView
+                android:id="@+id/Wordle_ForthAttempt_Third"
+                style="@style/Wordle_Letter" />
+
+            <TextView
+                android:id="@+id/Wordle_ForthAttempt_Forth"
+                style="@style/Wordle_Letter"
+                android:layout_marginHorizontal="10dp" />
+
+            <TextView
+                android:id="@+id/Wordle_ForthAttempt_Fifth"
+                style="@style/Wordle_Letter" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/Wordle_Letter_Layout">
+
+            <TextView
+                android:id="@+id/Wordle_FifthAttempt_First"
+                style="@style/Wordle_Letter" />
+
+            <TextView
+                android:id="@+id/Wordle_FifthAttempt_Second"
+                style="@style/Wordle_Letter"
+                android:layout_marginHorizontal="10dp" />
+
+            <TextView
+                android:id="@+id/Wordle_FifthAttempt_Third"
+                style="@style/Wordle_Letter" />
+
+            <TextView
+                android:id="@+id/Wordle_FifthAttempt_Forth"
+                style="@style/Wordle_Letter"
+                android:layout_marginHorizontal="10dp" />
+
+            <TextView
+                android:id="@+id/Wordle_FifthAttempt_Fifth"
+                style="@style/Wordle_Letter" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Wordle_Bt_Check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check"
+        app:layout_constraintBottom_toTopOf="@id/Wordle_Keyboard"
+        app:layout_constraintEnd_toStartOf="@+id/Wordle_Bt_Skip"
+        app:layout_constraintStart_toStartOf="@+id/Wordle_GuidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/Wordle_Attempts" />
+
+    <Button
+        android:id="@+id/Wordle_Bt_Skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skip"
+        app:layout_constraintBottom_toBottomOf="@+id/Wordle_Bt_Check"
+        app:layout_constraintEnd_toStartOf="@+id/Wordle_GuidelineEnd"
+        app:layout_constraintStart_toEndOf="@+id/Wordle_Bt_Check"
+        app:layout_constraintTop_toTopOf="@+id/Wordle_Bt_Check" />
+
+    <!-- Keyboard -->
+
+    <LinearLayout
+        android:id="@+id/Wordle_Keyboard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/Wordle_GuidelineBottom"
+        app:layout_constraintEnd_toStartOf="@+id/Wordle_GuidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/Wordle_GuidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/Wordle_Bt_Check">
+
+        <LinearLayout style="@style/Wordle_Keyboard_Layout">
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="Q" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="W" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="E" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="R" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="T" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="Y" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="U" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="I" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="O" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="P" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/Wordle_Keyboard_Layout">
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="A" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="S" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="D" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="F" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="G" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="H" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="J" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="K" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="L" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/Wordle_Keyboard_Layout">
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="Z" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="X" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="C" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="V" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="B" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="N" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:text="M" />
+
+            <Button
+                style="@style/Wordle_Button"
+                android:layout_weight="0.25"
+                android:backgroundTint="@color/red"
+                android:text="@string/symbol_backspace" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Wordle_GuidelineStart"
+        style="@style/GuideLineStart"
+        android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Wordle_GuidelineEnd"
+        style="@style/GuideLineEnd"
+        android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Wordle_GuidelineTop"
+        style="@style/GuideLineTop"
+        android:orientation="horizontal" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Wordle_GuidelineBottom"
+        style="@style/GuideLineBottom"
+        android:orientation="horizontal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
