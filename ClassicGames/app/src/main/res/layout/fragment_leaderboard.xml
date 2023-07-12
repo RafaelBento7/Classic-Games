@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.views.fragment.LeaderboardFragment"
-    android:background="@color/background_color">
+    android:background="@color/background_color"
+    android:paddingBottom="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -177,6 +178,62 @@
                     android:layout_column="0"/>
                 <TextView
                     android:id="@+id/Leaderboard_Tv_MastermindAttemptsRecord"
+                    style="@style/TextView"
+                    android:textAlignment="viewEnd"
+                    android:layout_width="0dp"
+                    android:text="@string/zero"
+                    android:layout_column="1" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/Leaderboard_Tv_Wordle"
+            style="@style/BigTextView"
+            android:layout_marginTop="40dp"
+            android:text="@string/wordle_game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Leaderboard_Tb_Mastermind" />
+
+        <TableLayout
+            android:id="@+id/Leaderboard_Tb_Wordle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            android:paddingHorizontal="50dp"
+            android:stretchColumns="*"
+            app:layout_constraintTop_toBottomOf="@+id/Leaderboard_Tv_Wordle">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+                <TextView
+                    style="@style/TextView"
+                    android:layout_width="0dp"
+                    android:text="@string/record"
+                    android:layout_column="0"/>
+                <TextView
+                    android:id="@+id/Leaderboard_Tv_WordlePointsRecord"
+                    style="@style/TextView"
+                    android:textAlignment="viewEnd"
+                    android:layout_width="0dp"
+                    android:text="@string/zero"
+                    android:layout_column="1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+                <TextView
+                    style="@style/TextView"
+                    android:layout_width="0dp"
+                    android:text="@string/time"
+                    android:layout_column="0"/>
+                <TextView
+                    android:id="@+id/Leaderboard_Tv_WordleTimeRecord"
                     style="@style/TextView"
                     android:textAlignment="viewEnd"
                     android:layout_width="0dp"
