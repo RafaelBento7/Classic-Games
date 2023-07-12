@@ -33,6 +33,12 @@
     <string name="objective">Objective</string>
     <string name="swipe_left"><![CDATA[Swipe Left ->]]></string>
     <string name="swipe_right"><![CDATA[<- Swipe Right]]></string>
+    <string name="record">Record</string>
+    <string name="time">Time</string>
+    <string name="attempts">Attempts</string>
+    <string name="check">Check</string>
+    <string name="skip">Skip (-1)</string>
+    <string name="symbol_backspace">\u232b</string>
 
 
     <!--Dialog Titles-->
@@ -61,6 +67,13 @@
     <string name="brown">Brown</string>
     <string name="orange">Orange</string>
     <string name="pink">Pink</string>
+
+    <!-- Patch Notes -->
+    <string name="patch_notes">Patch Notes</string>
+    <string name="patch_notes_v2_0">New app structure\nNew app Design\nRecords Page\nHelp Page\nSnake Game now has 3 different records (Small Map; Medium Map; Big Map)\nNew custom dialog\nFix Mastermind random solution (can no longer be 2 equal colors)</string>
+    <string name="leaderboard_snake_big_map">Big Map</string>
+    <string name="leaderboard_snake_medium_map">Medium Map</string>
+    <string name="leaderboard_snake_small_map">Small map</string>
 
     <!-- Games -->
     <string name="snake_game">Snake</string>
@@ -91,6 +104,7 @@
     <string name="heart3">true_colors_heart3</string>
     <string name="true_colors_objective">It\'s an easy game you just have to choose the color you READ instead of the color your eyes SEE! Oh and be careful with time!</string>
     <string name="true_colors_speed">"00–04 = 4s\n05–09 = 3.5s\n10–14 = 3s\n15–19 = 2.5s\n20–24 = 2s\n25–50 = 1.5s\n20–24 = 2s\n50+ = 1s"</string>
+
     <!-- Mastermind -->
     <string name="mastermind_objective">"Find the solution in 10 tries!\nYou are going to choose a sequence of four colors, and the colors must be the same as the solution and must be in the same position.\nTo help you, you will have two small circles next to the attempt!
         Red circle - Gives you the number of totally correct colors.
@@ -109,19 +123,14 @@
     <string name="can_not_play_there">You can not play there, you know it!</string>
     <string name="tictactoe_objective">"Everyone knows what the objective is… 3 in a row let's go!"</string>
 
-    <!-- Patch Notes -->
-    <string name="patch_notes">Patch Notes</string>
-    <string name="patch_notes_v2_0">New app structure\nNew app Design\nRecords Page\nHelp Page\nSnake Game now has 3 different records (Small Map; Medium Map; Big Map)\nNew custom dialog\nFix Mastermind random solution (can no longer be 2 equal colors)</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="leaderboard_snake_big_map">Big Map</string>
-    <string name="leaderboard_snake_medium_map">Medium Map</string>
-    <string name="leaderboard_snake_small_map">Small map</string>
-    <string name="record">Record</string>
-    <string name="time">Time</string>
-    <string name="attempts">Attempts</string>
-    <string name="check">Check</string>
-    <string name="skip">Skip (-1)</string>
-    <string name="symbol_backspace">\u232b</string>
+    <!-- Wordle -->
+    <string name="wordle">Wordle</string>
+    <string name="wordle_check_error">Set the word first!</string>
+    <string name="wordle_win">Congratulations! The word was %1$s</string>
+    <string name="wordle_cant_skip">You have 0 points, you can\'t skip</string>
+    <string name="wordle_file_error">The file with the words can not be opened…</string>
+    <string name="wordle_game_over">You Lost! The word was %1$s</string>
+    <string name="wordle_game_over_record">NEW RECORD! %1$d points in %2$s\nThe answer was %3$s</string>
+    <string name="wordle_game_over_no_record">You lost with %1$d points in %2$s\nThe answer was %3$s</string>
 
 </resources>

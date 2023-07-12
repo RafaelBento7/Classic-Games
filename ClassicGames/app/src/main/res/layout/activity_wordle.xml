@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
+    android:id="@+id/Wordle_Layout"
     tools:context=".ui.views.activity.WordleActivity">
 
     <TextView
@@ -200,42 +201,53 @@
         <LinearLayout style="@style/Wordle_Keyboard_Layout">
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterQ"
                 style="@style/Wordle_Button"
+                android:onClick="KeyPressed"
                 android:text="Q" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterW"
                 style="@style/Wordle_Button"
                 android:text="W" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterE"
                 style="@style/Wordle_Button"
                 android:text="E" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterR"
                 style="@style/Wordle_Button"
                 android:text="R" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterT"
                 style="@style/Wordle_Button"
                 android:text="T" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterY"
                 style="@style/Wordle_Button"
                 android:text="Y" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterU"
                 style="@style/Wordle_Button"
                 android:text="U" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterI"
                 style="@style/Wordle_Button"
                 android:text="I" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterO"
                 style="@style/Wordle_Button"
                 android:text="O" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterP"
                 style="@style/Wordle_Button"
                 android:text="P" />
         </LinearLayout>
@@ -243,38 +255,47 @@
         <LinearLayout style="@style/Wordle_Keyboard_Layout">
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterA"
                 style="@style/Wordle_Button"
                 android:text="A" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterS"
                 style="@style/Wordle_Button"
                 android:text="S" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterD"
                 style="@style/Wordle_Button"
                 android:text="D" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterF"
                 style="@style/Wordle_Button"
                 android:text="F" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterG"
                 style="@style/Wordle_Button"
                 android:text="G" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterH"
                 style="@style/Wordle_Button"
                 android:text="H" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterJ"
                 style="@style/Wordle_Button"
                 android:text="J" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterK"
                 style="@style/Wordle_Button"
                 android:text="K" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterL"
                 style="@style/Wordle_Button"
                 android:text="L" />
 
@@ -283,30 +304,37 @@
         <LinearLayout style="@style/Wordle_Keyboard_Layout">
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterZ"
                 style="@style/Wordle_Button"
                 android:text="Z" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterX"
                 style="@style/Wordle_Button"
                 android:text="X" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterC"
                 style="@style/Wordle_Button"
                 android:text="C" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterV"
                 style="@style/Wordle_Button"
                 android:text="V" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterB"
                 style="@style/Wordle_Button"
                 android:text="B" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterN"
                 style="@style/Wordle_Button"
                 android:text="N" />
 
             <Button
+                android:id="@+id/Wordle_Bt_LetterM"
                 style="@style/Wordle_Button"
                 android:text="M" />
 

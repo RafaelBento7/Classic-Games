@@ -15,6 +15,7 @@ import com.classicgames.myapplication.ui.views.activity.MastermindActivity;
 import com.classicgames.myapplication.ui.views.activity.SnakeActivity;
 import com.classicgames.myapplication.ui.views.activity.TicTacToeActivity;
 import com.classicgames.myapplication.ui.views.activity.TrueColorsActivity;
+import com.classicgames.myapplication.ui.views.activity.WordleActivity;
 import com.classicgames.myapplication.utils.CustomDialog;
 import com.classicgames.myapplication.utils.SnakeMapSizeDialog;
 
@@ -32,6 +33,7 @@ public class GamesFragment extends Fragment {
         binding.GamesFragmentIBTrueColors.setOnClickListener(v -> startActivity(new Intent(getContext(), TrueColorsActivity.class)));
         binding.GamesFragmentIBMastermind.setOnClickListener(v -> startActivity(new Intent(getContext(), MastermindActivity.class)));
         binding.GamesFragmentIBTicTacToe.setOnClickListener(v -> startActivity(new Intent(getContext(), TicTacToeActivity.class)));
+        binding.GamesFragmentIBWordle.setOnClickListener(v -> startActivity(new Intent(getContext(), WordleActivity.class)));
 
         return view;
     }

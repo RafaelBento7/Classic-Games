@@ -24,4 +24,9 @@
     <color name="orange">#F48D00</color>
     <color name="pink">#FF00F7</color>
     <color name="dialog_button_background">#B3E5FC</color>
+
+    <!-- Wordle Colors -->
+    <color name="wordle_correct">#64DD17</color>
+    <color name="wordle_wrong_position">#E1BEE7</color>
+    <color name="wordle_wrong_letter">#9E9E9E</color>
 </resources>
