@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="40dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/ViewHelpWordle_Tv_SwipeLeft"
+                style="@style/TextView"
+                android:text="@string/swipe_left"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ViewHelpWordle_Tv_SwipeRight"
+                style="@style/TextView"
+                android:text="@string/swipe_right"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ViewHelpWordle_Title"
+                style="@style/TitleTextView"
+                android:text="@string/wordle"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpWordle_Tv_SwipeLeft" />
+
+            <ImageView
+                android:id="@+id/ViewHelpWordle_Iv_TrueColors"
+                style="@style/ImageButton_Games"
+                android:contentDescription="@string/true_colors_game"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpWordle_Title"
+                app:srcCompat="@drawable/wordle"
+                android:paddingHorizontal="50dp"/>
+
+            <TextView
+                android:id="@+id/ViewHelpWordle_Tv_ObjectiveTitle"
+                style="@style/BigTextView"
+                android:layout_marginTop="40dp"
+                android:text="@string/objective"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpWordle_Iv_TrueColors" />
+
+            <TextView
+                android:id="@+id/ViewHelpWordle_Tv_Objective"
+                style="@style/TextView"
+                android:layout_marginTop="20dp"
+                android:text="@string/wordle_objective"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpWordle_Tv_ObjectiveTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -80,6 +80,7 @@
     <string name="true_colors_game">True Colors</string>
     <string name="mastermind_game">Mastermind</string>
     <string name="tic_tac_toe_game">Tic Tac Toe</string>
+    <string name="wordle_game">Wordle</string>
 
     <!-- Menu Item Text -->
     <string name="menu_video_games">Games</string>
@@ -132,5 +133,9 @@
     <string name="wordle_game_over">You Lost! The word was %1$s</string>
     <string name="wordle_game_over_record">NEW RECORD! %1$d points in %2$s\nThe answer was %3$s</string>
     <string name="wordle_game_over_no_record">You lost with %1$d points in %2$s\nThe answer was %3$s</string>
+    <string name="wordle_objective">This is not an easy game! You have to guess the 5 letter word. You need to set the letters in the box and click check. There are three options for each letter after check:\n
+        Wrong letter, the letter will become dark\n
+        Correct letter but wrong position, it will look like a pink\n
+        Correct letter in the correct position, it will turn green\nIf you see you can\'t guess the word, you can always skip, BUT it will cost you one point…</string>
 
 </resources>
