@@ -66,4 +66,22 @@ public class RecordsPreferences {
         records[2] = sp.getInt("mastermind_attempts", 0);
         return records;
     }
+
+    public void setWordleRecord(int minutes, int seconds, int points) {
+        editor.putInt("wordle_minutes", minutes);
+        editor.putInt("wordle_seconds", seconds);
+        editor.putInt("wordle_points", points);
+        editor.apply();
+    }
+
+    /**
+     * @return int[0] = minutes; int[1] = seconds; int[2] = points
+     */
+    public int[] getWordleRecord() {
+        int[] records = new int[3];
+        records[0] = sp.getInt("wordle_minutes", 0);
+        records[1] = sp.getInt("wordle_seconds", 0);
+        records[2] = sp.getInt("wordle_points", 0);
+        return records;
+    }
 }
