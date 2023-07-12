@@ -50,12 +50,22 @@
             app:srcCompat="@drawable/tic_tac_toe" />
 
         <ImageButton
+            android:id="@+id/GamesFragment_IB_Wordle"
+            style="@style/ImageButton_Games"
+            android:paddingHorizontal="60dp"
+            android:contentDescription="@string/wordle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GamesFragment_IB_TicTacToe"
+            app:srcCompat="@drawable/wordle" />
+
+        <ImageButton
             style="@style/ImageButton_Games"
             app:srcCompat="@drawable/coming_soon"
             android:contentDescription="@string/coming_soon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/GamesFragment_IB_TicTacToe" />
+            app:layout_constraintTop_toBottomOf="@id/GamesFragment_IB_Wordle" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
