@@ -68,12 +68,15 @@
     <string name="orange">Orange</string>
     <string name="pink">Pink</string>
 
-    <!-- Patch Notes -->
-    <string name="patch_notes">Patch Notes</string>
-    <string name="patch_notes_v2_0">New app structure\nNew app Design\nRecords Page\nHelp Page\nSnake Game now has 3 different records (Small Map; Medium Map; Big Map)\nNew custom dialog\nFix Mastermind random solution (can no longer be 2 equal colors)</string>
+    <!-- Leaderboard -->
     <string name="leaderboard_snake_big_map">Big Map</string>
     <string name="leaderboard_snake_medium_map">Medium Map</string>
     <string name="leaderboard_snake_small_map">Small map</string>
+
+    <!-- Patch Notes -->
+    <string name="patch_notes">Patch Notes</string>
+    <string name="patch_notes_v2_0">New app structure\nNew app Design\nRecords Page\nHelp Page\nSnake Game now has 3 different records (Small Map; Medium Map; Big Map)\nNew custom dialog\nFix Mastermind random solution (can no longer be 2 equal colors)</string>
+    <string name="patch_notes_v2_1">New Game Wordle\nFix Snake Records</string>
 
     <!-- Games -->
     <string name="snake_game">Snake</string>

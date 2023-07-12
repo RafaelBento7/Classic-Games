@@ -20,6 +20,7 @@ public class WordleModel {
         pointsRecord = MyApplication.getInstance().getRecords().getWordleRecord()[2];
         secondsRecord = MyApplication.getInstance().getRecords().getWordleRecord()[1];
         minutesRecord = MyApplication.getInstance().getRecords().getWordleRecord()[0];
+
     }
 
     public void StartGame() {

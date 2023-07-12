@@ -41,5 +41,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/PatchNotes_V2_0" />
 
+        <TextView
+            android:id="@+id/PatchNotes_V2_1"
+            style="@style/BigTextView"
+            android:text="V 2.0"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/PatchNotes_V2_Changes" />
+
+        <TextView
+            android:id="@+id/PatchNotes_V2_1_Changes"
+            style="@style/TextView"
+            android:layout_width="match_parent"
+            android:text="@string/patch_notes_v2_1"
+            android:layout_marginTop="20dp"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/PatchNotes_V2_1" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
