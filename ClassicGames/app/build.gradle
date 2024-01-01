@@ -3,24 +3,34 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 34
 
     dataBinding {
         enabled = true
     }
 
+    signingConfigs {
+        release {
+            storeFile file('C:/Program Files/Java/jdk-18.0.1.1/bin/classic_games.keystore')
+            storePassword 'classic_games'
+            keyAlias 'classic_games'
+            keyPassword 'classic_games'
+        }
+    }
+
     defaultConfig {
         applicationId "com.classicgames.myapplication"
         minSdk 21
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        targetSdk 34
+        versionCode 1011
+        versionName "1.0.1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -36,11 +46,11 @@ android {
 
 dependencies {
 
-    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.5.1'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.6.2'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }

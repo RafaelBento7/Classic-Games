@@ -1,8 +1,12 @@
 package com.classicgames.myapplication;
 
 import android.app.Application;
+import android.content.res.Configuration;
 
+import com.classicgames.myapplication.data.preferences.AppPreferences;
 import com.classicgames.myapplication.data.preferences.RecordsPreferences;
+
+import java.util.Locale;
 
 public class MyApplication extends Application {
 
@@ -15,12 +19,14 @@ public class MyApplication extends Application {
     private int[] colors;
 
     private RecordsPreferences recordsPreferences;
+    private AppPreferences appPreferences;
 
     @Override
     public void onCreate() {
         super.onCreate();
         instance = this;
         recordsPreferences = new RecordsPreferences(this);
+        appPreferences = new AppPreferences(this);
         initializeColors();
     }
 
@@ -43,4 +49,10 @@ public class MyApplication extends Application {
     public RecordsPreferences getRecords() {
         return recordsPreferences;
     }
+
+    public AppPreferences getAppPreferences() {
+        return appPreferences;
+    }
+
+
 }

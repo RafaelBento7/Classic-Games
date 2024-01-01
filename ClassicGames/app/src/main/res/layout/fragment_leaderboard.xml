@@ -15,7 +15,7 @@
         <TextView
             android:id="@+id/Leaderboard_Tv_Title"
             style="@style/TitleTextView"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:text="@string/menu_leaderboard"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

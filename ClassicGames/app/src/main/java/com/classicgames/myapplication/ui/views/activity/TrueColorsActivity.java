@@ -11,7 +11,7 @@ import android.view.View;
 import com.classicgames.myapplication.R;
 import com.classicgames.myapplication.databinding.ActivityTrueColorsBinding;
 import com.classicgames.myapplication.ui.viewmodels.TrueColorsViewModel;
-import com.classicgames.myapplication.utils.CustomDialog;
+import com.classicgames.myapplication.ui.dialog.CustomDialog;
 
 public class TrueColorsActivity extends AppCompatActivity {
 

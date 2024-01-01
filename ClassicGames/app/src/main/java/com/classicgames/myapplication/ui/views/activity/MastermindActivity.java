@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.classicgames.myapplication.R;
 import com.classicgames.myapplication.databinding.ActivityMastermindBinding;
 import com.classicgames.myapplication.ui.viewmodels.MastermindViewModel;
-import com.classicgames.myapplication.utils.CustomDialog;
+import com.classicgames.myapplication.ui.dialog.CustomDialog;
 
 import java.util.Locale;
 

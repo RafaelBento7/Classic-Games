@@ -16,8 +16,8 @@ import com.classicgames.myapplication.ui.views.activity.SnakeActivity;
 import com.classicgames.myapplication.ui.views.activity.TicTacToeActivity;
 import com.classicgames.myapplication.ui.views.activity.TrueColorsActivity;
 import com.classicgames.myapplication.ui.views.activity.WordleActivity;
-import com.classicgames.myapplication.utils.CustomDialog;
-import com.classicgames.myapplication.utils.SnakeMapSizeDialog;
+import com.classicgames.myapplication.ui.dialog.CustomDialog;
+import com.classicgames.myapplication.ui.dialog.SnakeMapSizeDialog;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

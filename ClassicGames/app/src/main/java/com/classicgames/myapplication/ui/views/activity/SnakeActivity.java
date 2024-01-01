@@ -20,7 +20,7 @@ import com.classicgames.myapplication.data.models.SnakePiece;
 import com.classicgames.myapplication.databinding.ActivitySnakeBinding;
 import com.classicgames.myapplication.ui.viewmodels.SnakeViewModel;
 import com.classicgames.myapplication.utils.BorderView;
-import com.classicgames.myapplication.utils.CustomDialog;
+import com.classicgames.myapplication.ui.dialog.CustomDialog;
 
 import java.util.Timer;
 import java.util.TimerTask;

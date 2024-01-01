@@ -14,7 +14,7 @@ import com.classicgames.myapplication.R;
 import com.classicgames.myapplication.data.models.WordleModel;
 import com.classicgames.myapplication.databinding.ActivityWordleBinding;
 import com.classicgames.myapplication.ui.viewmodels.WordleViewModel;
-import com.classicgames.myapplication.utils.CustomDialog;
+import com.classicgames.myapplication.ui.dialog.CustomDialog;
 import com.classicgames.myapplication.utils.FileHelper;
 import com.google.android.material.snackbar.Snackbar;
 

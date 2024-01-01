@@ -1,9 +1,9 @@
 <resources>
     <!-- General-->
-    <string name="app_name">Classic Games</string>
+    <string name="app_name" translatable="false">Classic Games</string>
     <string name="points">Points: %1$d</string>
     <string name="max_points">Max Points: %1$d</string>
-    <string name="game_over">Game Over</string>
+    <string name="game_over" translatable="false">Game Over</string>
     <string name="cancel">Cancel</string>
     <string name="play_again">Restart</string>
     <string name="error">Something went wrong</string>
@@ -16,9 +16,9 @@
     <string name="next">Next</string>
     <string name="lives_left">Lives Left:</string>
     <string name="attempts_left">Attempts Left: %1$d</string>
-    <string name="timer_minutes_seconds">%1$s:%2$s</string>
-    <string name="timer_hour_minutes_seconds">%1$s:%2$s:%3$s</string>
-    <string name="question_mark">\?</string>
+    <string name="timer_minutes_seconds" translatable="false">%1$s:%2$s</string>
+    <string name="timer_hour_minutes_seconds" translatable="false">%1$s:%2$s:%3$s</string>
+    <string name="question_mark" translatable="false">\?</string>
     <string name="restart">restart</string>
     <string name="lets_try">Let\'s try!</string>
     <string name="small">Small</string>
@@ -38,25 +38,28 @@
     <string name="attempts">Attempts</string>
     <string name="check">Check</string>
     <string name="skip">Skip (-1)</string>
-    <string name="symbol_backspace">\u232b</string>
+    <string name="symbol_backspace" translatable="false">\u232b</string>
+    <string name="languages">Languages</string>
+    <string name="support">Support</string>
+    <string name="settings">Settings</string>
 
 
     <!--Dialog Titles-->
-    <string name="game_over_title">GAME OVER</string>
+    <string name="game_over_title" translatable="false">GAME OVER</string>
     <string name="victory_title">VICTORY</string>
 
     <!--Numbers-->
-    <string name="zero">0</string>
-    <string name="one">1</string>
-    <string name="two">2</string>
-    <string name="three">3</string>
-    <string name="four">4</string>
-    <string name="five">5</string>
-    <string name="six">6</string>
-    <string name="seven">7</string>
-    <string name="eight">8</string>
-    <string name="nine">9</string>
-    <string name="ten">10</string>
+    <string name="zero" translatable="false">0</string>
+    <string name="one" translatable="false">1</string>
+    <string name="two" translatable="false">2</string>
+    <string name="three" translatable="false">3</string>
+    <string name="four" translatable="false">4</string>
+    <string name="five" translatable="false">5</string>
+    <string name="six" translatable="false">6</string>
+    <string name="seven" translatable="false">7</string>
+    <string name="eight" translatable="false">8</string>
+    <string name="nine" translatable="false">9</string>
+    <string name="ten" translatable="false">10</string>
 
     <!-- Colors -->
     <string name="purple">Purple</string>
@@ -74,8 +77,7 @@
     <string name="leaderboard_snake_small_map">Small map</string>
 
     <!-- Patch Notes -->
-    <string name="patch_notes">Patch Notes</string>
-    <string name="patch_notes_v2_0">New app structure\nNew app Design\nRecords Page\nHelp Page\nSnake Game now has 3 different records (Small Map; Medium Map; Big Map)\nNew custom dialog\nFix Mastermind random solution (can no longer be 2 equal colors)</string>
+    <string name="patch_notes" translatable="false">Patch Notes</string>
     <string name="patch_notes_v2_1">New Game Wordle\nFix Snake Records</string>
 
     <!-- Games -->
@@ -97,17 +99,17 @@
     <string name="no_golden_point">Golden Point OFF</string>
     <string name="snake_select_map_size">Select a Map Size!</string>
     <string name="snake_obstacles">Do you want to add obstacles?</string>
-    <string name="snake_objective">"Eat every green and yellow point you can with the snake! And do not forget, avoid the red!\nEach point you eat will make you grow and get faster so take the advantage of yellow points!"</string>
+    <string name="snake_objective">Eat every green and yellow point you can with the snake! And do not forget, avoid the red! Each point you eat will make you grow and get faster so take the advantage of yellow points!</string>
     <string name="snake_how_to_move">Easy, just swipe in the direction you want to go</string>
-    <string name="snake_speed_level">"00–05 = 10%\n06–10 = 30%\n11–25 = 50%\n26–50 = 70%\n51–100 = 85%\n101+ = 100%"</string>
+    <string name="snake_speed_level" translatable="false">00–05 = 10% \n06–10 = 30% \n11–25 = 50% \n26–50 = 70% \n51–100 = 85% \n101+ = 100%</string>
 
     <!-- True Colors -->
     <string name="true_colors_color">Color</string>
-    <string name="heart1">true_colors_heart</string>
-    <string name="heart2">true_colors_heart2</string>
-    <string name="heart3">true_colors_heart3</string>
+    <string name="heart1" translatable="false">true_colors_heart</string>
+    <string name="heart2" translatable="false">true_colors_heart2</string>
+    <string name="heart3" translatable="false">true_colors_heart3</string>
     <string name="true_colors_objective">It\'s an easy game you just have to choose the color you READ instead of the color your eyes SEE! Oh and be careful with time!</string>
-    <string name="true_colors_speed">"00–04 = 4s\n05–09 = 3.5s\n10–14 = 3s\n15–19 = 2.5s\n20–24 = 2s\n25–50 = 1.5s\n20–24 = 2s\n50+ = 1s"</string>
+    <string name="true_colors_speed" translatable="false">"00–04 = 4s\n05–09 = 3.5s\n10–14 = 3s\n15–19 = 2.5s\n20–24 = 2s\n25–50 = 1.5s\n20–24 = 2s\n50+ = 1s"</string>
 
     <!-- Mastermind -->
     <string name="mastermind_objective">"Find the solution in 10 tries!\nYou are going to choose a sequence of four colors, and the colors must be the same as the solution and must be in the same position.\nTo help you, you will have two small circles next to the attempt!
@@ -125,7 +127,7 @@
     <string name="tictactoe_draw">Draw! No winners!</string>
     <string name="tictactoe_win">Victory! Congratulations player </string>
     <string name="can_not_play_there">You can not play there, you know it!</string>
-    <string name="tictactoe_objective">"Everyone knows what the objective is… 3 in a row let's go!"</string>
+    <string name="tictactoe_objective">Everyone knows what the objective is… 3 in a row let\'s go!</string>
 
     <!-- Wordle -->
     <string name="wordle">Wordle</string>
@@ -135,10 +137,9 @@
     <string name="wordle_file_error">The file with the words can not be opened…</string>
     <string name="wordle_game_over">You Lost! The word was %1$s</string>
     <string name="wordle_game_over_record">NEW RECORD! %1$d points in %2$s\nThe answer was %3$s</string>
-    <string name="wordle_game_over_no_record">You lost with %1$d points in %2$s\nThe answer was %3$s</string>
-    <string name="wordle_objective">This is not an easy game! You have to guess the 5 letter word. You need to set the letters in the box and click check. There are three options for each letter after check:\n
-        Wrong letter, the letter will become dark\n
-        Correct letter but wrong position, it will look like a pink\n
-        Correct letter in the correct position, it will turn green\nIf you see you can\'t guess the word, you can always skip, BUT it will cost you one point…</string>
+    <string name="wordle_objective">This is not an easy game! You have to guess the 5 letter word. You need to set the letters in the box and click check. \nThere are three options for each letter after check:          \n            Wrong letter, the letter will become dark          \n            Correct letter but wrong position, it will look like a pink          \n            Correct letter in the correct position, it will turn green \nIf you see you can\'t guess the word, you can always skip, BUT it will cost you one point…</string>
+    <string name="patch_notes_v2_0">New app structure \nNew app Design \nRecords Page \nHelp Page \nSnake Game now has 3 different records (Small Map; Medium Map; Big Map) \nMastermind random solution (can no longer be 2 equal colors)</string>
+    <string name="wordle_game_over_no_record">You lost with %1$d points in %2$s The answer was %3$s</string>
+    <string name="pick_language">Language</string>
 
 </resources>

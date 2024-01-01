@@ -1,4 +1,4 @@
-package com.classicgames.myapplication.utils;
+package com.classicgames.myapplication.ui.dialog;
 
 import android.app.Activity;
 import android.app.Dialog;
