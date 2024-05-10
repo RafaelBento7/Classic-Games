@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="20dp"
+    android:background="@color/background_color"
+    tools:context=".ui.views.activity.HangmanActivity">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toStartOf="@+id/Hangman_GuidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/Hangman_GuidelineStart"
+        app:layout_constraintTop_toTopOf="@+id/Hangman_GuidelineTop"
+        app:srcCompat="@drawable/hangman_0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Hangman_GuidelineStart"
+        android:orientation="vertical"
+        style="@style/GuideLineStart" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Hangman_GuidelineEnd"
+        android:orientation="vertical"
+        style="@style/GuideLineEnd" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Hangman_GuidelineTop"
+        android:orientation="horizontal"
+        style="@style/GuideLineTop" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/Hangman_GuidelineBottom"
+        android:orientation="horizontal"
+        style="@style/GuideLineBottom" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
