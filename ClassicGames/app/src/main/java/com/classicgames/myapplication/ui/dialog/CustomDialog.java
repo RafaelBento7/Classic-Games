@@ -8,8 +8,6 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import com.classicgames.myapplication.R;
 
 public class CustomDialog extends Dialog {
@@ -33,7 +31,7 @@ public class CustomDialog extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.custom_dialog);
+        setContentView(R.layout.dialog_custom);
         btPositive = findViewById(R.id.CustomDialog_Bt_Positive);
         btPositive.setOnClickListener(v -> {
             if (listener != null)

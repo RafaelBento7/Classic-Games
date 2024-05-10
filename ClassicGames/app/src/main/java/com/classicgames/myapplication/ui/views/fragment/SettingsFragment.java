@@ -24,6 +24,7 @@ import java.util.Locale;
 public class SettingsFragment extends Fragment {
 
     FragmentSettingsBinding binding;
+    LanguagePickerDialog dialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,7 +32,13 @@ public class SettingsFragment extends Fragment {
         View view = binding.getRoot();
 
         binding.SettingsConsLayoutPatchNotes.setOnClickListener(v -> startActivity(new Intent(getContext(), PatchNotesActivity.class)));
-        binding.SettingsConsLayoutLanguages.setOnClickListener(v -> new LanguagePickerDialog(this.getActivity()).show());//changeLanguage("en"));
+        binding.SettingsConsLayoutLanguages.setOnClickListener(v -> {
+            dialog = new LanguagePickerDialog(this.getActivity(), languageCode -> {
+                dialog.dismiss();
+                changeLanguage(languageCode);
+            });
+            dialog.show();
+        });//changeLanguage("en"));
         binding.SettingsConsLayoutSupport.setOnClickListener(v -> Toast.makeText(this.getContext(), R.string.coming_soon, Toast.LENGTH_SHORT).show());
 
         return view;

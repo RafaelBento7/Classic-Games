@@ -28,6 +28,12 @@ public class MastermindActivity extends AppCompatActivity {
         binding = ActivityMastermindBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        setSupportActionBar(binding.MastermindToolbar.getRoot());
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        binding.MastermindToolbar.ToolbarTitle.setText(R.string.mastermind_game);
+
         initializeViewModel();
         startGame(null);
     }

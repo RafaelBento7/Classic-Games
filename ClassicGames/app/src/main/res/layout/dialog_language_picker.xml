@@ -33,7 +33,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
-        android:paddingHorizontal="20dp"
         android:paddingBottom="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,33 +40,46 @@
         app:layout_constraintTop_toBottomOf="@+id/CustomDialog_Layout_Title">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/LanguageDialog_ConsLayout_Pt"
+            android:paddingHorizontal="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/LanguageDialog_Iv_Portuguese"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_flag_icon_pt" />
 
             <TextView
                 style="@style/BigTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_marginStart="20dp"
                 android:text="Português"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_Portuguese"
+                app:layout_constraintStart_toEndOf="@+id/LanguageDialog_Iv_Portuguese"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <View
+            android:layout_width="230dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:background="?attr/colorPrimary"
+            android:layout_height="1dp"/>
+
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/LanguageDialog_ConsLayout_En"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:paddingHorizontal="20dp"
+            android:layout_marginTop="10dp">
 
             <ImageView
                 android:id="@+id/LanguageDialog_Iv_UnitedKingdom"
@@ -79,10 +91,11 @@
 
             <TextView
                 style="@style/BigTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_marginStart="20dp"
                 android:text="English"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_UnitedKingdom"
                 app:layout_constraintTop_toTopOf="parent" />

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.classicgames.myapplication">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:name=".MyApplication"
@@ -17,14 +16,17 @@
         <activity
             android:name=".ui.views.activity.PatchNotesActivity"
             android:exported="false"
+            android:parentActivityName=".ui.views.activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.views.activity.WordleActivity"
             android:exported="false"
+            android:parentActivityName=".ui.views.activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.views.activity.HangmanActivity"
             android:exported="false"
+            android:parentActivityName=".ui.views.activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.views.activity.SplashActivity"
@@ -39,18 +41,22 @@
         <activity
             android:name=".ui.views.activity.TrueColorsActivity"
             android:exported="false"
+            android:parentActivityName=".ui.views.activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.views.activity.TicTacToeActivity"
             android:exported="false"
+            android:parentActivityName=".ui.views.activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.views.activity.MastermindActivity"
             android:exported="false"
+            android:parentActivityName=".ui.views.activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.views.activity.SnakeActivity"
             android:exported="false"
+            android:parentActivityName=".ui.views.activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.views.activity.MainActivity"

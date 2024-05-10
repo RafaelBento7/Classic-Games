@@ -7,89 +7,58 @@
     tools:context=".ui.views.activity.PatchNotesActivity"
     android:background="@color/background_color">
 
+    <include android:id="@+id/PatchNotes_Toolbar"
+        layout="@layout/toolbar"/>
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:paddingBottom="25dp"
         android:scrollbars="none"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/PatchNotesActivity_GuidelineEnd"
-        app:layout_constraintStart_toStartOf="@+id/PatchNotesActivity_GuidelineStart"
-        app:layout_constraintTop_toTopOf="@+id/PatchNotesActivity_GuidelineTop">
+        app:layout_constraintEnd_toStartOf="@+id/PatchNotes_GuidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/PatchNotes_GuidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/PatchNotes_Toolbar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/PatchNotes_Title"
-                style="@style/TitleTextView"
-                android:text="@string/patch_notes"
+                android:id="@+id/PatchNotes_V2_0"
+                style="@style/BigTextView"
+                android:text="V1.0.0.0"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/PatchNotes_V2_0"
-                style="@style/BigTextView"
-                android:layout_marginTop="40dp"
-                android:text="V1.0.1.0"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/PatchNotes_Title" />
 
             <TextView
                 android:id="@+id/PatchNotes_V2_Changes"
                 style="@style/TextView"
                 android:layout_width="match_parent"
                 android:layout_marginTop="20dp"
-                android:text="@string/patch_notes_v2_0"
+                android:text="@string/patch_notes_v1"
                 android:textAlignment="textStart"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/PatchNotes_V2_0" />
 
-            <TextView
-                android:id="@+id/PatchNotes_V2_1"
-                style="@style/BigTextView"
-                android:layout_marginTop="40dp"
-                android:text="V1.0.1.1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/PatchNotes_V2_Changes" />
-
-            <TextView
-                android:id="@+id/PatchNotes_V2_1_Changes"
-                style="@style/TextView"
-                android:layout_width="match_parent"
-                android:layout_marginTop="20dp"
-                android:text="@string/patch_notes_v2_1"
-                android:textAlignment="textStart"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/PatchNotes_V2_1" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/PatchNotesActivity_GuidelineTop"
-        android:orientation="horizontal"
-        style="@style/GuideLineTop" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/PatchNotesActivity_GuidelineBottom"
+        android:id="@+id/PatchNotes_GuidelineBottom"
         android:orientation="horizontal"
         style="@style/GuideLineBottom" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/PatchNotesActivity_GuidelineStart"
+        android:id="@+id/PatchNotes_GuidelineStart"
         style="@style/GuideLineStart"
         android:orientation="vertical" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/PatchNotesActivity_GuidelineEnd"
+        android:id="@+id/PatchNotes_GuidelineEnd"
         style="@style/GuideLineEnd"
         android:orientation="vertical" />
 

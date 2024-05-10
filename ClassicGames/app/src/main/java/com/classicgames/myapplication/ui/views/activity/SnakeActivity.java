@@ -46,6 +46,13 @@ public class SnakeActivity extends AppCompatActivity implements SurfaceHolder.Ca
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySnakeBinding.inflate(getLayoutInflater());
+
+        setSupportActionBar(binding.SnakeToolbar.getRoot());
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        binding.SnakeToolbar.ToolbarTitle.setText(R.string.snake_game);
+
         setContentView(binding.getRoot());
         getExtras();
         createPaints();

@@ -25,6 +25,12 @@ public class TrueColorsActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_true_colors);
         binding.setViewModel(mViewModel);
 
+        setSupportActionBar(binding.TrueColorsToolbar.getRoot());
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        binding.TrueColorsToolbar.ToolbarTitle.setText(R.string.true_colors_game);
+
         mViewModel.getProgress().observe(this, progress -> binding.TrueColorsProgressBar.setProgress(progress));
         mViewModel.getTrueColor().observe(this, this::changeTrueColorText);
         mViewModel.getFalseColor().observe(this, this::changeFalseColors);

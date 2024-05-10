@@ -27,7 +27,7 @@
     <string name="how_speed_works">Como funciona a velocidade?</string>
     <string name="objective">Objetivo</string>
     <string name="swipe_left"><![CDATA[Deslizar  ->]]></string>
-    <string name="swipe_right"><![CDATA[<- Swipe Right]]></string>
+    <string name="swipe_right"><![CDATA[<- Deslizar]]></string>
     <string name="record">Recorde</string>
     <string name="time">Tempo</string>
     <string name="attempts">Tentativas</string>
@@ -45,6 +45,7 @@
     <string name="leaderboard_snake_big_map">Mapa Grande</string>
     <string name="leaderboard_snake_medium_map">Mapa Médio</string>
     <string name="leaderboard_snake_small_map">Mapa Pequeno</string>
+    <string name="patch_notes_v1">Primeira Versão</string>
     <string name="snake_game">Cobra</string>
     <string name="true_colors_game">True Colors</string>
     <string name="mastermind_game">Mastermind</string>
@@ -83,8 +84,6 @@
     <string name="mastermind_new_record">NOVO RECORDE! %1$d:%2$d em %3$d tentativas!</string>
     <string name="wordle_check_error">Indica a palavra primeiro</string>
     <string name="wordle_win">Parabéns! A palavra era %1$s</string>
-    <string name="patch_notes_v2_1">Novo jogo Wordle\nFix records no jogo da cobra</string>
-    <string name="patch_notes_v2_0">Nova estruturação da aplicação\nNovo design da aplicação\nPágina de recordes\nPágina de ajuda\nJogo da cobra tem agoar 3 recordes diferentes (Pequeno; Médio; Grande)\nFix na geração da solução do Mastermind (já não é possível aparecer cores repetidas)</string>
     <string name="languages">Língua</string>
     <string name="support">Suporte</string>
     <string name="settings">Definições</string>

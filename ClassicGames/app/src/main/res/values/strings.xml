@@ -42,6 +42,7 @@
     <string name="languages">Languages</string>
     <string name="support">Support</string>
     <string name="settings">Settings</string>
+    <string name="pick_language">Language</string>
 
 
     <!--Dialog Titles-->
@@ -78,7 +79,7 @@
 
     <!-- Patch Notes -->
     <string name="patch_notes" translatable="false">Patch Notes</string>
-    <string name="patch_notes_v2_1">New Game Wordle\nFix Snake Records</string>
+    <string name="patch_notes_v1">First Version</string>
 
     <!-- Games -->
     <string name="snake_game">Snake</string>
@@ -138,8 +139,6 @@
     <string name="wordle_game_over">You Lost! The word was %1$s</string>
     <string name="wordle_game_over_record">NEW RECORD! %1$d points in %2$s\nThe answer was %3$s</string>
     <string name="wordle_objective">This is not an easy game! You have to guess the 5 letter word. You need to set the letters in the box and click check. \nThere are three options for each letter after check:          \n            Wrong letter, the letter will become dark          \n            Correct letter but wrong position, it will look like a pink          \n            Correct letter in the correct position, it will turn green \nIf you see you can\'t guess the word, you can always skip, BUT it will cost you one point…</string>
-    <string name="patch_notes_v2_0">New app structure \nNew app Design \nRecords Page \nHelp Page \nSnake Game now has 3 different records (Small Map; Medium Map; Big Map) \nMastermind random solution (can no longer be 2 equal colors)</string>
     <string name="wordle_game_over_no_record">You lost with %1$d points in %2$s The answer was %3$s</string>
-    <string name="pick_language">Language</string>
 
 </resources>

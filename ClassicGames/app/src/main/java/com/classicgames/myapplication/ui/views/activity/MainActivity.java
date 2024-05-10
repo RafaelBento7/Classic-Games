@@ -2,6 +2,7 @@ package com.classicgames.myapplication.ui.views.activity;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -26,23 +27,22 @@ public class MainActivity extends BaseActivity {
         setContentView(binding.getRoot());
 
         replaceFragment(new GamesFragment());
-
-        binding.MainActivityBottomNavView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()){
-                case R.id.BottomNav_Games:
-                    replaceFragment(new GamesFragment());
-                    break;
-                case R.id.BottomNav_Leaderboard:
-                    replaceFragment(new LeaderboardFragment());
-                    break;
-                case R.id.BottomNav_Help:
-                    replaceFragment(new HelpFragment());
-                    break;
-                case R.id.BottomNav_News:
-                    replaceFragment(new SettingsFragment());
-                    break;
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                moveTaskToBack(true);
             }
-
+        });
+        binding.MainActivityBottomNavView.setOnItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.BottomNav_Games){
+                replaceFragment(new GamesFragment());
+            } else if (item.getItemId() == R.id.BottomNav_Leaderboard) {
+                replaceFragment(new LeaderboardFragment());
+            } else if (item.getItemId() == R.id.BottomNav_Help) {
+                replaceFragment(new HelpFragment());
+            } else if (item.getItemId() == R.id.BottomNav_Settings) {
+                replaceFragment(new SettingsFragment());
+            }
             return true;
         });
 

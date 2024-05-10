@@ -7,12 +7,16 @@
     tools:context=".ui.views.activity.SnakeActivity"
     android:background="@color/background_color">
 
+    <include android:id="@+id/Snake_Toolbar"
+        layout="@layout/toolbar"/>
+
     <TextView
         android:id="@+id/Snake_Tv_Points"
         style="@style/TextView"
+        android:layout_marginTop="25dp"
         android:text="@string/points"
         app:layout_constraintStart_toStartOf="@+id/Snake_GuidelineStart"
-        app:layout_constraintTop_toTopOf="@+id/Snake_GuidelineTop" />
+        app:layout_constraintTop_toBottomOf="@+id/Snake_Toolbar" />
 
     <FrameLayout
         android:id="@+id/Snake_FrameLayout_Game"
@@ -32,7 +36,7 @@
         style="@style/TextView"
         android:text="@string/max_points"
         app:layout_constraintEnd_toStartOf="@+id/Snake_GuidelineEnd"
-        app:layout_constraintTop_toTopOf="@+id/Snake_GuidelineTop" />
+        app:layout_constraintTop_toTopOf="@+id/Snake_Tv_Points" />
 
     <TextView
         android:id="@+id/Snake_Tv_CurrentSpeed"
@@ -58,11 +62,6 @@
         android:id="@+id/Snake_GuidelineEnd"
         android:orientation="vertical"
         style="@style/GuideLineEnd" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Snake_GuidelineTop"
-        android:orientation="horizontal"
-        style="@style/GuideLineTop" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Snake_GuidelineBottom"

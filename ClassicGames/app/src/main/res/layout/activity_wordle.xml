@@ -8,19 +8,23 @@
     android:id="@+id/Wordle_Layout"
     tools:context=".ui.views.activity.WordleActivity">
 
+    <include android:id="@+id/Wordle_Toolbar"
+        layout="@layout/toolbar"/>
+
     <TextView
         android:id="@+id/Wordle_Tv_Points"
         style="@style/BigTextView"
         android:text="@string/points"
+        android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="@+id/Wordle_GuidelineStart"
-        app:layout_constraintTop_toTopOf="@+id/Wordle_GuidelineTop" />
+        app:layout_constraintTop_toBottomOf="@+id/Wordle_Toolbar" />
 
     <TextView
         android:id="@+id/Wordle_Tv_Timer"
         style="@style/BigTextView"
         android:text="@string/timer_minutes_seconds"
         app:layout_constraintEnd_toStartOf="@id/Wordle_GuidelineEnd"
-        app:layout_constraintTop_toBottomOf="@id/Wordle_GuidelineTop" />
+        app:layout_constraintTop_toTopOf="@+id/Wordle_Tv_Points" />
 
     <!-- Attempts -->
 

@@ -15,12 +15,16 @@
         android:layout_height="match_parent"
         android:background="@color/background_color">
 
+        <include android:id="@+id/TicTacToe_Toolbar"
+            layout="@layout/toolbar"/>
+
         <TextView
             android:id="@+id/Tictactoe_Tv_PlayerOne"
             style="@style/BigTextView"
+            android:layout_marginTop="25dp"
             android:text="@string/tictactoe_player_one"
             app:layout_constraintStart_toStartOf="@+id/Tictactoe_GuidelineStart"
-            app:layout_constraintTop_toTopOf="@+id/Tictactoe_GuidelineTop" />
+            app:layout_constraintTop_toBottomOf="@+id/TicTacToe_Toolbar" />
 
         <TextView
             android:id="@+id/Tictactoe_Tv_PlayerTwo"
@@ -182,11 +186,6 @@
             android:id="@+id/TicTacToe_GuidelineEnd"
             android:orientation="vertical"
             style="@style/GuideLineEnd" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/Tictactoe_GuidelineTop"
-            android:orientation="horizontal"
-            style="@style/GuideLineTop" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/TicTacToe_GuidelineBottom"

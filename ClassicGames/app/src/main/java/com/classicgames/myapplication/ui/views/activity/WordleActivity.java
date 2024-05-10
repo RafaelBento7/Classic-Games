@@ -35,6 +35,12 @@ public class WordleActivity extends AppCompatActivity {
         binding = ActivityWordleBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        setSupportActionBar(binding.WordleToolbar.getRoot());
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        binding.WordleToolbar.ToolbarTitle.setText(R.string.wordle);
+
         InitializeViewModel();
         binding.WordleBtCheck.setOnClickListener(v -> {
             if (viewModel.GetCurrentAttemptPos() > 4) {

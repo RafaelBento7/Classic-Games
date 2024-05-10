@@ -16,7 +16,7 @@
         android:icon="@drawable/ic_help" />
 
     <item
-        android:id="@+id/BottomNav_News"
+        android:id="@+id/BottomNav_Settings"
         android:title="@string/settings"
         android:icon="@drawable/ic_settings" />
 </menu>

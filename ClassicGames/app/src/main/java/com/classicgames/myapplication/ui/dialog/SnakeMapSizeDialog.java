@@ -5,7 +5,6 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -26,7 +25,7 @@ public class SnakeMapSizeDialog extends Dialog implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.snake_map_size_dialog);
+        setContentView(R.layout.dialog_snake_map_size);
         findViewById(R.id.SnakeMapSize_Bt_Next).setOnClickListener(this);
         findViewById(R.id.SnakeMapSize_Bt_Cancel).setOnClickListener(this);
         small = findViewById(R.id.SnakeMapSize_Rb_Small);

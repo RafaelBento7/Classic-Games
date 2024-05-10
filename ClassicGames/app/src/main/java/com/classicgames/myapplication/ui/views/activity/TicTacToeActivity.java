@@ -26,6 +26,12 @@ public class TicTacToeActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_tic_tac_toe);
         binding.setActivity(this);
 
+        setSupportActionBar(binding.TicTacToeToolbar.getRoot());
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        binding.TicTacToeToolbar.ToolbarTitle.setText(R.string.tic_tac_toe_game);
+
         String pointsTextPlayerOne = getResources().getString(R.string.tictactoe_player_one)+" 0";
         binding.TictactoeTvPlayerOne.setText(pointsTextPlayerOne);
         String pointsTextPlayerTwo = getResources().getString(R.string.tictactoe_player_two)+" 0";
