@@ -3,6 +3,7 @@ package com.classicgames.myapplication.ui.views.activity;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
+import androidx.core.view.WindowCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -24,6 +25,7 @@ public class MainActivity extends BaseActivity {
         String languageCode = MyApplication.getInstance().getAppPreferences().getLanguage();
         setLocale(languageCode);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding.getRoot().setFitsSystemWindows(true);
         setContentView(binding.getRoot());
 
         replaceFragment(new GamesFragment());

@@ -24,6 +24,7 @@ public class TrueColorsActivity extends AppCompatActivity {
         mViewModel = new ViewModelProvider(this).get(TrueColorsViewModel.class);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_true_colors);
         binding.setViewModel(mViewModel);
+        binding.getRoot().setFitsSystemWindows(true);
 
         setSupportActionBar(binding.TrueColorsToolbar.getRoot());
         getSupportActionBar().setDisplayShowTitleEnabled(false);

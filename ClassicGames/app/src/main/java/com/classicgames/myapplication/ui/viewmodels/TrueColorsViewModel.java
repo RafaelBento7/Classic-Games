@@ -67,6 +67,9 @@ public class TrueColorsViewModel extends ViewModel {
     }
 
     public void colorPressed(View view){
+        if (lives.getValue() == null || lives.getValue() == 0) {
+            return;
+        }
         ColorStateList colorStateList = view.getBackgroundTintList();
         int color = colorStateList.getDefaultColor();
         stopTimer();

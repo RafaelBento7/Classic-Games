@@ -2,6 +2,7 @@
 <resources>
     <string name="points">Pontos: %1$d</string>
     <string name="max_points">Máx Pontos: %1$d</string>
+    <string name="game_over">Perdeste</string>
     <string name="cancel">Cancelar</string>
     <string name="play_again">Reiniciar</string>
     <string name="error">Algo correu mal</string>
@@ -46,6 +47,9 @@
     <string name="leaderboard_snake_medium_map">Mapa Médio</string>
     <string name="leaderboard_snake_small_map">Mapa Pequeno</string>
     <string name="patch_notes_v1">Primeira Versão</string>
+    <string name="patch_notes_v1_0_0_5">Corrigido problema de margens em dispositivos androids recentes Correções na UI</string>
+    <string name="patch_notes_v1_1_0_0">Primeiro lançamento no Play Store</string>
+    <string name="patch_notes_v1_1_1_0">Alterações na UI e no logótipo</string>
     <string name="snake_game">Cobra</string>
     <string name="true_colors_game">True Colors</string>
     <string name="mastermind_game">Mastermind</string>
@@ -60,10 +64,10 @@
     <string name="no_golden_point">Ponto dourado OFF</string>
     <string name="snake_select_map_size">Escolhe um mapa!</string>
     <string name="snake_obstacles">Queres jogar com obstáculos?</string>
-    <string name="snake_objective">Come todos os pontos verdes e amarelos que conseguires com a cobra! E não te esqueças, desvia-te do vermelho! Cada ponto que apanhares vai fazer-te crescer e ficar mais rápido portanto aproveita a vantagem dos pontos amarelo!</string>
+    <string name="snake_objective">Come todos os pontos verdes e amarelos que conseguires com a cobra! E não te esqueças, desvia-te do vermelho! Cada ponto que apanhares vai fazer-te crescer e ficar mais rápido, portanto aproveita a vantagem dos pontos amarelo!</string>
     <string name="snake_how_to_move">Fácil, desliza para o local que pretendes ir</string>
     <string name="true_colors_color">Cor</string>
-    <string name="true_colors_objective">É um jogo fácil só tens de escolher a cor que lês em vez da cores que que vês! Cuidado com o tempo!</string>
+    <string name="true_colors_objective">É um jogo fácil só tens de escolher a cor que lês em vez da cor que vês! Cuidado com o tempo!</string>
     <string name="tictactoe_player_one">Jogador um:</string>
     <string name="tictactoe_player_two">Jogador dois:</string>
     <string name="tictactoe_turn_player_one">Tua vez jogador um</string>
@@ -77,15 +81,18 @@
     <string name="wordle_file_error">Não foi possível abrir o ficheiro com as palavras...</string>
     <string name="wordle_game_over">Perdeste! A palavra era %1$s</string>
     <string name="wordle_game_over_record">Novo Record! %1$d pontos em %2$s A reposta era%3$s</string>
-    <string name="wordle_game_over_no_record">Perdeste com %1$d pontos em %2$d A resposta era %3$s</string>
+    <string name="wordle_game_over_no_record">Perdeste com %1$d pontos em %2$s A resposta era %3$s</string>
     <string name="wordle_objective">Não é um jogo fácil! Tens de adivinhar a palavra de 5 letras ao clicando nas letras. \nExistem três opções após clicar em verificar:\n          Letra errada, A letra irá ficar escura          \n          Letra correta posição errada, irá ficar num tom de rosa          \n          Letra correta posição correta, irá ficar verde \nSe não conseguires adivinhar a palvra, poderás saltar, mas irá custar um ponto…</string>
     <string name="mastermind_no_record">Não é um record, mas ganhaste!</string>
-    <string name="mastermind_objective">Encontra a solução em 10 tentativas!\nVais escolher uma sequência de 4 cores, estas cores têm de ser as corretas e têm de estar na mesma posição.\nPara te ajudar, irás ter dois circulos pequenos ao lado da tentativa!\n        Circulo Vermelho - Número de cores corretas\n        Circulo Preto - Números de cores corretas na posição errada.\nUma dica, o jogo NÃO permite cores repetidas!</string>
+    <string name="mastermind_objective">Encontra a solução em 10 tentativas!\nVais escolher uma sequência de 4 cores, estas cores têm de ser as corretas e têm de estar na mesma posição.\nPara te ajudar, irás ter dois círculos pequenos ao lado da tentativa!\n        Círculo Vermelho - Número de cores corretas\n        Círculo Preto - Números de cores corretas na posição errada.\nUma dica, o jogo NÃO permite cores repetidas!</string>
     <string name="mastermind_new_record">NOVO RECORDE! %1$d:%2$d em %3$d tentativas!</string>
     <string name="wordle_check_error">Indica a palavra primeiro</string>
     <string name="wordle_win">Parabéns! A palavra era %1$s</string>
-    <string name="languages">Língua</string>
+    <string name="languages">Línguas</string>
     <string name="support">Suporte</string>
     <string name="settings">Definições</string>
     <string name="pick_language">Língua</string>
+    <string name="patch_notes_v1_0_0_6">Adicionado suporte à língua francesa</string>
+    <string name="new_version_available">New Version Available</string>
+    <string name="update_required">Existe uma nova versão disponível, clica Sim para instalar a atualização.</string>
 </resources>

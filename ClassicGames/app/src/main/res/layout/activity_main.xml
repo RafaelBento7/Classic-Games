@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color"
+    android:background="@drawable/splash_background"
     tools:context=".ui.views.activity.MainActivity">
 
     <include
@@ -49,7 +49,8 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/MainActivity_BottomNavView"
         app:menu="@menu/bottom_nav_menu"
-        android:background="@color/nav_bar"
+        android:background="@android:color/transparent"
+        app:elevation="0dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"

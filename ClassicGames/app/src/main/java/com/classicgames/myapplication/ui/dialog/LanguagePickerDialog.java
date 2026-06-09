@@ -31,6 +31,11 @@ public class LanguagePickerDialog extends Dialog {
             if (listener != null)
                 listener.OnLanguageClicked("en");
         });
+
+        findViewById(R.id.LanguageDialog_ConsLayout_Fr).setOnClickListener(v -> {
+            if (listener != null)
+                listener.OnLanguageClicked("fr");
+        });
     }
 
     public interface LanguageDialogButtonClick {

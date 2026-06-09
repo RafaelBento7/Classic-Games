@@ -26,6 +26,7 @@ public class MastermindActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMastermindBinding.inflate(getLayoutInflater());
+        binding.getRoot().setFitsSystemWindows(true);
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.MastermindToolbar.getRoot());

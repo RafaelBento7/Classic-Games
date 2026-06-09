@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.views.fragment.GamesFragment"
-    android:background="@color/background_color">
+    android:background="@android:color/transparent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -52,7 +52,6 @@
         <ImageButton
             android:id="@+id/GamesFragment_IB_Wordle"
             style="@style/ImageButton_Games"
-            android:paddingHorizontal="60dp"
             android:contentDescription="@string/wordle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

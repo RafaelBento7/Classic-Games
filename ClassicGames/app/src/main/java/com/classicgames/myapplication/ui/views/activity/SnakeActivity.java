@@ -46,6 +46,7 @@ public class SnakeActivity extends AppCompatActivity implements SurfaceHolder.Ca
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySnakeBinding.inflate(getLayoutInflater());
+        binding.getRoot().setFitsSystemWindows(true);
 
         setSupportActionBar(binding.SnakeToolbar.getRoot());
         getSupportActionBar().setDisplayShowTitleEnabled(false);

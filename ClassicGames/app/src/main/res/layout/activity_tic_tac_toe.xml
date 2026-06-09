@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_color">
+        android:background="@drawable/splash_background">
 
         <include android:id="@+id/TicTacToe_Toolbar"
             layout="@layout/toolbar"/>

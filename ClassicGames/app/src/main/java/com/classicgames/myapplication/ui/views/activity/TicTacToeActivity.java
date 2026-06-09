@@ -24,6 +24,7 @@ public class TicTacToeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         viewModel = new TicTacToeViewModel();
         binding = DataBindingUtil.setContentView(this, R.layout.activity_tic_tac_toe);
+        binding.getRoot().setFitsSystemWindows(true);
         binding.setActivity(this);
 
         setSupportActionBar(binding.TicTacToeToolbar.getRoot());

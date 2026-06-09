@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/background_color">
+    android:background="@android:color/transparent">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,13 +21,6 @@
             android:paddingTop="20dp">
 
             <TextView
-                android:id="@+id/ViewHelpWordle_Tv_SwipeLeft"
-                style="@style/TextView"
-                android:text="@string/swipe_left"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
                 android:id="@+id/ViewHelpWordle_Tv_SwipeRight"
                 style="@style/TextView"
                 android:text="@string/swipe_right"
@@ -41,7 +34,7 @@
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ViewHelpWordle_Tv_SwipeLeft" />
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpWordle_Tv_SwipeRight" />
 
             <ImageView
                 android:id="@+id/ViewHelpWordle_Iv_TrueColors"
@@ -50,8 +43,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ViewHelpWordle_Title"
-                app:srcCompat="@drawable/wordle"
-                android:paddingHorizontal="50dp"/>
+                app:srcCompat="@drawable/wordle"/>
 
             <TextView
                 android:id="@+id/ViewHelpWordle_Tv_ObjectiveTitle"

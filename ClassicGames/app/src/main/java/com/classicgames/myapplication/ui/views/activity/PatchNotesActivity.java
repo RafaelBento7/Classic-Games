@@ -1,6 +1,7 @@
 package com.classicgames.myapplication.ui.views.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.WindowCompat;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ public class PatchNotesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityPatchNotesBinding.inflate(getLayoutInflater());
+        binding.getRoot().setFitsSystemWindows(true);
         setContentView(binding.getRoot());
         setSupportActionBar(binding.PatchNotesToolbar.getRoot());
         getSupportActionBar().setDisplayShowTitleEnabled(false);

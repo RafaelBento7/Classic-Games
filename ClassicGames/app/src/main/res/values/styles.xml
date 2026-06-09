@@ -25,11 +25,11 @@
 
     <!--  Games Fragment  -->
     <style name="ImageButton_Games">
-        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_height">160dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:adjustViewBounds">true</item>
-        <item name="android:background">@color/background_color</item>
-        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">@null</item>
+        <item name="android:scaleType">centerInside</item>
         <item name="android:layout_marginTop">40dp</item>
     </style>
 

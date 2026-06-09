@@ -11,7 +11,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    android:background="@color/nav_bar"
+    android:background="@android:color/transparent"
     android:paddingTop="5dp"
     android:paddingBottom="5dp">
 

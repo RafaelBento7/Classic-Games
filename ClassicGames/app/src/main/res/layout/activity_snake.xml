@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.views.activity.SnakeActivity"
-    android:background="@color/background_color">
+    android:background="@drawable/splash_background">
 
     <include android:id="@+id/Snake_Toolbar"
         layout="@layout/toolbar"/>

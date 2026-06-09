@@ -3,7 +3,7 @@
     <string name="app_name" translatable="false">Classic Games</string>
     <string name="points">Points: %1$d</string>
     <string name="max_points">Max Points: %1$d</string>
-    <string name="game_over" translatable="false">Game Over</string>
+    <string name="game_over">Game Over</string>
     <string name="cancel">Cancel</string>
     <string name="play_again">Restart</string>
     <string name="error">Something went wrong</string>
@@ -43,6 +43,8 @@
     <string name="support">Support</string>
     <string name="settings">Settings</string>
     <string name="pick_language">Language</string>
+    <string name="new_version_available">New Version Available</string>
+    <string name="update_required">There is a new version available, press Yes to install the update.</string>
 
 
     <!--Dialog Titles-->
@@ -80,6 +82,9 @@
     <!-- Patch Notes -->
     <string name="patch_notes" translatable="false">Patch Notes</string>
     <string name="patch_notes_v1">First Version</string>
+    <string name="patch_notes_v1_0_0_5">Fixed edge-to-edge on recent android devices Fixed UI issues</string>
+    <string name="patch_notes_v1_1_0_0">First launching on Play Store</string>
+    <string name="patch_notes_v1_1_1_0">Changes to the UI and logo</string>
 
     <!-- Games -->
     <string name="snake_game">Snake</string>
@@ -140,5 +145,6 @@
     <string name="wordle_game_over_record">NEW RECORD! %1$d points in %2$s\nThe answer was %3$s</string>
     <string name="wordle_objective">This is not an easy game! You have to guess the 5 letter word. You need to set the letters in the box and click check. \nThere are three options for each letter after check:          \n            Wrong letter, the letter will become dark          \n            Correct letter but wrong position, it will look like a pink          \n            Correct letter in the correct position, it will turn green \nIf you see you can\'t guess the word, you can always skip, BUT it will cost you one point…</string>
     <string name="wordle_game_over_no_record">You lost with %1$d points in %2$s The answer was %3$s</string>
+    <string name="patch_notes_v1_0_0_6">Added support to the french language</string>
 
 </resources>

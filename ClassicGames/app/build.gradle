@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    compileSdk 34
+    compileSdk 36
 
     dataBinding {
         enabled = true
@@ -21,9 +21,9 @@ android {
     defaultConfig {
         applicationId "com.classicgames.myapplication"
         minSdk 21
-        targetSdk 34
-        versionCode 1000000
-        versionName "1.0.0.0"
+        targetSdk 36
+        versionCode 1100100
+        versionName "1.1.1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -46,7 +46,7 @@ android {
 }
 
 dependencies {
-
+    implementation "com.google.android.play:app-update:2.1.0"
     implementation 'androidx.lifecycle:lifecycle-viewmodel:2.6.2'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
