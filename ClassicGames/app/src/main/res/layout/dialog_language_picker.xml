@@ -28,116 +28,455 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        android:paddingBottom="15dp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CustomDialog_Layout_Title">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/LanguageDialog_ConsLayout_Pt"
-            android:paddingHorizontal="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/LanguageDialog_Iv_Portuguese"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_flag_icon_pt" />
-
-            <TextView
-                style="@style/BigTextView"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="20dp"
-                android:text="Português"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/LanguageDialog_Iv_Portuguese"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <View
-            android:layout_width="230dp"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:background="?attr/colorPrimary"
-            android:layout_height="1dp"/>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/LanguageDialog_ConsLayout_En"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="20dp"
-            android:layout_marginTop="10dp">
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/LanguageDialog_Iv_UnitedKingdom"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_flag_icon_uk" />
+            <!-- English first, then the rest alphabetically -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LanguageDialog_ConsLayout_En"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp">
 
-            <TextView
-                style="@style/BigTextView"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="20dp"
-                android:text="English"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_UnitedKingdom"
-                app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/LanguageDialog_Iv_UnitedKingdom"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_flag_icon_uk" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    style="@style/BigTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/language_en"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_UnitedKingdom"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <View
-            android:layout_width="230dp"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:background="?attr/colorPrimary"
-            android:layout_height="1dp"/>
+            <View style="@style/LanguageDialog_Divider" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/LanguageDialog_ConsLayout_Fr"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="20dp"
-            android:layout_marginTop="10dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LanguageDialog_ConsLayout_De"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp">
 
-            <ImageView
-                android:id="@+id/LanguageDialog_Iv_France"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_flag_icon_fr" />
+                <ImageView
+                    android:id="@+id/LanguageDialog_Iv_Germany"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_flag_icon_de" />
 
-            <TextView
-                style="@style/BigTextView"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="20dp"
-                android:text="Français"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_France"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    style="@style/BigTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/language_de"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_Germany"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <View style="@style/LanguageDialog_Divider" />
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LanguageDialog_ConsLayout_Es"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp">
 
-    </LinearLayout>
+                <ImageView
+                    android:id="@+id/LanguageDialog_Iv_Spain"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_flag_icon_es" />
+
+                <TextView
+                    style="@style/BigTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/language_es"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_Spain"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View style="@style/LanguageDialog_Divider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LanguageDialog_ConsLayout_Fr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/LanguageDialog_Iv_France"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_flag_icon_fr" />
+
+                <TextView
+                    style="@style/BigTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/language_fr"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_France"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View style="@style/LanguageDialog_Divider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LanguageDialog_ConsLayout_It"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/LanguageDialog_Iv_Italy"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_flag_icon_it" />
+
+                <TextView
+                    style="@style/BigTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/language_it"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_Italy"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View style="@style/LanguageDialog_Divider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LanguageDialog_ConsLayout_Nl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/LanguageDialog_Iv_Netherlands"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_flag_icon_nl" />
+
+                <TextView
+                    style="@style/BigTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/language_nl"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_Netherlands"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View style="@style/LanguageDialog_Divider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LanguageDialog_ConsLayout_Pl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/LanguageDialog_Iv_Poland"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_flag_icon_pl" />
+
+                <TextView
+                    style="@style/BigTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/language_pl"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_Poland"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View style="@style/LanguageDialog_Divider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LanguageDialog_ConsLayout_Pt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/LanguageDialog_Iv_Portuguese"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_flag_icon_pt" />
+
+                <TextView
+                    style="@style/BigTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/language_pt"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_Portuguese"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View style="@style/LanguageDialog_Divider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LanguageDialog_ConsLayout_PtBr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/LanguageDialog_Iv_Brazil"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_flag_icon_br" />
+
+                <TextView
+                    style="@style/BigTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/language_pt_br"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_Brazil"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View style="@style/LanguageDialog_Divider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LanguageDialog_ConsLayout_Tr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/LanguageDialog_Iv_Turkey"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_flag_icon_tr" />
+
+                <TextView
+                    style="@style/BigTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/language_tr"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_Turkey"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View style="@style/LanguageDialog_Divider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LanguageDialog_ConsLayout_Ru"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/LanguageDialog_Iv_Russia"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_flag_icon_ru" />
+
+                <TextView
+                    style="@style/BigTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/language_ru"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_Russia"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View style="@style/LanguageDialog_Divider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LanguageDialog_ConsLayout_Ko"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/LanguageDialog_Iv_Korea"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_flag_icon_ko" />
+
+                <TextView
+                    style="@style/BigTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/language_ko"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_Korea"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View style="@style/LanguageDialog_Divider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LanguageDialog_ConsLayout_Ja"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/LanguageDialog_Iv_Japan"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_flag_icon_ja" />
+
+                <TextView
+                    style="@style/BigTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/language_ja"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_Japan"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View style="@style/LanguageDialog_Divider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LanguageDialog_ConsLayout_Zh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/LanguageDialog_Iv_China"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_flag_icon_cn" />
+
+                <TextView
+                    style="@style/BigTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/language_zh"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/LanguageDialog_Iv_China"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

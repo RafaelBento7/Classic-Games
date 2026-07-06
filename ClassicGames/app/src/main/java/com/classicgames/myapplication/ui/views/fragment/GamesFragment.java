@@ -18,6 +18,7 @@ import com.classicgames.myapplication.ui.views.activity.TrueColorsActivity;
 import com.classicgames.myapplication.ui.views.activity.WordleActivity;
 import com.classicgames.myapplication.ui.dialog.CustomDialog;
 import com.classicgames.myapplication.ui.dialog.SnakeMapSizeDialog;
+import com.classicgames.myapplication.utils.SoundManager;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -29,11 +30,26 @@ public class GamesFragment extends Fragment {
         binding = FragmentGamesBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
-        binding.GamesFragmentIBSnake.setOnClickListener(v -> snakeGame());
-        binding.GamesFragmentIBTrueColors.setOnClickListener(v -> startActivity(new Intent(getContext(), TrueColorsActivity.class)));
-        binding.GamesFragmentIBMastermind.setOnClickListener(v -> startActivity(new Intent(getContext(), MastermindActivity.class)));
-        binding.GamesFragmentIBTicTacToe.setOnClickListener(v -> startActivity(new Intent(getContext(), TicTacToeActivity.class)));
-        binding.GamesFragmentIBWordle.setOnClickListener(v -> startActivity(new Intent(getContext(), WordleActivity.class)));
+        binding.GamesFragmentIBSnake.setOnClickListener(v -> {
+            SoundManager.play(SoundManager.Sound.CLICK);
+            snakeGame();
+        });
+        binding.GamesFragmentIBTrueColors.setOnClickListener(v -> {
+            SoundManager.play(SoundManager.Sound.CLICK);
+            startActivity(new Intent(getContext(), TrueColorsActivity.class));
+        });
+        binding.GamesFragmentIBMastermind.setOnClickListener(v -> {
+            SoundManager.play(SoundManager.Sound.CLICK);
+            startActivity(new Intent(getContext(), MastermindActivity.class));
+        });
+        binding.GamesFragmentIBTicTacToe.setOnClickListener(v -> {
+            SoundManager.play(SoundManager.Sound.CLICK);
+            startActivity(new Intent(getContext(), TicTacToeActivity.class));
+        });
+        binding.GamesFragmentIBWordle.setOnClickListener(v -> {
+            SoundManager.play(SoundManager.Sound.CLICK);
+            startActivity(new Intent(getContext(), WordleActivity.class));
+        });
 
         return view;
     }

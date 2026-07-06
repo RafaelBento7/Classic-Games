@@ -4,8 +4,6 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.IntentSenderRequest;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.WindowCompat;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +14,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
+import android.os.Looper;
 
 import com.classicgames.myapplication.R;
 import com.classicgames.myapplication.ui.dialog.CustomDialog;
@@ -27,8 +25,8 @@ import com.google.android.play.core.appupdate.AppUpdateOptions;
 import com.google.android.play.core.install.model.AppUpdateType;
 import com.google.android.play.core.install.model.UpdateAvailability;
 
-public class SplashActivity extends AppCompatActivity {
-    private Handler handler = new Handler();
+public class SplashActivity extends BaseActivity {
+    private final Handler handler = new Handler(Looper.getMainLooper());
     private AppUpdateManager appUpdateManager;
     private ActivityResultLauncher<IntentSenderRequest> updateLauncher;
 
@@ -60,16 +58,12 @@ public class SplashActivity extends AppCompatActivity {
 
         appUpdateManager = AppUpdateManagerFactory.create(this);
         appUpdateManager.getAppUpdateInfo().addOnSuccessListener(info -> {
-            Log.d("TESTES", info.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE) ? "1" : "0");
-            Log.d("TESTES", info.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE ? "1" : "0");
             if (info.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && info.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
                 showUpdateDialog(info);
             } else {
                 goToMain();
             }
-        }).addOnFailureListener(e -> {
-            goToMain();
-        });;
+        }).addOnFailureListener(e -> goToMain());
     }
 
     private void showUpdateDialog(AppUpdateInfo info) {

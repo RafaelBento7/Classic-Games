@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.classicgames.myapplication.data.models.SnakeModel;
 import com.classicgames.myapplication.data.models.SnakePiece;
+import com.classicgames.myapplication.utils.SoundManager;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -48,6 +49,7 @@ public class SnakeViewModel extends ViewModel {
 
     public void checkPoint(){
         if(game.pointCollision(game.getSnakeHead())){
+            SoundManager.play(SoundManager.Sound.SNAKE_POINT);
             game.growSnake();
             score.postValue(game.getScore());
             game.generateNewPoint();
@@ -65,6 +67,7 @@ public class SnakeViewModel extends ViewModel {
 
     public void checkGoldenPoint(){
         if (game.goldenPointCollision(game.getSnakeHead())){
+            SoundManager.play(SoundManager.Sound.SNAKE_GOLDEN_POINT);
             game.goldenPointCaught();
             score.postValue(game.getScore());
             if (game.shouldSpeedIncrease()){
@@ -85,6 +88,30 @@ public class SnakeViewModel extends ViewModel {
     public void gameOver(){
         game.gameOver();
         record.postValue(game.getRecord());
+    }
+
+    public boolean isNewRecord(){
+        return game.isNewRecord();
+    }
+
+    public int getScoreValue(){
+        return game.getScore();
+    }
+
+    public int getApplesEaten(){
+        return game.getApplesEaten();
+    }
+
+    public int getGoldenEaten(){
+        return game.getGoldenEaten();
+    }
+
+    public int getMapSize(){
+        return game.getMapSize();
+    }
+
+    public char getDirection(){
+        return game.getDirection();
     }
 
     public void trySpawnGoldenPoint(){

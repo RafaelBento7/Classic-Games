@@ -1,6 +1,7 @@
 package com.classicgames.myapplication.ui.viewmodels;
 
 import android.os.Handler;
+import android.os.Looper;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,7 +41,7 @@ public class MastermindViewModel extends ViewModel {
         seconds.setValue(0);
         minutes.setValue(0);
         if (timerHandler != null) timerHandler.removeCallbacks(timerRunnable);
-        timerHandler = new Handler();
+        timerHandler = new Handler(Looper.getMainLooper());
         timerRunnable = new Runnable() {
             @Override
             public void run() {
@@ -111,6 +112,10 @@ public class MastermindViewModel extends ViewModel {
 
     public int[] getRecords() {
         return game.getRecords();
+    }
+
+    public int getAttemptCount() {
+        return game.getAttempt();
     }
 
     public int getColorPicked() {

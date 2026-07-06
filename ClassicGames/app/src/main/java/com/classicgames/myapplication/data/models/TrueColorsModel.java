@@ -1,10 +1,13 @@
 package com.classicgames.myapplication.data.models;
 
 import com.classicgames.myapplication.MyApplication;
+import com.classicgames.myapplication.data.enums.GameColor;
 
 import java.util.Random;
 
 public class TrueColorsModel {
+
+    private static final int COLOR_COUNT = 8;   // matches the 8 colour buttons in the layout
 
     private int lives, correctColorsPicked, points, maxPoints;
     private int speedMultiplier, currentLevelMilSec;
@@ -14,8 +17,13 @@ public class TrueColorsModel {
     private final int[] colors;
 
     public TrueColorsModel(){
-        colors = MyApplication.getInstance().getColors();
-        maxPoints = MyApplication.getInstance().getRecords().getTrueColorsRecord();
+        this(GameColor.palette(MyApplication.getInstance(), COLOR_COUNT));
+    }
+
+    /** Visible for testing: inject a colour palette without needing an Android Context. */
+    TrueColorsModel(int[] colors){
+        this.colors = colors;
+        this.maxPoints = MyApplication.getInstance() != null ? MyApplication.getInstance().getRecords().getTrueColorsRecord() : 0;
     }
 
     public void startGame(){
@@ -29,8 +37,8 @@ public class TrueColorsModel {
     }
 
     private void generateColors(){
-        falseColor = colors[new Random().nextInt(8)];
-        trueColor = colors[new Random().nextInt(8)];
+        falseColor = colors[new Random().nextInt(colors.length)];
+        trueColor = colors[new Random().nextInt(colors.length)];
     }
 
     public void winPoint(int timeLeft){
@@ -60,8 +68,11 @@ public class TrueColorsModel {
     }
 
     public boolean isNewRecord() {
-        if (points < maxPoints) return false;
-        MyApplication.getInstance().getRecords().setTrueColorsRecord(points);
+        // Must strictly beat the stored record, and a 0-point game never counts.
+        if (points <= 0 || points <= maxPoints) return false;
+        if (MyApplication.getInstance() != null) {
+            MyApplication.getInstance().getRecords().setTrueColorsRecord(points);
+        }
         maxPoints = points;
         return true;
     }

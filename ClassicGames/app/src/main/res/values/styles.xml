@@ -23,6 +23,51 @@
         <item name="android:textSize">15sp</item>
     </style>
 
+    <!--  Settings Fragment  -->
+    <!--  A tappable row: leading icon + label, laid out horizontally.  -->
+    <style name="Settings_Row">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <style name="Settings_Row_Icon">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Settings_Row_Label" parent="BigTextView">
+        <item name="android:layout_marginStart">24dp</item>
+    </style>
+
+    <style name="Settings_Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!--  Stats / Records section header (used by the per-game stats pages)  -->
+    <style name="Stats_SectionHeader" parent="BigTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">28dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="Stats_SectionDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
     <!--  Games Fragment  -->
     <style name="ImageButton_Games">
         <item name="android:layout_height">160dp</item>
@@ -91,16 +136,25 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+    <style name="LanguageDialog_Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
     <style name="Mastermind_TruePosition" parent="Mastermind_PositionCircles">
-        <item name="android:backgroundTint">@color/red</item>
+        <item name="android:backgroundTint">@color/green</item>
         <item name="android:layout_marginTop">3dp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Mastermind_WrongPosition" parent="Mastermind_PositionCircles">
-        <item name="android:backgroundTint">@color/black</item>
+        <item name="android:backgroundTint">@color/yellow</item>
         <item name="android:layout_marginTop">5dp</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <!-- Wordle -->

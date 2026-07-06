@@ -1,147 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.views.fragment.SettingsFragment"
-    android:background="@android:color/transparent">
+    android:background="@android:color/transparent"
+    tools:context=".ui.views.fragment.SettingsFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/Settings_Tv_Title"
             style="@style/TitleTextView"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="25dp"
-            android:text="@string/settings"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="@string/settings" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Settings_Tv_Title">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/Settings_ConsLayout_PatchNotes"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:paddingHorizontal="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+            <LinearLayout
+                android:id="@+id/Settings_Row_PatchNotes"
+                style="@style/Settings_Row">
 
                 <ImageView
-                    android:id="@+id/Settings_Iv_PatchNotes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/Settings_Row_Icon"
                     android:contentDescription="@string/patch_notes"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_patch_notes" />
 
                 <TextView
-                    style="@style/BigTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_marginStart="60dp"
-                    android:text="@string/patch_notes"
-                    app:layout_constraintBottom_toBottomOf="@+id/Settings_Iv_PatchNotes"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/Settings_Iv_PatchNotes" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    style="@style/Settings_Row_Label"
+                    android:text="@string/patch_notes" />
+            </LinearLayout>
 
-            <View
-                android:id="@+id/Settings_Line"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Settings_ConsLayout_PatchNotes" />
+            <View style="@style/Settings_Divider" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/Settings_ConsLayout_Languages"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="5dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:padding="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/Settings_Line">
+            <LinearLayout
+                android:id="@+id/Settings_Row_Languages"
+                style="@style/Settings_Row">
 
                 <ImageView
-                    android:id="@+id/Settings_Iv_Languages"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/Settings_Row_Icon"
                     android:contentDescription="@string/languages"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_language" />
 
                 <TextView
-                    style="@style/BigTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_marginStart="60dp"
-                    android:text="@string/languages"
-                    app:layout_constraintBottom_toBottomOf="@id/Settings_Iv_Languages"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/Settings_Iv_Languages" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    style="@style/Settings_Row_Label"
+                    android:text="@string/languages" />
+            </LinearLayout>
 
-            <View
-                android:id="@+id/Settings_Line2"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Settings_ConsLayout_Languages" />
+            <View style="@style/Settings_Divider" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/Settings_ConsLayout_Support"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="5dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:padding="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/Settings_Line2">
+            <LinearLayout
+                android:id="@+id/Settings_Row_Support"
+                style="@style/Settings_Row">
 
                 <ImageView
-                    android:id="@+id/Settings_Iv_Support"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/languages"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/Settings_Row_Icon"
+                    android:contentDescription="@string/support"
                     app:srcCompat="@drawable/ic_contact_support" />
 
                 <TextView
-                    style="@style/BigTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_marginStart="60dp"
-                    android:text="@string/support"
-                    app:layout_constraintBottom_toBottomOf="@id/Settings_Iv_Support"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/Settings_Iv_Support" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                    style="@style/Settings_Row_Label"
+                    android:text="@string/support" />
+            </LinearLayout>
+
+            <View style="@style/Settings_Divider" />
+
+            <LinearLayout
+                android:id="@+id/Settings_Row_Rate"
+                style="@style/Settings_Row">
+
+                <ImageView
+                    style="@style/Settings_Row_Icon"
+                    android:contentDescription="@string/settings_rate"
+                    app:srcCompat="@drawable/ic_star" />
+
+                <TextView
+                    style="@style/Settings_Row_Label"
+                    android:text="@string/settings_rate" />
+            </LinearLayout>
+
+            <View style="@style/Settings_Divider" />
+
+            <LinearLayout
+                android:id="@+id/Settings_Row_Sfx"
+                style="@style/Settings_Row">
+
+                <ImageView
+                    android:id="@+id/Settings_Iv_Sfx"
+                    style="@style/Settings_Row_Icon"
+                    android:contentDescription="@string/sound_effects"
+                    app:srcCompat="@drawable/ic_sound" />
+
+                <TextView
+                    style="@style/Settings_Row_Label"
+                    android:text="@string/sound_effects" />
+            </LinearLayout>
+
+            <View style="@style/Settings_Divider" />
+
+            <LinearLayout
+                android:id="@+id/Settings_Row_Music"
+                style="@style/Settings_Row">
+
+                <ImageView
+                    android:id="@+id/Settings_Iv_Music"
+                    style="@style/Settings_Row_Icon"
+                    android:contentDescription="@string/music"
+                    app:srcCompat="@drawable/ic_music" />
+
+                <TextView
+                    style="@style/Settings_Row_Label"
+                    android:text="@string/music" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 </FrameLayout>

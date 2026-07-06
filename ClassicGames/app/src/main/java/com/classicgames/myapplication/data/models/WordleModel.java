@@ -15,12 +15,19 @@ public class WordleModel {
     private int points;
 
     private int minutesRecord, secondsRecord, pointsRecord;
+    private boolean recordLoaded;
 
     public WordleModel() {
-        pointsRecord = MyApplication.getInstance().getRecords().getWordleRecord()[2];
-        secondsRecord = MyApplication.getInstance().getRecords().getWordleRecord()[1];
-        minutesRecord = MyApplication.getInstance().getRecords().getWordleRecord()[0];
+        
+    }
 
+    private void ensureRecordLoaded() {
+        if (recordLoaded) return;
+        int[] record = MyApplication.getInstance().getRecords().getWordleRecord();
+        minutesRecord = record[0];
+        secondsRecord = record[1];
+        pointsRecord = record[2];
+        recordLoaded = true;
     }
 
     public void StartGame() {
@@ -61,6 +68,7 @@ public class WordleModel {
     }
 
     public boolean IsNewRecord(int points, int minutes, int seconds) {
+        ensureRecordLoaded();
         if (points == 0) return false;
 
         if (points > pointsRecord) return true;
@@ -77,6 +85,7 @@ public class WordleModel {
         pointsRecord = points;
         secondsRecord = seconds;
         minutesRecord = minutes;
+        recordLoaded = true;
     }
 
     public boolean IsGameOver() {

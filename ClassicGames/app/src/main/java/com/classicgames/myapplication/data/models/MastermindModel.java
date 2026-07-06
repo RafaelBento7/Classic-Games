@@ -1,10 +1,13 @@
 package com.classicgames.myapplication.data.models;
 
 import com.classicgames.myapplication.MyApplication;
+import com.classicgames.myapplication.data.enums.GameColor;
 
 import java.util.Random;
 
 public class MastermindModel {
+
+    private static final int COLOR_COUNT = 8;   // colours this game is built around
 
     private int attempt, lastAttemptTruePosition, lastAttemptWrongPosition, colorsPicked;
     private final int[] records;
@@ -12,8 +15,15 @@ public class MastermindModel {
     private final int[] colors;
 
     public MastermindModel() {
-        colors = MyApplication.getInstance().getColors();
-        records = MyApplication.getInstance().getRecords().getMastermindRecord();
+        this(GameColor.palette(MyApplication.getInstance(), COLOR_COUNT));
+    }
+
+    /** Visible for testing: inject a colour palette without needing an Android Context. */
+    MastermindModel(int[] colors) {
+        this.colors = colors;
+        this.records = MyApplication.getInstance() != null
+                ? MyApplication.getInstance().getRecords().getMastermindRecord()
+                : new int[]{0, 0, 0};
     }
 
     public void startGame() {
@@ -27,13 +37,13 @@ public class MastermindModel {
         solution = new int[4];
 
         for (int i = 0; i < 4; i++) {
-            int randomNumber = new Random().nextInt(8);
+            int randomNumber = new Random().nextInt(colors.length);
             solution[i] = colors[randomNumber];
             //Check if the color already exists
             boolean conflict = true;
             do {
                 if (!hasCollision(solution[i], i)) conflict = false;
-                else solution[i] = colors[new Random().nextInt(8)];
+                else solution[i] = colors[new Random().nextInt(colors.length)];
             } while (conflict);
 
         }
@@ -86,7 +96,9 @@ public class MastermindModel {
 
         if (!newRecord) return false;
 
-        MyApplication.getInstance().getRecords().setMastermindRecord((int) minutes, (int) seconds, (int) attempt);
+        if (MyApplication.getInstance() != null) {
+            MyApplication.getInstance().getRecords().setMastermindRecord((int) minutes, (int) seconds, (int) attempt);
+        }
         records[0] = (int) minutes;
         records[1] = (int) seconds;
         records[2] = (int) attempt;

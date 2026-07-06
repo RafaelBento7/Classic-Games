@@ -4,12 +4,15 @@ import static java.lang.Math.abs;
 
 import com.classicgames.myapplication.MyApplication;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.Random;
 
 public class SnakeModel {
 
     private static final int DEFAULT_SNAKE_SIZE = 3;
+    private static final int[][] NEIGHBOURS = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
     private final int SURFACE_VIEW_WIDTH, SURFACE_VIEW_HEIGHT, MAP_SIZE;
 
     private final ArrayList<SnakePiece> snakeBody, obstacles;
@@ -18,10 +21,12 @@ public class SnakeModel {
 
     private final boolean obstaclesGame;
     private int maxPoints, score;
+    private int applesEaten, goldenEaten;
     private int snakeSpeed, speedLevel;
     private final int bodyRadiusSize;
     private char direction;         // L = Left; R = Right; U = Up; D = Down
     private boolean canChangeDirection;     // Blocks the player from instantly changing directions twice
+    private boolean newRecord;              // Whether the last finished game beat the stored record
 
     public SnakeModel(int mapSize, int bodyRadiusSize, int surfaceViewWidth, int surfaceViewHeight, boolean obstaclesGame) {
         this.snakeBody = new ArrayList<>();
@@ -38,6 +43,7 @@ public class SnakeModel {
     }
 
     private void getMaxPoints() {
+        if (MyApplication.getInstance() == null) return;   // no record store under unit tests
         if (MAP_SIZE == 1)
             maxPoints = MyApplication.getInstance().getRecords().getSnakeSmallRecord();
         else if (MAP_SIZE == 2)
@@ -46,16 +52,19 @@ public class SnakeModel {
     }
 
     private void setNewRecord(int record){
+        maxPoints = record;
+        if (MyApplication.getInstance() == null) return;   // no record store under unit tests
         if (MAP_SIZE == 1)
             MyApplication.getInstance().getRecords().setSnakeSmallRecord(record);
         else if (MAP_SIZE == 2)
             MyApplication.getInstance().getRecords().setSnakeMediumRecord(record);
         else MyApplication.getInstance().getRecords().setSnakeBigRecord(record);
-        maxPoints = record;
     }
 
     public void start() {
         score = 0;
+        applesEaten = 0;
+        goldenEaten = 0;
         canChangeDirection = true;
         snakeSpeed = 600;
         speedLevel = 1;
@@ -78,10 +87,110 @@ public class SnakeModel {
         if (MAP_SIZE == 1) obstaclesNr = 15;
         else if (MAP_SIZE == 2) obstaclesNr = 30;
         else obstaclesNr = 50;
-        for (int i = 0; i < obstaclesNr; i++){
-            SnakePiece newObstacle = generateRandomSnakePiece();
-            obstacles.add(newObstacle);
+
+        // Place obstacles one at a time, rejecting any candidate that would trap
+        // part of the board. After each placement the empty space must stay fully
+        // reachable AND free of one-exit dead-ends, so a point can never spawn
+        // somewhere the snake cannot reach and leave alive. Capped so a crowded
+        // board can never loop forever (it simply ends up with fewer obstacles).
+        int attempts = 0;
+        int maxAttempts = obstaclesNr * 40;
+        while (obstacles.size() < obstaclesNr && attempts++ < maxAttempts) {
+            SnakePiece candidate = generateRandomSnakePiece();
+            // Never spawn right in the snake's path at start, or it dies instantly.
+            if (inStartupSafeZone(candidate)) continue;
+            obstacles.add(candidate);
+            if (!freeSpaceIsPlayable()) {
+                obstacles.remove(obstacles.size() - 1);
+            }
         }
+    }
+
+    /**
+     * The three tiles directly ahead of the snake's head in its starting
+     * direction. Obstacles are kept out of this strip so the player can't lose
+     * the moment the game begins (the snake starts moving on the first tick).
+     */
+    private boolean inStartupSafeZone(SnakePiece piece) {
+        SnakePiece head = getSnakeHead();
+        int step = bodyRadiusSize * 2;
+        for (int i = 1; i <= 3; i++) {
+            int zoneX = head.getPositionX(), zoneY = head.getPositionY();
+            switch (direction) {
+                case 'R': zoneX += i * step; break;
+                case 'L': zoneX -= i * step; break;
+                case 'U': zoneY -= i * step; break;
+                case 'D': zoneY += i * step; break;
+            }
+            if (piece.getPositionX() == zoneX && piece.getPositionY() == zoneY) return true;
+        }
+        return false;
+    }
+
+    /**
+     * True when, treating the current obstacles as walls, every empty cell is
+     * reachable from the snake's head and has at least two open neighbours. That
+     * rules out both isolated cells and single-exit dead-ends — either of which
+     * could hold a point the player can never safely collect.
+     */
+    private boolean freeSpaceIsPlayable() {
+        int cell = bodyRadiusSize * 2;
+        int cols = SURFACE_VIEW_WIDTH / cell;
+        int rows = SURFACE_VIEW_HEIGHT / cell;
+        if (cols <= 0 || rows <= 0) return true;
+
+        boolean[][] blocked = new boolean[cols][rows];
+        int blockedCount = 0;
+        for (SnakePiece o : obstacles) {
+            int c = (o.getPositionX() - bodyRadiusSize) / cell;
+            int r = (o.getPositionY() - bodyRadiusSize) / cell;
+            if (c >= 0 && c < cols && r >= 0 && r < rows && !blocked[c][r]) {
+                blocked[c][r] = true;
+                blockedCount++;
+            }
+        }
+
+        // No empty cell may be a dead-end (fewer than two open neighbours).
+        for (int c = 0; c < cols; c++) {
+            for (int r = 0; r < rows; r++) {
+                if (!blocked[c][r] && openNeighbours(blocked, cols, rows, c, r) < 2)
+                    return false;
+            }
+        }
+
+        // Every empty cell must be reachable from the snake's head.
+        SnakePiece head = getSnakeHead();
+        int startC = (head.getPositionX() - bodyRadiusSize) / cell;
+        int startR = (head.getPositionY() - bodyRadiusSize) / cell;
+        if (startC < 0 || startC >= cols || startR < 0 || startR >= rows || blocked[startC][startR])
+            return true;   // head off-grid at spawn: nothing to validate against
+
+        boolean[][] seen = new boolean[cols][rows];
+        Deque<int[]> stack = new ArrayDeque<>();
+        stack.push(new int[]{startC, startR});
+        seen[startC][startR] = true;
+        int reached = 0;
+        while (!stack.isEmpty()) {
+            int[] cur = stack.pop();
+            reached++;
+            for (int[] d : NEIGHBOURS) {
+                int nc = cur[0] + d[0], nr = cur[1] + d[1];
+                if (nc >= 0 && nc < cols && nr >= 0 && nr < rows && !blocked[nc][nr] && !seen[nc][nr]) {
+                    seen[nc][nr] = true;
+                    stack.push(new int[]{nc, nr});
+                }
+            }
+        }
+        return reached == cols * rows - blockedCount;
+    }
+
+    private int openNeighbours(boolean[][] blocked, int cols, int rows, int c, int r) {
+        int open = 0;
+        for (int[] d : NEIGHBOURS) {
+            int nc = c + d[0], nr = r + d[1];
+            if (nc >= 0 && nc < cols && nr >= 0 && nr < rows && !blocked[nc][nr]) open++;
+        }
+        return open;
     }
 
     private SnakePiece generateRandomSnakePiece() {
@@ -189,6 +298,7 @@ public class SnakeModel {
         SnakePiece snakePiece = new SnakePiece(0,0);
         snakeBody.add(snakePiece);
         score++;
+        applesEaten++;
     }
 
     public void trySpawnGoldenPoint(){
@@ -207,6 +317,7 @@ public class SnakeModel {
 
     public void goldenPointCaught(){
         score += 5;
+        goldenEaten++;
         disableGoldenPoint();
     }
 
@@ -284,7 +395,12 @@ public class SnakeModel {
     }
 
     public void gameOver() {
-        if (maxPoints < score) setNewRecord(score);
+        newRecord = maxPoints < score;
+        if (newRecord) setNewRecord(score);
+    }
+
+    public boolean isNewRecord() {
+        return newRecord;
     }
 
     public int getRecord(){
@@ -293,6 +409,22 @@ public class SnakeModel {
 
     public int getScore(){
         return this.score;
+    }
+
+    public int getApplesEaten(){
+        return this.applesEaten;
+    }
+
+    public int getGoldenEaten(){
+        return this.goldenEaten;
+    }
+
+    public int getMapSize(){
+        return this.MAP_SIZE;
+    }
+
+    public char getDirection(){
+        return this.direction;
     }
 
     public int getGoldenPointCounter(){

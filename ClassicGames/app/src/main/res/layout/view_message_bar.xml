@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Custom in-app message bar. Pinned to the bottom of the activity content;
+     MessageBar replaces any existing instance instead of queuing. -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/MessageBar_Tv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginBottom="24dp"
+    android:background="@drawable/bg_message_bar"
+    android:elevation="8dp"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="14dp"
+    android:gravity="center_horizontal"
+    android:textColor="@color/white"
+    android:textSize="16sp"
+    tools:ignore="UnusedAttribute"
+    xmlns:tools="http://schemas.android.com/tools" />

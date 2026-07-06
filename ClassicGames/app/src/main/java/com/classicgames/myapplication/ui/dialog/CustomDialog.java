@@ -9,13 +9,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.classicgames.myapplication.R;
+import com.classicgames.myapplication.utils.ShareHelper;
+import com.classicgames.myapplication.utils.SoundManager;
 
 public class CustomDialog extends Dialog {
 
     private Activity activity;
-    private Button btPositive, btNegative;
+    private Button btPositive, btNegative, btShare;
     private TextView tvMessage, tvTitle;
-    private String message, title;
+    private String message, title, shareText;
 
     private DialogButtonClick listener;
 
@@ -34,16 +36,29 @@ public class CustomDialog extends Dialog {
         setContentView(R.layout.dialog_custom);
         btPositive = findViewById(R.id.CustomDialog_Bt_Positive);
         btPositive.setOnClickListener(v -> {
+            SoundManager.play(SoundManager.Sound.CLICK);
             if (listener != null)
                 listener.onPositiveButtonClicked();
             dismiss();
         });
         btNegative = findViewById(R.id.CustomDialog_Bt_Negative);
         btNegative.setOnClickListener(v -> {
+            SoundManager.play(SoundManager.Sound.CLICK);
             if (listener != null)
                 listener.onNegativeButtonClicked();
             dismiss();
         });
+        btShare = findViewById(R.id.CustomDialog_Bt_Share);
+        if (shareText != null) {
+            btShare.setVisibility(View.VISIBLE);
+            btShare.setOnClickListener(v -> {
+                SoundManager.play(SoundManager.Sound.CLICK);
+                ShareHelper.shareScore(activity, shareText);
+            });
+        } else {
+            btShare.setVisibility(View.GONE);
+        }
+
         tvMessage = findViewById(R.id.CustomDialog_Tv_Message);
         if (this.title != null) {
             tvTitle = findViewById(R.id.CustomDialog_Tv_Title);
@@ -53,12 +68,24 @@ public class CustomDialog extends Dialog {
         tvMessage.setText(message);
     }
 
+    /**
+     * Sets the text shared when the user taps the Share button. Must be called
+     * before {@link #show()}; a non-null value reveals the otherwise-hidden button.
+     */
+    public void setShareText(String shareText) {
+        this.shareText = shareText;
+    }
+
     public Button getBtPositive() {
         return btPositive;
     }
 
     public Button getBtNegative() {
         return btNegative;
+    }
+
+    public Button getBtShare() {
+        return btShare;
     }
 
     public interface DialogButtonClick {

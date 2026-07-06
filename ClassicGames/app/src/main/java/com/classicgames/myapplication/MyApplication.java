@@ -1,12 +1,16 @@
 package com.classicgames.myapplication;
 
+import android.app.Activity;
 import android.app.Application;
-import android.content.res.Configuration;
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.classicgames.myapplication.data.preferences.AppPreferences;
 import com.classicgames.myapplication.data.preferences.RecordsPreferences;
-
-import java.util.Locale;
+import com.classicgames.myapplication.utils.MusicManager;
+import com.classicgames.myapplication.utils.SoundManager;
 
 public class MyApplication extends Application {
 
@@ -16,10 +20,10 @@ public class MyApplication extends Application {
         return instance;
     }
 
-    private int[] colors;
-
     private RecordsPreferences recordsPreferences;
     private AppPreferences appPreferences;
+    private SoundManager soundManager;
+    private MusicManager musicManager;
 
     @Override
     public void onCreate() {
@@ -27,23 +31,39 @@ public class MyApplication extends Application {
         instance = this;
         recordsPreferences = new RecordsPreferences(this);
         appPreferences = new AppPreferences(this);
-        initializeColors();
+        appPreferences.ensureLanguageDefault();   // open in the system language on first launch
+        soundManager = new SoundManager(this);
+        musicManager = new MusicManager(this);
+        registerMusicLifecycle();
     }
 
-    private void initializeColors() {
-        colors = new int[8];
-        colors[0] = getResources().getColor(R.color.purple);
-        colors[1] = getResources().getColor(R.color.green);
-        colors[2] = getResources().getColor(R.color.red);
-        colors[3] = getResources().getColor(R.color.yellow);
-        colors[4] = getResources().getColor(R.color.blue);
-        colors[5] = getResources().getColor(R.color.brown);
-        colors[6] = getResources().getColor(R.color.orange);
-        colors[7] = getResources().getColor(R.color.pink);
-    }
+    /**
+     * Tracks how many activities are started so background music pauses when the
+     * app goes to the background and resumes when it returns to the foreground.
+     */
+    private void registerMusicLifecycle() {
+        registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
+            private int startedActivities = 0;
 
-    public int[] getColors() {
-        return colors;
+            @Override public void onActivityStarted(@NonNull Activity activity) {
+                if (startedActivities == 0) musicManager.setForeground(true);
+                startedActivities++;
+            }
+
+            @Override public void onActivityStopped(@NonNull Activity activity) {
+                startedActivities--;
+                if (startedActivities <= 0) {
+                    startedActivities = 0;
+                    musicManager.setForeground(false);
+                }
+            }
+
+            @Override public void onActivityCreated(@NonNull Activity activity, @Nullable Bundle savedInstanceState) { }
+            @Override public void onActivityResumed(@NonNull Activity activity) { }
+            @Override public void onActivityPaused(@NonNull Activity activity) { }
+            @Override public void onActivitySaveInstanceState(@NonNull Activity activity, @NonNull Bundle outState) { }
+            @Override public void onActivityDestroyed(@NonNull Activity activity) { }
+        });
     }
 
     public RecordsPreferences getRecords() {
@@ -54,5 +74,11 @@ public class MyApplication extends Application {
         return appPreferences;
     }
 
+    public SoundManager getSoundManager() {
+        return soundManager;
+    }
 
+    public MusicManager getMusicManager() {
+        return musicManager;
+    }
 }

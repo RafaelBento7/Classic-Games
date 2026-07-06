@@ -21,34 +21,12 @@
         app:layout_constraintStart_toStartOf="@+id/PatchNotes_GuidelineStart"
         app:layout_constraintTop_toBottomOf="@+id/PatchNotes_Toolbar">
 
+        <!-- Populated at runtime by PatchNotesActivity from assets/patch_notes.json. -->
         <LinearLayout
+            android:id="@+id/PatchNotes_Container"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                style="@style/BigTextView"
-                android:text="V1.1.0.0"
-                android:layout_gravity="center"/>
-
-            <TextView
-                style="@style/TextView"
-                android:layout_width="match_parent"
-                android:layout_marginTop="20dp"
-                android:text="@string/patch_notes_v1_1_0_0" />
-
-            <TextView
-                style="@style/BigTextView"
-                android:layout_marginTop="20dp"
-                android:text="V1.1.1.0"
-                android:layout_gravity="center"/>
-
-            <TextView
-                style="@style/TextView"
-                android:layout_width="match_parent"
-                android:layout_marginTop="20dp"
-                android:text="@string/patch_notes_v1_1_1_0" />
-        </LinearLayout>
+            android:layout_height="wrap_content" />
     </ScrollView>
 
     <androidx.constraintlayout.widget.Guideline

@@ -1,0 +1,244 @@
+{
+  "versions": [
+    {
+      "version": "V1.0.0.0",
+      "notes": {
+        "en": "First Version",
+        "pt": "Primeira Versão",
+        "pt-BR": "Primeira versão",
+        "fr": "Première version",
+        "es": "Primera versión",
+        "de": "Erste Version",
+        "it": "Prima versione",
+        "nl": "Eerste versie",
+        "pl": "Pierwsza wersja",
+        "tr": "İlk sürüm",
+        "ru": "Первая версия",
+        "zh-CN": "第一个版本",
+        "ja": "最初のバージョン",
+        "ko": "첫 번째 버전"
+      }
+    },
+    {
+      "version": "V1.0.0.1",
+      "notes": {
+        "en": "Fixed edge-to-edge on recent Android devices. Fixed UI issues",
+        "pt": "Corrigido problema de margens em dispositivos androids recentes. Correções na UI",
+        "pt-BR": "Corrigido o problema de margens em dispositivos Android recentes. Correções na interface",
+        "fr": "Correction d'un problème de marges sur les appareils Android récents. Corrections de l'interface",
+        "es": "Corregido el problema de márgenes en dispositivos Android recientes. Correcciones en la interfaz",
+        "de": "Randproblem auf neueren Android-Geräten behoben. UI-Korrekturen",
+        "it": "Risolto il problema dei margini sui dispositivi Android recenti. Correzioni all'interfaccia",
+        "nl": "Margeprobleem op recente Android-apparaten opgelost. Verbeteringen aan de interface",
+        "pl": "Naprawiono problem z marginesami na nowszych urządzeniach z Androidem. Poprawki interfejsu",
+        "tr": "Yeni Android cihazlardaki kenar boşluğu sorunu düzeltildi. Arayüz düzeltmeleri",
+        "ru": "Исправлена проблема с отступами на новых устройствах Android. Исправления интерфейса",
+        "zh-CN": "修复了较新 Android 设备上的边距问题。界面修复",
+        "ja": "最近のAndroid端末での余白の問題を修正。UIの修正",
+        "ko": "최신 안드로이드 기기의 여백 문제 수정. UI 수정"
+      }
+    },
+    {
+      "version": "V1.0.0.2",
+      "notes": {
+        "en": "Added support for the French language",
+        "pt": "Adicionado suporte à língua francesa",
+        "pt-BR": "Adicionado suporte ao idioma francês",
+        "fr": "Ajout de la prise en charge de la langue française",
+        "es": "Añadido soporte para el idioma francés",
+        "de": "Unterstützung für die französische Sprache hinzugefügt",
+        "it": "Aggiunto il supporto alla lingua francese",
+        "nl": "Ondersteuning voor de Franse taal toegevoegd",
+        "pl": "Dodano obsługę języka francuskiego",
+        "tr": "Fransızca dil desteği eklendi",
+        "ru": "Добавлена поддержка французского языка",
+        "zh-CN": "添加了对法语的支持",
+        "ja": "フランス語のサポートを追加",
+        "ko": "프랑스어 지원 추가"
+      }
+    },
+    {
+      "version": "V1.1.0.0",
+      "notes": {
+        "en": "First launch on the Play Store",
+        "pt": "Primeiro lançamento no Play Store",
+        "pt-BR": "Primeiro lançamento na Play Store",
+        "fr": "Premier lancement sur le Play Store",
+        "es": "Primer lanzamiento en Play Store",
+        "de": "Erste Veröffentlichung im Play Store",
+        "it": "Primo lancio sul Play Store",
+        "nl": "Eerste lancering in de Play Store",
+        "pl": "Pierwsza premiera w Sklepie Play",
+        "tr": "Play Store'da ilk yayın",
+        "ru": "Первый выпуск в Play Маркете",
+        "zh-CN": "在 Play 商店首次发布",
+        "ja": "Playストアでの初リリース",
+        "ko": "플레이 스토어 첫 출시"
+      }
+    },
+    {
+      "version": "V1.1.1.0",
+      "notes": {
+        "en": "Changes to the UI and logo",
+        "pt": "Alterações na UI e no logótipo",
+        "pt-BR": "Alterações na interface e no logotipo",
+        "fr": "Modifications apportées à l'interface et au logo",
+        "es": "Cambios en la interfaz y el logotipo",
+        "de": "Änderungen an der UI und am Logo",
+        "it": "Modifiche all'interfaccia e al logo",
+        "nl": "Wijzigingen aan de interface en het logo",
+        "pl": "Zmiany w interfejsie i logo",
+        "tr": "Arayüz ve logoda değişiklikler",
+        "ru": "Изменения в интерфейсе и логотипе",
+        "zh-CN": "界面和徽标的更改",
+        "ja": "UIとロゴの変更",
+        "ko": "UI 및 로고 변경"
+      }
+    },
+    {
+      "version": "V1.2.0.0",
+      "notes": {
+        "en": [
+          "🌍 New languages: Chinese, Brazilian Portuguese and many more",
+          "🔊 Brand-new sound effects to bring every game to life",
+          "🐍 A brand-new look for the Snake",
+          "📊 Fresh stats and records to track your progress",
+          "📤 Show off, share your best records with friends",
+          "💬 A slick new custom message box",
+          "✨ UI polish and smoother animations",
+          "⚡ Performance improvements and bug fixes"
+        ],
+        "pt": [
+          "🌍 Novos idiomas: chinês, português do Brasil e muitos mais",
+          "🔊 Efeitos sonoros novos em folha para dar vida a cada jogo",
+          "🐍 Um visual novo em folha para a Cobra",
+          "📊 Novas estatísticas e recordes para acompanhares o teu progresso",
+          "📤 Mostra do que és capaz, partilha os teus melhores recordes com os amigos",
+          "💬 Uma nova e elegante caixa de mensagens personalizada",
+          "✨ Interface mais polida e animações mais suaves",
+          "⚡ Melhorias de desempenho e correção de erros"
+        ],
+        "pt-BR": [
+          "🌍 Novos idiomas: chinês, português do Brasil e muitos mais",
+          "🔊 Efeitos sonoros novinhos em folha para dar vida a cada jogo",
+          "🐍 Um visual novinho em folha para a Cobra",
+          "📊 Novas estatísticas e recordes para acompanhar seu progresso",
+          "📤 Arrase, compartilhe seus melhores recordes com os amigos",
+          "💬 Uma nova e estilosa caixa de mensagens personalizada",
+          "✨ Interface mais caprichada e animações mais suaves",
+          "⚡ Melhorias de desempenho e correção de bugs"
+        ],
+        "fr": [
+          "🌍 Nouvelles langues : chinois, portugais brésilien et bien plus encore",
+          "🔊 De tout nouveaux effets sonores pour donner vie à chaque jeu",
+          "🐍 Un tout nouveau look pour le Serpent",
+          "📊 De nouvelles statistiques et de nouveaux records pour suivre ta progression",
+          "📤 Fais-toi remarquer, partage tes meilleurs records avec tes amis",
+          "💬 Une toute nouvelle boîte de dialogue personnalisée et élégante",
+          "✨ Interface peaufinée et animations plus fluides",
+          "⚡ Améliorations des performances et corrections de bugs"
+        ],
+        "es": [
+          "🌍 Nuevos idiomas: chino, portugués de Brasil y muchos más",
+          "🔊 Efectos de sonido totalmente nuevos para dar vida a cada juego",
+          "🐍 Un aspecto totalmente nuevo para la Serpiente",
+          "📊 Nuevas estadísticas y récords para seguir tu progreso",
+          "📤 Presume, comparte tus mejores récords con tus amigos",
+          "💬 Un nuevo y elegante cuadro de mensajes personalizado",
+          "✨ Interfaz más pulida y animaciones más fluidas",
+          "⚡ Mejoras de rendimiento y corrección de errores"
+        ],
+        "de": [
+          "🌍 Neue Sprachen: Chinesisch, brasilianisches Portugiesisch und viele mehr",
+          "🔊 Brandneue Soundeffekte, die jedes Spiel zum Leben erwecken",
+          "🐍 Ein brandneues Aussehen für die Schlange",
+          "📊 Neue Statistiken und Rekorde, um deinen Fortschritt zu verfolgen",
+          "📤 Teile deine besten Rekorde mit Freunden und zeig, was du kannst",
+          "💬 Eine schicke neue, individuelle Nachrichtenbox",
+          "✨ Feinschliff an der Oberfläche und flüssigere Animationen",
+          "⚡ Leistungsverbesserungen und Fehlerbehebungen"
+        ],
+        "it": [
+          "🌍 Nuove lingue: cinese, portoghese brasiliano e molte altre",
+          "🔊 Effetti sonori nuovi di zecca per dare vita a ogni gioco",
+          "🐍 Un aspetto nuovo di zecca per il Serpente",
+          "📊 Nuove statistiche e record per seguire i tuoi progressi",
+          "📤 Mettiti in mostra, condividi i tuoi record migliori con gli amici",
+          "💬 Una nuova ed elegante finestra di messaggi personalizzata",
+          "✨ Interfaccia più curata e animazioni più fluide",
+          "⚡ Miglioramenti delle prestazioni e correzioni di bug"
+        ],
+        "nl": [
+          "🌍 Nieuwe talen: Chinees, Braziliaans Portugees en veel meer",
+          "🔊 Gloednieuwe geluidseffecten die elk spel tot leven brengen",
+          "🐍 Een gloednieuw uiterlijk voor de Slang",
+          "📊 Nieuwe statistieken en records om je voortgang bij te houden",
+          "📤 Laat je zien, deel je beste records met vrienden",
+          "💬 Een strak nieuw aangepast berichtenvenster",
+          "✨ Verfijnde interface en soepelere animaties",
+          "⚡ Prestatieverbeteringen en bugfixes"
+        ],
+        "pl": [
+          "🌍 Nowe języki: chiński, brazylijski portugalski i wiele więcej",
+          "🔊 Zupełnie nowe efekty dźwiękowe ożywiające każdą grę",
+          "🐍 Zupełnie nowy wygląd Węża",
+          "📊 Nowe statystyki i rekordy, aby śledzić swoje postępy",
+          "📤 Pochwal się, podziel się swoimi najlepszymi rekordami ze znajomymi",
+          "💬 Nowe, eleganckie, własne okno wiadomości",
+          "✨ Dopracowany interfejs i płynniejsze animacje",
+          "⚡ Poprawa wydajności i naprawa błędów"
+        ],
+        "tr": [
+          "🌍 Yeni diller: Çince, Brezilya Portekizcesi ve çok daha fazlası",
+          "🔊 Her oyuna hayat veren yepyeni ses efektleri",
+          "🐍 Yılan için yepyeni bir görünüm",
+          "📊 İlerlemeni takip etmen için yeni istatistikler ve rekorlar",
+          "📤 Hava at, en iyi rekorlarını arkadaşlarınla paylaş",
+          "💬 Şık ve yeni bir özel mesaj kutusu",
+          "✨ Daha ince işlenmiş arayüz ve daha akıcı animasyonlar",
+          "⚡ Performans iyileştirmeleri ve hata düzeltmeleri"
+        ],
+        "ru": [
+          "🌍 Новые языки: китайский, бразильский португальский и многие другие",
+          "🔊 Совершенно новые звуковые эффекты, оживляющие каждую игру",
+          "🐍 Совершенно новый облик Змейки",
+          "📊 Новая статистика и рекорды, чтобы следить за прогрессом",
+          "📤 Похвастайся, делись своими лучшими рекордами с друзьями",
+          "💬 Новое стильное окно сообщений",
+          "✨ Отполированный интерфейс и более плавная анимация",
+          "⚡ Улучшения производительности и исправление ошибок"
+        ],
+        "zh-CN": [
+          "🌍 新增语言：中文、巴西葡萄牙语等等",
+          "🔊 为每款游戏全新打造的音效，让游戏更生动",
+          "🐍 贪吃蛇焕然一新的外观",
+          "📊 全新的统计和记录，随时掌握你的进度",
+          "📤 秀一把，和好友分享你的最佳纪录",
+          "💬 全新精致的自定义消息框",
+          "✨ 界面细节优化，动画更顺滑",
+          "⚡ 性能优化与错误修复"
+        ],
+        "ja": [
+          "🌍 新しい言語：中国語、ブラジルポルトガル語など多数",
+          "🔊 各ゲームを盛り上げる真新しいサウンドエフェクト",
+          "🐍 スネークの真新しい見た目",
+          "📊 進捗を追える新しい統計と記録",
+          "📤 自慢しよう、自己ベストの記録を友達とシェア",
+          "💬 新しくおしゃれなカスタムメッセージボックス",
+          "✨ UIの磨き上げとより滑らかなアニメーション",
+          "⚡ パフォーマンスの向上とバグ修正"
+        ],
+        "ko": [
+          "🌍 새로운 언어: 중국어, 브라질 포르투갈어 등 다수",
+          "🔊 모든 게임에 생동감을 더하는 완전히 새로운 사운드 효과",
+          "🐍 스네이크의 완전히 새로운 디자인",
+          "📊 진행 상황을 추적하는 새로운 통계와 기록",
+          "📤 자랑해 보세요, 최고 기록을 친구들과 공유하세요",
+          "💬 세련된 새 맞춤형 메시지 상자",
+          "✨ 더 다듬어진 인터페이스와 부드러운 애니메이션",
+          "⚡ 성능 개선 및 버그 수정"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="40dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/Stats_Hint_Prev"
+                style="@style/TextView"
+                android:text="@string/swipe_right"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Stats_Hint_Next"
+                style="@style/TextView"
+                android:text="@string/swipe_left"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Stats_Wordle_Title"
+                style="@style/TitleTextView"
+                android:layout_marginTop="20dp"
+                android:text="@string/wordle_game"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Stats_Hint_Next" />
+
+            <ImageView
+                android:id="@+id/Stats_Wordle_Image"
+                style="@style/ImageButton_Games"
+                android:contentDescription="@string/wordle_game"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Stats_Wordle_Title"
+                app:srcCompat="@drawable/wordle" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:paddingHorizontal="50dp"
+                android:stretchColumns="*"
+                app:layout_constraintTop_toBottomOf="@+id/Stats_Wordle_Image">
+
+                <TableRow>
+                    <TextView style="@style/TextView" android:text="@string/stat_best_score" />
+                    <TextView android:id="@+id/Stats_Wordle_PointsRecord" style="@style/TextView" android:textAlignment="viewEnd" android:text="@string/zero" />
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView style="@style/TextView" android:text="@string/stat_best_time" />
+                    <TextView android:id="@+id/Stats_Wordle_TimeRecord" style="@style/TextView" android:textAlignment="viewEnd" android:text="@string/zero" />
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView style="@style/TextView" android:text="@string/stat_games_played" />
+                    <TextView android:id="@+id/Stats_Wordle_Games" style="@style/TextView" android:textAlignment="viewEnd" android:text="@string/zero" />
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView style="@style/TextView" android:text="@string/stat_words_guessed" />
+                    <TextView android:id="@+id/Stats_Wordle_WordsGuessed" style="@style/TextView" android:textAlignment="viewEnd" android:text="@string/zero" />
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView style="@style/TextView" android:text="@string/stat_current_streak" />
+                    <TextView android:id="@+id/Stats_Wordle_CurrentStreak" style="@style/TextView" android:textAlignment="viewEnd" android:text="@string/zero" />
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView style="@style/TextView" android:text="@string/stat_best_streak" />
+                    <TextView android:id="@+id/Stats_Wordle_BestStreak" style="@style/TextView" android:textAlignment="viewEnd" android:text="@string/zero" />
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView style="@style/TextView" android:text="@string/stat_average_words" />
+                    <TextView android:id="@+id/Stats_Wordle_AvgWords" style="@style/TextView" android:textAlignment="viewEnd" android:text="@string/zero" />
+                </TableRow>
+            </TableLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

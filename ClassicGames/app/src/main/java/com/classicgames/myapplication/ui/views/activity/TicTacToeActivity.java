@@ -3,16 +3,17 @@ package com.classicgames.myapplication.ui.views.activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.classicgames.myapplication.MyApplication;
 import com.classicgames.myapplication.R;
 import com.classicgames.myapplication.databinding.ActivityTicTacToeBinding;
 import com.classicgames.myapplication.ui.viewmodels.TicTacToeViewModel;
+import com.classicgames.myapplication.utils.MessageBar;
+import com.classicgames.myapplication.utils.SoundManager;
 
-public class TicTacToeActivity extends AppCompatActivity {
+public class TicTacToeActivity extends BaseActivity {
 
     private ActivityTicTacToeBinding binding;
     private TicTacToeViewModel viewModel;
@@ -45,12 +46,19 @@ public class TicTacToeActivity extends AppCompatActivity {
         viewModel.setNewGame();
     }
 
+    /** Restart button tap: plays a click, then starts a fresh game. */
+    public void restartGame(){
+        SoundManager.play(SoundManager.Sound.CLICK);
+        initGame();
+    }
+
     public void playerMove(View view, int row, int col){
         if (!viewModel.canPlay(row, col)){    // Checks if player can play
-            Toast.makeText(this, R.string.can_not_play_there, Toast.LENGTH_SHORT).show();
+            MessageBar.show(this, R.string.can_not_play_there);
             return;
         }
 
+        SoundManager.play(SoundManager.Sound.CLICK);
         int currentPlayer = viewModel.getPlayerTurn();
 
         // Add X or O to ImageView
@@ -89,16 +97,19 @@ public class TicTacToeActivity extends AppCompatActivity {
     }
 
     private void draw() {
-        Toast.makeText(this, getResources().getString(R.string.tictactoe_draw), Toast.LENGTH_SHORT).show();
+        SoundManager.play(SoundManager.Sound.DRAW);
+        MyApplication.getInstance().getRecords().recordTicTacToeDraw();
+        MessageBar.show(this, R.string.tictactoe_draw);
         viewModel.changePlayerTurn();
         initGame();
     }
 
     private void gameOver() {
         int currentPlayer = viewModel.getPlayerTurn();
-        Toast.makeText(this, getResources().getString(R.string.tictactoe_win) + " "  + viewModel.getPlayerTurn() + "!", Toast.LENGTH_SHORT).show();
+        SoundManager.play(SoundManager.Sound.WIN);
+        MyApplication.getInstance().getRecords().recordTicTacToeWin(currentPlayer);
+        MessageBar.show(this, getResources().getString(R.string.tictactoe_win) + " " + currentPlayer + "!");
         if(currentPlayer == 1){
-            Toast.makeText(this, getResources().getString(R.string.tictactoe_win)+" 1!", Toast.LENGTH_SHORT).show();
             playerOnePoints++;
             String pointsText = getResources().getString(R.string.tictactoe_player_one)+" "+playerOnePoints;
             binding.TictactoeTvPlayerOne.setText(pointsText);

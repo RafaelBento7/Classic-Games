@@ -14,6 +14,7 @@ import com.classicgames.myapplication.ui.views.fragment.GamesFragment;
 import com.classicgames.myapplication.ui.views.fragment.HelpFragment;
 import com.classicgames.myapplication.ui.views.fragment.LeaderboardFragment;
 import com.classicgames.myapplication.ui.views.fragment.SettingsFragment;
+import com.classicgames.myapplication.utils.SoundManager;
 
 public class MainActivity extends BaseActivity {
 
@@ -22,11 +23,11 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String languageCode = MyApplication.getInstance().getAppPreferences().getLanguage();
-        setLocale(languageCode);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         binding.getRoot().setFitsSystemWindows(true);
         setContentView(binding.getRoot());
+
+        MyApplication.getInstance().getMusicManager().notifyMainReached();
 
         replaceFragment(new GamesFragment());
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
@@ -36,6 +37,7 @@ public class MainActivity extends BaseActivity {
             }
         });
         binding.MainActivityBottomNavView.setOnItemSelectedListener(item -> {
+            SoundManager.play(SoundManager.Sound.CLICK);
             if (item.getItemId() == R.id.BottomNav_Games){
                 replaceFragment(new GamesFragment());
             } else if (item.getItemId() == R.id.BottomNav_Leaderboard) {

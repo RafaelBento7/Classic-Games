@@ -1,6 +1,5 @@
 package com.classicgames.myapplication.ui.views.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -9,11 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.classicgames.myapplication.R;
+import com.classicgames.myapplication.data.enums.GameColor;
 import com.classicgames.myapplication.databinding.ActivityTrueColorsBinding;
 import com.classicgames.myapplication.ui.viewmodels.TrueColorsViewModel;
 import com.classicgames.myapplication.ui.dialog.CustomDialog;
+import com.classicgames.myapplication.utils.ReviewHelper;
 
-public class TrueColorsActivity extends AppCompatActivity {
+public class TrueColorsActivity extends BaseActivity {
 
     private TrueColorsViewModel mViewModel;
     private ActivityTrueColorsBinding binding;
@@ -73,6 +74,12 @@ public class TrueColorsActivity extends AppCompatActivity {
                     gameOverDialog
             );
             dialog.setCancelable(false);
+            if (mViewModel.isNewRecord()) {
+                dialog.setShareText(getResources().getString(R.string.share_record_points,
+                        getResources().getString(R.string.true_colors_game), mViewModel.getPointsValue(),
+                        getResources().getString(R.string.store_link)));
+                ReviewHelper.requestReview(this);
+            }
             dialog.setOnShowListener(dialogInterface -> {
                 dialog.getBtPositive().setText(getResources().getString(R.string.play_again));
                 dialog.getBtNegative().setText(getResources().getString(R.string.back_menu));
@@ -88,49 +95,15 @@ public class TrueColorsActivity extends AppCompatActivity {
     }
 
     private void changeFalseColors(final int color){
-        if (color == getResources().getColor(R.color.purple)) {
-            binding.TrueColorsProgressBar.setProgressTintList(ColorStateList.valueOf(getResources().getColor(R.color.purple)));
-            binding.TrueColorsTvColor.setTextColor(getResources().getColor(R.color.purple));
-        }
-        else if (color == getResources().getColor(R.color.green)){
-            binding.TrueColorsProgressBar.setProgressTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
-            binding.TrueColorsTvColor.setTextColor(getResources().getColor(R.color.green));
-        }
-        else if (color == getResources().getColor(R.color.red)){
-            binding.TrueColorsProgressBar.setProgressTintList(ColorStateList.valueOf(getResources().getColor(R.color.red)));
-            binding.TrueColorsTvColor.setTextColor(getResources().getColor(R.color.red));
-        }
-        else if (color == getResources().getColor(R.color.yellow)){
-            binding.TrueColorsProgressBar.setProgressTintList(ColorStateList.valueOf(getResources().getColor(R.color.yellow)));
-            binding.TrueColorsTvColor.setTextColor(getResources().getColor(R.color.yellow));
-        }
-        else if (color == getResources().getColor(R.color.blue)) {
-            binding.TrueColorsProgressBar.setProgressTintList(ColorStateList.valueOf(getResources().getColor(R.color.blue)));
-            binding.TrueColorsTvColor.setTextColor(getResources().getColor(R.color.blue));
-        }
-        else if (color == getResources().getColor(R.color.brown)){
-            binding.TrueColorsProgressBar.setProgressTintList(ColorStateList.valueOf(getResources().getColor(R.color.brown)));
-            binding.TrueColorsTvColor.setTextColor(getResources().getColor(R.color.brown));
-        }
-        else if (color == getResources().getColor(R.color.orange)) {
-            binding.TrueColorsProgressBar.setProgressTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
-            binding.TrueColorsTvColor.setTextColor(getResources().getColor(R.color.orange));
-        }
-        else if (color == getResources().getColor(R.color.pink)) {
-            binding.TrueColorsProgressBar.setProgressTintList(ColorStateList.valueOf(getResources().getColor(R.color.pink)));
-            binding.TrueColorsTvColor.setTextColor(getResources().getColor(R.color.pink));
-        }
+        binding.TrueColorsProgressBar.setProgressTintList(ColorStateList.valueOf(color));
+        binding.TrueColorsTvColor.setTextColor(color);
     }
 
     private void changeTrueColorText(final int color){
-        if (color == getResources().getColor(R.color.purple)) binding.TrueColorsTvColor.setText(getResources().getString(R.string.purple));
-        else if (color == getResources().getColor(R.color.green)) binding.TrueColorsTvColor.setText(getResources().getString(R.string.green));
-        else if (color == getResources().getColor(R.color.red)) binding.TrueColorsTvColor.setText(getResources().getString(R.string.red));
-        else if (color == getResources().getColor(R.color.yellow)) binding.TrueColorsTvColor.setText(getResources().getString(R.string.yellow));
-        else if (color == getResources().getColor(R.color.blue)) binding.TrueColorsTvColor.setText(getResources().getString(R.string.blue));
-        else if (color == getResources().getColor(R.color.brown)) binding.TrueColorsTvColor.setText(getResources().getString(R.string.brown));
-        else if (color == getResources().getColor(R.color.orange)) binding.TrueColorsTvColor.setText(getResources().getString(R.string.orange));
-        else if (color == getResources().getColor(R.color.pink)) binding.TrueColorsTvColor.setText(getResources().getString(R.string.pink));
+        GameColor gameColor = GameColor.fromColor(this, color);
+        if (gameColor != null) {
+            binding.TrueColorsTvColor.setText(gameColor.nameRes);
+        }
     }
 
     private void loadRecord(int maxPoints){

@@ -20,6 +20,7 @@
             android:id="@+id/ActionBar_Iv_Logo"
             android:layout_width="40dp"
             android:layout_height="50dp"
+            android:contentDescription="@null"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

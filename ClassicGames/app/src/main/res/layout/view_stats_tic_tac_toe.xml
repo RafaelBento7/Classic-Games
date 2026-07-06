@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="40dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/Stats_Hint_Prev"
+                style="@style/TextView"
+                android:text="@string/swipe_right"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Stats_Hint_Next"
+                style="@style/TextView"
+                android:text="@string/swipe_left"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Stats_Ttt_Title"
+                style="@style/TitleTextView"
+                android:layout_marginTop="20dp"
+                android:text="@string/tic_tac_toe_game"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Stats_Hint_Next" />
+
+            <ImageView
+                android:id="@+id/Stats_Ttt_Image"
+                style="@style/ImageButton_Games"
+                android:contentDescription="@string/tic_tac_toe_game"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Stats_Ttt_Title"
+                app:srcCompat="@drawable/tic_tac_toe" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:paddingHorizontal="50dp"
+                android:stretchColumns="*"
+                app:layout_constraintTop_toBottomOf="@+id/Stats_Ttt_Image">
+
+                <TableRow>
+                    <TextView style="@style/TextView" android:text="@string/stat_games_played" />
+                    <TextView android:id="@+id/Stats_Ttt_Games" style="@style/TextView" android:textAlignment="viewEnd" android:text="@string/zero" />
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView style="@style/TextView" android:text="@string/stat_p1_wins" />
+                    <TextView android:id="@+id/Stats_Ttt_P1Wins" style="@style/TextView" android:textAlignment="viewEnd" android:text="@string/zero" />
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView style="@style/TextView" android:text="@string/stat_p2_wins" />
+                    <TextView android:id="@+id/Stats_Ttt_P2Wins" style="@style/TextView" android:textAlignment="viewEnd" android:text="@string/zero" />
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView style="@style/TextView" android:text="@string/stat_draws" />
+                    <TextView android:id="@+id/Stats_Ttt_Draws" style="@style/TextView" android:textAlignment="viewEnd" android:text="@string/zero" />
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView style="@style/TextView" android:text="@string/stat_p1_win_rate" />
+                    <TextView android:id="@+id/Stats_Ttt_P1WinRate" style="@style/TextView" android:textAlignment="viewEnd" android:text="@string/zero" />
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView style="@style/TextView" android:text="@string/stat_p2_win_rate" />
+                    <TextView android:id="@+id/Stats_Ttt_P2WinRate" style="@style/TextView" android:textAlignment="viewEnd" android:text="@string/zero" />
+                </TableRow>
+                <TableRow android:layout_marginTop="10dp">
+                    <TextView style="@style/TextView" android:text="@string/stat_draw_rate" />
+                    <TextView android:id="@+id/Stats_Ttt_DrawRate" style="@style/TextView" android:textAlignment="viewEnd" android:text="@string/zero" />
+                </TableRow>
+            </TableLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

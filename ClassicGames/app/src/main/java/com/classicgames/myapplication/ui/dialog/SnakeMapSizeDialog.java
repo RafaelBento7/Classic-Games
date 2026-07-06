@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.RadioButton;
-import android.widget.Toast;
 
 import com.classicgames.myapplication.R;
+import com.classicgames.myapplication.utils.MessageBar;
+import com.classicgames.myapplication.utils.SoundManager;
 
 public class SnakeMapSizeDialog extends Dialog implements View.OnClickListener {
 
@@ -35,6 +36,7 @@ public class SnakeMapSizeDialog extends Dialog implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        SoundManager.play(SoundManager.Sound.CLICK);
         int id = view.getId();
         if (id == R.id.SnakeMapSize_Bt_Next){
             if (small.isChecked()) mapLevel = 1;
@@ -42,7 +44,7 @@ public class SnakeMapSizeDialog extends Dialog implements View.OnClickListener {
             else if (big.isChecked()) mapLevel = 3;
 
             if (mapLevel != 0) dismiss();
-            else Toast.makeText(activity, R.string.snake_select_map_size, Toast.LENGTH_SHORT).show();
+            else MessageBar.show(activity, R.string.snake_select_map_size);
 
         } else dismiss();
     }

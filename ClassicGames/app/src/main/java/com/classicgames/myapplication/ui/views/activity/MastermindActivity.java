@@ -4,18 +4,21 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import com.classicgames.myapplication.MyApplication;
 import com.classicgames.myapplication.R;
 import com.classicgames.myapplication.databinding.ActivityMastermindBinding;
 import com.classicgames.myapplication.ui.viewmodels.MastermindViewModel;
 import com.classicgames.myapplication.ui.dialog.CustomDialog;
+import com.classicgames.myapplication.utils.MessageBar;
+import com.classicgames.myapplication.utils.ReviewHelper;
+import com.classicgames.myapplication.utils.SoundManager;
 
 import java.util.Locale;
 
-public class MastermindActivity extends AppCompatActivity {
+public class MastermindActivity extends BaseActivity {
 
     private ActivityMastermindBinding binding;
     private MastermindViewModel viewModel;
@@ -99,6 +102,7 @@ public class MastermindActivity extends AppCompatActivity {
     }
 
     public void startGame(View view) {
+        if (view != null) SoundManager.play(SoundManager.Sound.CLICK); // restart button tap
         hideSolution();
         canPlay = true;
         clearImageViewsAttempts();
@@ -118,10 +122,10 @@ public class MastermindActivity extends AppCompatActivity {
     }
 
     private void hideSolution() {
-        binding.MastermindTvSolutionFirst.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
-        binding.MastermindTvSolutionSecond.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
-        binding.MastermindTvSolutionThird.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
-        binding.MastermindTvSolutionFourth.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
+        binding.MastermindTvSolutionFirst.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this,R.color.black)));
+        binding.MastermindTvSolutionSecond.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this,R.color.black)));
+        binding.MastermindTvSolutionThird.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this,R.color.black)));
+        binding.MastermindTvSolutionFourth.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this,R.color.black)));
         binding.MastermindTvSolutionFirst.setText("?");
         binding.MastermindTvSolutionSecond.setText("?");
         binding.MastermindTvSolutionThird.setText("?");
@@ -130,6 +134,7 @@ public class MastermindActivity extends AppCompatActivity {
 
     public void checkPlay(View view) {
         if (!canPlay) return;
+        SoundManager.play(SoundManager.Sound.CLICK);
 
         ColorStateList colorStateList = view.getBackgroundTintList();
         int color = colorStateList.getDefaultColor();
@@ -157,12 +162,16 @@ public class MastermindActivity extends AppCompatActivity {
     }
 
     private void gameOver() {
-        Toast.makeText(this, R.string.game_over, Toast.LENGTH_SHORT).show();
+        SoundManager.play(SoundManager.Sound.GAME_OVER);
+        MyApplication.getInstance().getRecords().recordMastermindGame(false, viewModel.getAttemptCount());
+        MessageBar.show(this, R.string.game_over);
         showSolution();
         canPlay = false;
     }
 
     private void win() {
+        SoundManager.play(viewModel.isNewRecord() ? SoundManager.Sound.RECORD : SoundManager.Sound.WIN);
+        MyApplication.getInstance().getRecords().recordMastermindGame(true, viewModel.getAttemptCount());
         CustomDialog.DialogButtonClick gameOverDialog = new CustomDialog.DialogButtonClick() {
             @Override
             public void onPositiveButtonClicked() {
@@ -176,7 +185,8 @@ public class MastermindActivity extends AppCompatActivity {
         };
 
         String message;
-        if (!viewModel.isNewRecord()) message = getResources().getString(R.string.mastermind_no_record);
+        boolean newRecord = viewModel.isNewRecord();
+        if (!newRecord) message = getResources().getString(R.string.mastermind_no_record);
         else message= getResources().getString(R.string.mastermind_new_record, viewModel.getRecords()[0],viewModel.getRecords()[1],viewModel.getRecords()[2]);
 
         CustomDialog dialog = new CustomDialog(
@@ -186,6 +196,11 @@ public class MastermindActivity extends AppCompatActivity {
                 gameOverDialog
         );
         dialog.setCancelable(false);
+        if (newRecord) {
+            dialog.setShareText(getResources().getString(R.string.share_record_mastermind, viewModel.getRecords()[2],
+                    getResources().getString(R.string.store_link)));
+            ReviewHelper.requestReview(this);
+        }
         dialog.setOnShowListener(dialogInterface -> {
             dialog.getBtPositive().setText(getResources().getString(R.string.play_again));
             dialog.getBtNegative().setText(getResources().getString(R.string.back_menu));

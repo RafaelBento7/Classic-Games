@@ -1,6 +1,7 @@
 package com.classicgames.myapplication.ui.viewmodels;
 
 import android.os.Handler;
+import android.os.Looper;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -30,7 +31,7 @@ public class WordleViewModel extends ViewModel {
         seconds.setValue(0);
         minutes.setValue(0);
         if (timerHandler != null) timerHandler.removeCallbacks(timerRunnable);
-        timerHandler = new Handler();
+        timerHandler = new Handler(Looper.getMainLooper());
         timerRunnable = new Runnable() {
             @Override
             public void run() {

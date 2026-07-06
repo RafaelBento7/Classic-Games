@@ -8,7 +8,9 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.classicgames.myapplication.MyApplication;
 import com.classicgames.myapplication.data.models.TrueColorsModel;
+import com.classicgames.myapplication.utils.SoundManager;
 
 public class TrueColorsViewModel extends ViewModel {
     private final TrueColorsModel game;
@@ -16,6 +18,7 @@ public class TrueColorsViewModel extends ViewModel {
     private final MutableLiveData<Integer> progress, trueColor, falseColor, correctColorsPicked, points, lives, record;
     private final MutableLiveData<Boolean> gameOver;
     private CountDownTimer countDownTimer;
+    private boolean newRecord;
 
     public TrueColorsViewModel(){
         game = new TrueColorsModel();
@@ -78,6 +81,7 @@ public class TrueColorsViewModel extends ViewModel {
     }
 
     private void winPoint(){
+        SoundManager.play(SoundManager.Sound.CORRECT);
         game.winPoint(progress.getValue());
         getModelColors();
         points.setValue(game.getPoints());
@@ -86,6 +90,7 @@ public class TrueColorsViewModel extends ViewModel {
     }
 
     private void loseLife(){
+        SoundManager.play(SoundManager.Sound.WRONG);
         game.loseLife();
         lives.setValue(game.getLives());
 
@@ -96,10 +101,23 @@ public class TrueColorsViewModel extends ViewModel {
     }
 
     private void gameOver(){
-        if (game.isNewRecord()){
+        newRecord = game.isNewRecord();
+        SoundManager.play(newRecord ? SoundManager.Sound.RECORD : SoundManager.Sound.GAME_OVER);
+        if (newRecord){
             record.setValue(game.getRecord());
         }
+        if (MyApplication.getInstance() != null) {
+            MyApplication.getInstance().getRecords().recordTrueColorsGame(game.getCorrectColorsPicked(), game.getPoints());
+        }
         gameOver.setValue(true);
+    }
+
+    public boolean isNewRecord(){
+        return newRecord;
+    }
+
+    public int getPointsValue(){
+        return game.getPoints();
     }
 
     public LiveData<Integer> getProgress(){
