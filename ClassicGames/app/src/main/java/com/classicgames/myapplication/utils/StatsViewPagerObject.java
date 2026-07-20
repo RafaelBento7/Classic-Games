@@ -8,7 +8,8 @@ public enum StatsViewPagerObject {
     TRUE_COLORS(R.layout.view_stats_true_colors),
     MASTERMIND(R.layout.view_stats_mastermind),
     TICTACTOE(R.layout.view_stats_tic_tac_toe),
-    WORDLE(R.layout.view_stats_wordle);
+    WORDLE(R.layout.view_stats_wordle),
+    HANGMAN(R.layout.view_stats_hangman);
 
     private final int layout;
 

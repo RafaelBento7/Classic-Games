@@ -133,4 +133,18 @@
     <string name="stat_overall">Ogólne</string>
     <string name="stat_no_obstacles">Bez przeszkód</string>
     <string name="stat_obstacles">Z przeszkodami</string>
+
+    <!-- Hangman -->
+    <string name="hangman">Wisielec</string>
+    <string name="hangman_game">Wisielec</string>
+    <string name="hangman_gallows">Szubienica</string>
+    <string name="hangman_win">Brawo! Słowo to %1$s</string>
+    <string name="hangman_cant_skip">Masz 0 punktów, nie możesz pominąć</string>
+    <string name="hangman_file_error">Nie można otworzyć pliku ze słowami…</string>
+    <string name="hangman_game_over_record">NOWY REKORD! %1$d słów w %2$s\nSłowo to %3$s</string>
+    <string name="hangman_game_over_no_record">Przegrałeś z %1$d słowami w %2$s Słowo to %3$s</string>
+    <string name="hangman_objective">Odgadnij ukryte słowo litera po literze! Każda nietrafiona litera dorysowuje kolejny element biedaka na szubienicy, a po 6 błędach gra się kończy. \nOdgadnij całe słowo, a zdobędziesz punkt, szubienica zostanie wymazana i pojawi się nowe słowo, więc dobra passa nie musi się nigdy skończyć. \nUtknąłeś na słowie? Zawsze możesz je pominąć, ALE będzie cię to kosztować jeden punkt…</string>
+    <string name="stat_wrong_letters">Błędne litery</string>
+    <string name="stat_perfect_words">Bezbłędne słowa</string>
+    <string name="stat_average_wrong">Śr. błędów / gra</string>
 </resources>

@@ -29,4 +29,8 @@
     <color name="wordle_correct">#64DD17</color>
     <color name="wordle_wrong_position">#E1BEE7</color>
     <color name="wordle_wrong_letter">#9E9E9E</color>
+
+    <!-- Hangman Colors -->
+    <color name="hangman_correct">#64DD17</color>
+    <color name="hangman_wrong">#9E9E9E</color>
 </resources>

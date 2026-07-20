@@ -18,7 +18,6 @@ import com.classicgames.myapplication.data.preferences.AppPreferences;
 import com.classicgames.myapplication.ui.dialog.LanguagePickerDialog;
 import com.classicgames.myapplication.ui.views.activity.PatchNotesActivity;
 import com.classicgames.myapplication.utils.MessageBar;
-import com.classicgames.myapplication.utils.ReviewHelper;
 import com.classicgames.myapplication.utils.SoundManager;
 
 public class SettingsFragment extends Fragment {
@@ -49,7 +48,6 @@ public class SettingsFragment extends Fragment {
         });
         binding.SettingsRowRate.setOnClickListener(v -> {
             SoundManager.play(SoundManager.Sound.CLICK);
-            ReviewHelper.launchReview(getActivity(), this::openStoreListing);
         });
 
         updateSfxIcon();

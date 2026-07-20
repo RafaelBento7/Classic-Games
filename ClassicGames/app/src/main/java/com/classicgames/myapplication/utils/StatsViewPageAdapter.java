@@ -110,6 +110,18 @@ public class StatsViewPageAdapter extends PagerAdapter {
                 setText(v, R.id.Stats_Wordle_AvgWords,
                         average(records.getWordleWordsGuessed(), records.getWordleGames()));
                 break;
+            case HANGMAN:
+                setText(v, R.id.Stats_Hangman_PointsRecord, records.getHangmanRecord()[2]);
+                setText(v, R.id.Stats_Hangman_TimeRecord, timer(records.getHangmanRecord()));
+                setText(v, R.id.Stats_Hangman_Games, records.getHangmanGames());
+                setText(v, R.id.Stats_Hangman_WordsGuessed, records.getHangmanWordsGuessed());
+                setText(v, R.id.Stats_Hangman_CurrentStreak, records.getHangmanCurrentStreak());
+                setText(v, R.id.Stats_Hangman_BestStreak, records.getHangmanBestStreak());
+                setText(v, R.id.Stats_Hangman_PerfectWords, records.getHangmanPerfectWords());
+                setText(v, R.id.Stats_Hangman_WrongLetters, records.getHangmanWrongLetters());
+                setText(v, R.id.Stats_Hangman_AvgWords, average(records.getHangmanWordsGuessed(), records.getHangmanGames()));
+                setText(v, R.id.Stats_Hangman_AvgWrong, average(records.getHangmanWrongLetters(), records.getHangmanGames()));
+                break;
         }
     }
 

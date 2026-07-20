@@ -7,7 +7,8 @@ public enum HelpViewPagerObject {
     TRUE_COLORS(R.string.true_colors_game, R.layout.view_help_true_colors),
     MASTERMIND(R.string.mastermind_game, R.layout.view_help_mastermind),
     TICTACTOE(R.string.tic_tac_toe_game, R.layout.view_help_tic_tac_toe),
-    WORDLE(R.string.wordle_game, R.layout.view_help_wordle);
+    WORDLE(R.string.wordle_game, R.layout.view_help_wordle),
+    HANGMAN(R.string.hangman_game, R.layout.view_help_hangman);
 
     private int title;
     private int layout;

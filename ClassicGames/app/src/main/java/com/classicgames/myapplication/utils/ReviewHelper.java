@@ -28,26 +28,4 @@ public final class ReviewHelper {
             // If it fails we silently skip — a review prompt is never critical.
         });
     }
-
-    /**
-     * Launches the in-app review flow in response to an explicit user action (e.g. a
-     * "Rate" button). Unlike {@link #requestReview}, this ignores the once-per-session
-     * guard, since the user asked for it. When the flow can't be prepared (debug builds,
-     * no Play Store, quota, etc.) {@code onUnavailable} is run so the caller can fall back,
-     * e.g. by opening the store listing. Note that Play may still show nothing even on
-     * success (for example if the user already reviewed) — that's expected and out of our
-     * control.
-     */
-    public static void launchReview(Activity activity, Runnable onUnavailable) {
-        if (activity == null) return;
-
-        ReviewManager manager = ReviewManagerFactory.create(activity);
-        manager.requestReviewFlow().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                manager.launchReviewFlow(activity, task.getResult());
-            } else if (onUnavailable != null) {
-                onUnavailable.run();
-            }
-        });
-    }
 }

@@ -108,8 +108,8 @@
     <string name="stat_win_rate">Winpercentage</string>
     <string name="stat_total_attempts">Totaal pogingen</string>
     <string name="stat_average_attempts">Gem. pogingen / spel</string>
-    <string name="stat_p1_win_rate">Win% S1</string>
-    <string name="stat_p2_win_rate">Win% S2</string>
+    <string name="stat_p1_win_rate">Winratio S1</string>
+    <string name="stat_p2_win_rate">Winratio S2</string>
     <string name="stat_draw_rate">Gelijkspelpercentage</string>
     <string name="stat_average_words">Gem. woorden / spel</string>
     <string name="sound_effects">Geluidseffecten</string>
@@ -133,4 +133,18 @@
     <string name="stat_overall">Algemeen</string>
     <string name="stat_no_obstacles">Zonder obstakels</string>
     <string name="stat_obstacles">Met obstakels</string>
+
+    <!-- Hangman -->
+    <string name="hangman">Galgje</string>
+    <string name="hangman_game">Galgje</string>
+    <string name="hangman_gallows">De galg</string>
+    <string name="hangman_win">Goed gedaan! Het woord was %1$s</string>
+    <string name="hangman_cant_skip">Je hebt 0 punten, je kunt niet overslaan</string>
+    <string name="hangman_file_error">Het bestand met de woorden kan niet worden geopend…</string>
+    <string name="hangman_game_over_record">NIEUW RECORD! %1$d woorden in %2$s\nHet woord was %3$s</string>
+    <string name="hangman_game_over_no_record">Je hebt verloren met %1$d woorden in %2$s Het woord was %3$s</string>
+    <string name="hangman_objective">Raad het verborgen woord letter voor letter! Elke letter die je mist tekent weer een stukje van de arme man aan de galg, en na 6 missers is het spel voorbij. \nRaad je het hele woord, dan scoor je een punt, wordt de galg gewist en verschijnt er een nieuw woord, dus een goede reeks hoeft nooit te eindigen. \nVastgelopen op een woord? Je kunt het altijd overslaan, MAAR het kost je een punt…</string>
+    <string name="stat_wrong_letters">Foute letters</string>
+    <string name="stat_perfect_words">Foutloze woorden</string>
+    <string name="stat_average_wrong">Gem. fouten / spel</string>
 </resources>

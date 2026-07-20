@@ -133,4 +133,18 @@
     <string name="stat_overall">Generale</string>
     <string name="stat_no_obstacles">Senza ostacoli</string>
     <string name="stat_obstacles">Con ostacoli</string>
+
+    <!-- Hangman -->
+    <string name="hangman">L\'Impiccato</string>
+    <string name="hangman_game">L\'Impiccato</string>
+    <string name="hangman_gallows">La forca</string>
+    <string name="hangman_win">Bravo! La parola era %1$s</string>
+    <string name="hangman_cant_skip">Hai 0 punti, non puoi saltare</string>
+    <string name="hangman_file_error">Impossibile aprire il file con le parole…</string>
+    <string name="hangman_game_over_record">NUOVO RECORD! %1$d parole in %2$s\nLa parola era %3$s</string>
+    <string name="hangman_game_over_no_record">Hai perso con %1$d parole in %2$s La parola era %3$s</string>
+    <string name="hangman_objective">Indovina la parola nascosta una lettera alla volta! Ogni lettera sbagliata disegna un altro pezzo del poveretto sulla forca, e dopo 6 errori la partita finisce. \nIndovina tutta la parola e guadagni un punto, la forca viene cancellata e appare una nuova parola, così una bella partita non deve mai finire. \nBloccato su una parola? Puoi sempre saltarla, MA ti costerà un punto…</string>
+    <string name="stat_wrong_letters">Lettere sbagliate</string>
+    <string name="stat_perfect_words">Parole perfette</string>
+    <string name="stat_average_wrong">Media errori / partita</string>
 </resources>

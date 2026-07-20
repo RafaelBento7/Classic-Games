@@ -133,4 +133,18 @@
     <string name="stat_overall">Общее</string>
     <string name="stat_no_obstacles">Без препятствий</string>
     <string name="stat_obstacles">С препятствиями</string>
+
+    <!-- Hangman -->
+    <string name="hangman">Виселица</string>
+    <string name="hangman_game">Виселица</string>
+    <string name="hangman_gallows">Виселица</string>
+    <string name="hangman_win">Отлично! Слово было %1$s</string>
+    <string name="hangman_cant_skip">У тебя 0 очков, пропустить нельзя</string>
+    <string name="hangman_file_error">Не удаётся открыть файл со словами…</string>
+    <string name="hangman_game_over_record">НОВЫЙ РЕКОРД! %1$d слов за %2$s\nСлово было %3$s</string>
+    <string name="hangman_game_over_no_record">Ты проиграл с %1$d словами за %2$s Слово было %3$s</string>
+    <string name="hangman_objective">Угадай скрытое слово буква за буквой! Каждая ошибка дорисовывает ещё одну часть бедняги на виселице, а после 6 промахов игра заканчивается. \nУгадаешь слово целиком — получишь очко, виселица очистится и появится новое слово, так что удачная серия может не заканчиваться. \nЗастрял на слове? Его всегда можно пропустить, НО это будет стоить одно очко…</string>
+    <string name="stat_wrong_letters">Ошибочные буквы</string>
+    <string name="stat_perfect_words">Слова без ошибок</string>
+    <string name="stat_average_wrong">Ср. ошибок / игру</string>
 </resources>

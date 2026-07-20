@@ -2,38 +2,244 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Hangman_Layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="20dp"
     android:background="@drawable/splash_background"
     tools:context=".ui.views.activity.HangmanActivity">
 
+    <include
+        android:id="@+id/Hangman_Toolbar"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/Hangman_Tv_Points"
+        style="@style/BigTextView"
+        android:layout_marginTop="25dp"
+        android:text="@string/points"
+        app:layout_constraintStart_toStartOf="@+id/Hangman_GuidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/Hangman_Toolbar" />
+
+    <TextView
+        android:id="@+id/Hangman_Tv_Timer"
+        style="@style/BigTextView"
+        android:text="@string/timer_minutes_seconds"
+        app:layout_constraintEnd_toStartOf="@id/Hangman_GuidelineEnd"
+        app:layout_constraintTop_toTopOf="@+id/Hangman_Tv_Points" />
+
+    <!-- Gallows: hangman_0 (empty) through hangman_6 (hanged) -->
+
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:id="@+id/Hangman_Iv_Gallows"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/hangman_gallows"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/Hangman_Tv_Word"
         app:layout_constraintEnd_toStartOf="@+id/Hangman_GuidelineEnd"
         app:layout_constraintStart_toStartOf="@+id/Hangman_GuidelineStart"
-        app:layout_constraintTop_toTopOf="@+id/Hangman_GuidelineTop"
+        app:layout_constraintTop_toBottomOf="@+id/Hangman_Tv_Points"
         app:srcCompat="@drawable/hangman_0" />
+
+    <!-- The answer with unguessed letters hidden, e.g. "_ R A _ G _" -->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/Hangman_Tv_Word"
+        style="@style/Hangman_Word"
+        app:autoSizeMaxTextSize="28sp"
+        app:autoSizeMinTextSize="14sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/Hangman_Bt_Skip"
+        app:layout_constraintEnd_toStartOf="@+id/Hangman_GuidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/Hangman_GuidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/Hangman_Iv_Gallows"
+        tools:text="_ R A _ G _" />
+
+    <Button
+        android:id="@+id/Hangman_Bt_Skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skip"
+        app:layout_constraintBottom_toTopOf="@+id/Hangman_Keyboard"
+        app:layout_constraintEnd_toStartOf="@+id/Hangman_GuidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/Hangman_GuidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/Hangman_Tv_Word" />
+
+    <!-- Keyboard -->
+
+    <LinearLayout
+        android:id="@+id/Hangman_Keyboard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/Hangman_GuidelineBottom"
+        app:layout_constraintEnd_toStartOf="@+id/Hangman_GuidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/Hangman_GuidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/Hangman_Bt_Skip">
+
+        <LinearLayout style="@style/Hangman_Keyboard_Layout">
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterQ"
+                style="@style/Hangman_Button"
+                android:text="Q" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterW"
+                style="@style/Hangman_Button"
+                android:text="W" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterE"
+                style="@style/Hangman_Button"
+                android:text="E" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterR"
+                style="@style/Hangman_Button"
+                android:text="R" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterT"
+                style="@style/Hangman_Button"
+                android:text="T" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterY"
+                style="@style/Hangman_Button"
+                android:text="Y" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterU"
+                style="@style/Hangman_Button"
+                android:text="U" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterI"
+                style="@style/Hangman_Button"
+                android:text="I" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterO"
+                style="@style/Hangman_Button"
+                android:text="O" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterP"
+                style="@style/Hangman_Button"
+                android:text="P" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/Hangman_Keyboard_Layout">
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterA"
+                style="@style/Hangman_Button"
+                android:text="A" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterS"
+                style="@style/Hangman_Button"
+                android:text="S" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterD"
+                style="@style/Hangman_Button"
+                android:text="D" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterF"
+                style="@style/Hangman_Button"
+                android:text="F" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterG"
+                style="@style/Hangman_Button"
+                android:text="G" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterH"
+                style="@style/Hangman_Button"
+                android:text="H" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterJ"
+                style="@style/Hangman_Button"
+                android:text="J" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterK"
+                style="@style/Hangman_Button"
+                android:text="K" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterL"
+                style="@style/Hangman_Button"
+                android:text="L" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/Hangman_Keyboard_Layout">
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterZ"
+                style="@style/Hangman_Button"
+                android:text="Z" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterX"
+                style="@style/Hangman_Button"
+                android:text="X" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterC"
+                style="@style/Hangman_Button"
+                android:text="C" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterV"
+                style="@style/Hangman_Button"
+                android:text="V" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterB"
+                style="@style/Hangman_Button"
+                android:text="B" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterN"
+                style="@style/Hangman_Button"
+                android:text="N" />
+
+            <Button
+                android:id="@+id/Hangman_Bt_LetterM"
+                style="@style/Hangman_Button"
+                android:text="M" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Hangman_GuidelineStart"
-        android:orientation="vertical"
-        style="@style/GuideLineStart" />
+        style="@style/GuideLineStart"
+        android:orientation="vertical" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Hangman_GuidelineEnd"
-        android:orientation="vertical"
-        style="@style/GuideLineEnd" />
+        style="@style/GuideLineEnd"
+        android:orientation="vertical" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Hangman_GuidelineTop"
-        android:orientation="horizontal"
-        style="@style/GuideLineTop" />
+        style="@style/GuideLineTop"
+        android:orientation="horizontal" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Hangman_GuidelineBottom"
-        android:orientation="horizontal"
-        style="@style/GuideLineBottom" />
+        style="@style/GuideLineBottom"
+        android:orientation="horizontal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

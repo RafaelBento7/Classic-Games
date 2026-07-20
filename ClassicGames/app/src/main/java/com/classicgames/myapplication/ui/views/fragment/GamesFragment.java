@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.classicgames.myapplication.R;
 import com.classicgames.myapplication.databinding.FragmentGamesBinding;
+import com.classicgames.myapplication.ui.views.activity.HangmanActivity;
 import com.classicgames.myapplication.ui.views.activity.MastermindActivity;
 import com.classicgames.myapplication.ui.views.activity.SnakeActivity;
 import com.classicgames.myapplication.ui.views.activity.TicTacToeActivity;
@@ -49,6 +50,10 @@ public class GamesFragment extends Fragment {
         binding.GamesFragmentIBWordle.setOnClickListener(v -> {
             SoundManager.play(SoundManager.Sound.CLICK);
             startActivity(new Intent(getContext(), WordleActivity.class));
+        });
+        binding.GamesFragmentIBHangman.setOnClickListener(v -> {
+            SoundManager.play(SoundManager.Sound.CLICK);
+            startActivity(new Intent(getContext(), HangmanActivity.class));
         });
 
         return view;

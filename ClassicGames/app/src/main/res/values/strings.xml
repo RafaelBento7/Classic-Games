@@ -108,6 +108,9 @@
     <string name="stat_overall">Overall</string>
     <string name="stat_no_obstacles">No obstacles</string>
     <string name="stat_obstacles">With obstacles</string>
+    <string name="stat_wrong_letters">Wrong letters</string>
+    <string name="stat_perfect_words">Flawless words</string>
+    <string name="stat_average_wrong">Avg. wrong / game</string>
 
 
     <!--Dialog Titles-->
@@ -204,5 +207,16 @@
     <string name="wordle_game_over_record">NEW RECORD! %1$d points in %2$s\nThe answer was %3$s</string>
     <string name="wordle_objective">This is not an easy game! You have to guess the 5 letter word. You need to set the letters in the box and click check. \nThere are three options for each letter after check:          \n            Wrong letter, the letter will become dark          \n            Correct letter but wrong position, it will look like a pink          \n            Correct letter in the correct position, it will turn green \nIf you see you can\'t guess the word, you can always skip, BUT it will cost you one point…</string>
     <string name="wordle_game_over_no_record">You lost with %1$d points in %2$s The answer was %3$s</string>
+
+    <!-- Hangman -->
+    <string name="hangman">Hangman</string>
+    <string name="hangman_game">Hangman</string>
+    <string name="hangman_gallows">The gallows</string>
+    <string name="hangman_win">Nice! The word was %1$s</string>
+    <string name="hangman_cant_skip">You have 0 points, you can\'t skip</string>
+    <string name="hangman_file_error">The file with the words can not be opened…</string>
+    <string name="hangman_game_over_record">NEW RECORD! %1$d words in %2$s\nThe word was %3$s</string>
+    <string name="hangman_game_over_no_record">You lost with %1$d words in %2$s The word was %3$s</string>
+    <string name="hangman_objective">Guess the hidden word one letter at a time! Every letter you miss draws another piece of the poor guy on the gallows, and after 6 misses the game is over. \nGuess the whole word and you score a point, the gallows is wiped clean and a new word shows up, so a good run never has to end. \nStuck on a word? You can always skip it, BUT it will cost you one point…</string>
 
 </resources>

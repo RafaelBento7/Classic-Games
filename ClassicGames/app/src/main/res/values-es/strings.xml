@@ -133,4 +133,18 @@
     <string name="stat_overall">General</string>
     <string name="stat_no_obstacles">Sin obstáculos</string>
     <string name="stat_obstacles">Con obstáculos</string>
+
+    <!-- Hangman -->
+    <string name="hangman">El Ahorcado</string>
+    <string name="hangman_game">El Ahorcado</string>
+    <string name="hangman_gallows">La horca</string>
+    <string name="hangman_win">¡Bien! La palabra era %1$s</string>
+    <string name="hangman_cant_skip">Tienes 0 puntos, no puedes pasar</string>
+    <string name="hangman_file_error">No se pudo abrir el archivo con las palabras…</string>
+    <string name="hangman_game_over_record">¡NUEVO RÉCORD! %1$d palabras en %2$s\nLa palabra era %3$s</string>
+    <string name="hangman_game_over_no_record">Has perdido con %1$d palabras en %2$s La palabra era %3$s</string>
+    <string name="hangman_objective">¡Adivina la palabra oculta letra a letra! Cada letra que falles dibuja otra parte del pobre hombre en la horca, y tras 6 fallos la partida termina. \nSi adivinas la palabra entera ganas un punto, la horca se borra y aparece una palabra nueva, así que una buena racha nunca tiene por qué acabar. \n¿Atascado con una palabra? Siempre puedes pasar, PERO te costará un punto…</string>
+    <string name="stat_wrong_letters">Letras falladas</string>
+    <string name="stat_perfect_words">Palabras impecables</string>
+    <string name="stat_average_wrong">Media fallos / partida</string>
 </resources>

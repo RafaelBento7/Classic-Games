@@ -133,4 +133,18 @@
     <string name="stat_overall">전체</string>
     <string name="stat_no_obstacles">장애물 없음</string>
     <string name="stat_obstacles">장애물 있음</string>
+
+    <!-- Hangman -->
+    <string name="hangman">행맨</string>
+    <string name="hangman_game">행맨</string>
+    <string name="hangman_gallows">교수대</string>
+    <string name="hangman_win">좋아요! 단어는 %1$s였습니다</string>
+    <string name="hangman_cant_skip">점수가 0점이라 건너뛸 수 없어요</string>
+    <string name="hangman_file_error">단어 파일을 열 수 없습니다…</string>
+    <string name="hangman_game_over_record">신기록! %2$s에 %1$d단어\n단어는 %3$s였습니다</string>
+    <string name="hangman_game_over_no_record">%2$s에 %1$d단어로 졌습니다 단어는 %3$s였습니다</string>
+    <string name="hangman_objective">숨겨진 단어를 한 글자씩 맞혀 보세요! 틀릴 때마다 교수대의 불쌍한 사람이 한 부분씩 그려지고, 6번 틀리면 게임이 끝납니다.\n단어를 모두 맞히면 1점을 얻고 교수대는 지워지며 새 단어가 나오니, 잘하면 얼마든지 이어갈 수 있어요.\n단어가 막혔나요? 언제든 건너뛸 수 있지만 1점을 잃습니다…</string>
+    <string name="stat_wrong_letters">틀린 글자</string>
+    <string name="stat_perfect_words">완벽한 단어</string>
+    <string name="stat_average_wrong">평균 실수 / 게임</string>
 </resources>

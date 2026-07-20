@@ -133,4 +133,18 @@
     <string name="stat_overall">全体</string>
     <string name="stat_no_obstacles">障害物なし</string>
     <string name="stat_obstacles">障害物あり</string>
+
+    <!-- Hangman -->
+    <string name="hangman">ハングマン</string>
+    <string name="hangman_game">ハングマン</string>
+    <string name="hangman_gallows">絞首台</string>
+    <string name="hangman_win">お見事！単語は %1$s でした</string>
+    <string name="hangman_cant_skip">0ポイントなのでスキップできません</string>
+    <string name="hangman_file_error">単語ファイルを開けません…</string>
+    <string name="hangman_game_over_record">新記録！%2$s で %1$d 単語\n単語は %3$s でした</string>
+    <string name="hangman_game_over_no_record">%2$s で %1$d 単語で負けました 単語は %3$s でした</string>
+    <string name="hangman_objective">隠された単語を1文字ずつ当てよう！外すたびに絞首台の哀れな男が描き足され、6回間違えるとゲームオーバーです。\n単語を全部当てると1ポイント、絞首台はリセットされて新しい単語が出てくるので、調子が良ければいつまでも続けられます。\n単語に詰まりましたか？いつでもスキップできますが、1ポイント失います…</string>
+    <string name="stat_wrong_letters">間違えた文字</string>
+    <string name="stat_perfect_words">ノーミスの単語</string>
+    <string name="stat_average_wrong">平均ミス / ゲーム</string>
 </resources>

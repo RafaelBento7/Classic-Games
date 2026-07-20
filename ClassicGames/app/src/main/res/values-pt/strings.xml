@@ -133,4 +133,18 @@
     <string name="stat_overall">Geral</string>
     <string name="stat_no_obstacles">Sem obstáculos</string>
     <string name="stat_obstacles">Com obstáculos</string>
+
+    <!-- Hangman -->
+    <string name="hangman">Jogo da Forca</string>
+    <string name="hangman_game">Jogo da Forca</string>
+    <string name="hangman_gallows">A forca</string>
+    <string name="hangman_win">Boa! A palavra era %1$s</string>
+    <string name="hangman_cant_skip">Tens 0 pontos, não podes passar ao próximo</string>
+    <string name="hangman_file_error">Não foi possível abrir o ficheiro com as palavras...</string>
+    <string name="hangman_game_over_record">Novo Recorde! %1$d palavras em %2$s\nA palavra era %3$s</string>
+    <string name="hangman_game_over_no_record">Perdeste com %1$d palavras em %2$s A palavra era %3$s</string>
+    <string name="hangman_objective">Adivinha a palavra escondida letra a letra! Cada letra que falhares desenha mais uma parte do pobre coitado na forca e, ao fim de 6 falhas, o jogo acaba. \nSe acertares na palavra toda ganhas um ponto, a forca é limpa e aparece uma palavra nova, por isso uma boa ronda nunca tem de acabar. \nPreso numa palavra? Podes sempre saltar, MAS vai custar-te um ponto…</string>
+    <string name="stat_wrong_letters">Letras erradas</string>
+    <string name="stat_perfect_words">Palavras sem falhas</string>
+    <string name="stat_average_wrong">Média de erros / jogo</string>
 </resources>

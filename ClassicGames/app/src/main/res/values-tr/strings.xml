@@ -133,4 +133,18 @@
     <string name="stat_overall">Genel</string>
     <string name="stat_no_obstacles">Engelsiz</string>
     <string name="stat_obstacles">Engelli</string>
+
+    <!-- Hangman -->
+    <string name="hangman">Adam Asmaca</string>
+    <string name="hangman_game">Adam Asmaca</string>
+    <string name="hangman_gallows">Darağacı</string>
+    <string name="hangman_win">Bravo! Kelime %1$s idi</string>
+    <string name="hangman_cant_skip">0 puanın var, geçemezsin</string>
+    <string name="hangman_file_error">Kelimelerin olduğu dosya açılamıyor…</string>
+    <string name="hangman_game_over_record">YENİ REKOR! %2$s içinde %1$d kelime\nKelime %3$s idi</string>
+    <string name="hangman_game_over_no_record">%2$s içinde %1$d kelimeyle kaybettin. Kelime %3$s idi</string>
+    <string name="hangman_objective">Gizli kelimeyi harf harf tahmin et! Kaçırdığın her harf darağacındaki zavallı adamın bir parçasını daha çizer ve 6 hatadan sonra oyun biter. \nKelimenin tamamını bilirsen bir puan kazanırsın, darağacı silinir ve yeni bir kelime gelir; yani iyi bir seri hiç bitmek zorunda değil. \nBir kelimede takıldın mı? Onu her zaman geçebilirsin, AMA sana bir puana mal olur…</string>
+    <string name="stat_wrong_letters">Yanlış harfler</string>
+    <string name="stat_perfect_words">Hatasız kelimeler</string>
+    <string name="stat_average_wrong">Ort. hata / oyun</string>
 </resources>

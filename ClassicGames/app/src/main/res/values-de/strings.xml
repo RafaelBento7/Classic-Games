@@ -133,4 +133,18 @@
     <string name="stat_overall">Gesamt</string>
     <string name="stat_no_obstacles">Ohne Hindernisse</string>
     <string name="stat_obstacles">Mit Hindernissen</string>
+
+    <!-- Hangman -->
+    <string name="hangman">Galgenmännchen</string>
+    <string name="hangman_game">Galgenmännchen</string>
+    <string name="hangman_gallows">Der Galgen</string>
+    <string name="hangman_win">Stark! Das Wort war %1$s</string>
+    <string name="hangman_cant_skip">Du hast 0 Punkte, du kannst nicht überspringen</string>
+    <string name="hangman_file_error">Die Datei mit den Wörtern kann nicht geöffnet werden…</string>
+    <string name="hangman_game_over_record">NEUER REKORD! %1$d Wörter in %2$s\nDas Wort war %3$s</string>
+    <string name="hangman_game_over_no_record">Du hast mit %1$d Wörtern in %2$s verloren. Das Wort war %3$s</string>
+    <string name="hangman_objective">Errate das versteckte Wort Buchstabe für Buchstabe! Jeder falsche Buchstabe zeichnet ein weiteres Teil des armen Kerls am Galgen, und nach 6 Fehlern ist das Spiel vorbei. \nErrätst du das ganze Wort, gibt es einen Punkt, der Galgen wird gelöscht und ein neues Wort erscheint – ein guter Lauf muss also nie enden. \nDu kommst bei einem Wort nicht weiter? Du kannst es immer überspringen, ABER es kostet dich einen Punkt…</string>
+    <string name="stat_wrong_letters">Falsche Buchstaben</string>
+    <string name="stat_perfect_words">Fehlerfreie Wörter</string>
+    <string name="stat_average_wrong">Ø Fehler / Spiel</string>
 </resources>

@@ -133,4 +133,18 @@
     <string name="stat_overall">总体</string>
     <string name="stat_no_obstacles">无障碍</string>
     <string name="stat_obstacles">有障碍</string>
+
+    <!-- Hangman -->
+    <string name="hangman">猜单词</string>
+    <string name="hangman_game">猜单词</string>
+    <string name="hangman_gallows">绞刑架</string>
+    <string name="hangman_win">漂亮！单词是 %1$s</string>
+    <string name="hangman_cant_skip">你有 0 分，不能跳过</string>
+    <string name="hangman_file_error">无法打开单词文件……</string>
+    <string name="hangman_game_over_record">新纪录！%2$s 内猜出 %1$d 个单词\n单词是 %3$s</string>
+    <string name="hangman_game_over_no_record">你在 %2$s 内猜出 %1$d 个单词后输了 单词是 %3$s</string>
+    <string name="hangman_objective">一次猜一个字母，猜出隐藏的单词！每猜错一个字母，绞刑架上那个可怜人就会多画出一部分，错满 6 次游戏就结束了。\n猜出整个单词可得 1 分，绞刑架会被清空并换上新单词，所以顺利的话可以一直玩下去。\n卡在某个单词上了？你随时可以跳过，但是要扣 1 分……</string>
+    <string name="stat_wrong_letters">错误字母</string>
+    <string name="stat_perfect_words">完美单词</string>
+    <string name="stat_average_wrong">平均错误 / 局</string>
 </resources>

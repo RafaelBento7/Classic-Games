@@ -22,6 +22,9 @@ public class RecordsPreferences {
     private static final String KEY_WORDLE_MINUTES = "wordle_minutes";
     private static final String KEY_WORDLE_SECONDS = "wordle_seconds";
     private static final String KEY_WORDLE_POINTS = "wordle_points";
+    private static final String KEY_HANGMAN_MINUTES = "hangman_minutes";
+    private static final String KEY_HANGMAN_SECONDS = "hangman_seconds";
+    private static final String KEY_HANGMAN_POINTS = "hangman_points";
 
     // --- Stats keys ---
     private static final String SNAKE_GAMES = "snake_games";
@@ -49,6 +52,12 @@ public class RecordsPreferences {
     private static final String TRUE_COLORS_TOTAL_POINTS = "true_colors_total_points";
     private static final String TRUE_COLORS_BEST_CORRECT = "true_colors_best_correct";
     private static final String MASTERMIND_TOTAL_ATTEMPTS = "mastermind_total_attempts";
+    private static final String HANGMAN_GAMES = "hangman_games";
+    private static final String HANGMAN_WORDS_GUESSED = "hangman_words_guessed";
+    private static final String HANGMAN_CURRENT_STREAK = "hangman_current_streak";
+    private static final String HANGMAN_BEST_STREAK = "hangman_best_streak";
+    private static final String HANGMAN_WRONG_LETTERS = "hangman_wrong_letters";
+    private static final String HANGMAN_PERFECT_WORDS = "hangman_perfect_words";
 
     private final SharedPreferences sp;
 
@@ -123,6 +132,25 @@ public class RecordsPreferences {
                 sp.getInt(KEY_WORDLE_MINUTES, 0),
                 sp.getInt(KEY_WORDLE_SECONDS, 0),
                 sp.getInt(KEY_WORDLE_POINTS, 0)
+        };
+    }
+
+    public void setHangmanRecord(int minutes, int seconds, int points) {
+        sp.edit()
+                .putInt(KEY_HANGMAN_MINUTES, minutes)
+                .putInt(KEY_HANGMAN_SECONDS, seconds)
+                .putInt(KEY_HANGMAN_POINTS, points)
+                .apply();
+    }
+
+    /**
+     * @return int[0] = minutes; int[1] = seconds; int[2] = points
+     */
+    public int[] getHangmanRecord() {
+        return new int[]{
+                sp.getInt(KEY_HANGMAN_MINUTES, 0),
+                sp.getInt(KEY_HANGMAN_SECONDS, 0),
+                sp.getInt(KEY_HANGMAN_POINTS, 0)
         };
     }
 
@@ -219,5 +247,25 @@ public class RecordsPreferences {
     public void recordWordleGameOver() {
         addStat(WORDLE_GAMES, 1);
         setStat(WORDLE_CURRENT_STREAK, 0);
+    }
+
+    // Hangman
+    public int getHangmanGames() { return getStat(HANGMAN_GAMES); }
+    public int getHangmanWordsGuessed() { return getStat(HANGMAN_WORDS_GUESSED); }
+    public int getHangmanCurrentStreak() { return getStat(HANGMAN_CURRENT_STREAK); }
+    public int getHangmanBestStreak() { return getStat(HANGMAN_BEST_STREAK); }
+    public int getHangmanWrongLetters() { return getStat(HANGMAN_WRONG_LETTERS); }
+    public int getHangmanPerfectWords() { return getStat(HANGMAN_PERFECT_WORDS); }
+    public void recordHangmanWordSolved() {
+        addStat(HANGMAN_WORDS_GUESSED, 1);
+        int streak = getStat(HANGMAN_CURRENT_STREAK) + 1;
+        setStat(HANGMAN_CURRENT_STREAK, streak);
+        if (streak > getStat(HANGMAN_BEST_STREAK)) setStat(HANGMAN_BEST_STREAK, streak);
+    }
+    public void recordHangmanGameOver(int wrongLetters, int perfectWords) {
+        addStat(HANGMAN_GAMES, 1);
+        addStat(HANGMAN_WRONG_LETTERS, wrongLetters);
+        addStat(HANGMAN_PERFECT_WORDS, perfectWords);
+        setStat(HANGMAN_CURRENT_STREAK, 0);
     }
 }

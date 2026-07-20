@@ -133,4 +133,18 @@
     <string name="stat_overall">Général</string>
     <string name="stat_no_obstacles">Sans obstacles</string>
     <string name="stat_obstacles">Avec obstacles</string>
+
+    <!-- Hangman -->
+    <string name="hangman">Le Pendu</string>
+    <string name="hangman_game">Le Pendu</string>
+    <string name="hangman_gallows">La potence</string>
+    <string name="hangman_win">Bien joué ! Le mot était %1$s</string>
+    <string name="hangman_cant_skip">Tu as 0 points, tu ne peux pas passer au suivant</string>
+    <string name="hangman_file_error">Impossible d\'ouvrir le fichier contenant les mots...</string>
+    <string name="hangman_game_over_record">Nouveau record ! %1$d mots en %2$s\nLe mot était %3$s</string>
+    <string name="hangman_game_over_no_record">Tu as perdu avec %1$d mots en %2$s Le mot était %3$s</string>
+    <string name="hangman_objective">Devine le mot caché lettre par lettre ! Chaque lettre ratée dessine un morceau de plus du pauvre bonhomme sur la potence, et après 6 erreurs la partie est finie. \nDevine le mot entier et tu marques un point, la potence est effacée et un nouveau mot apparaît : une bonne partie n\'a donc jamais besoin de s\'arrêter. \nBloqué sur un mot ? Tu peux toujours passer, MAIS cela te coûtera un point…</string>
+    <string name="stat_wrong_letters">Lettres ratées</string>
+    <string name="stat_perfect_words">Mots sans faute</string>
+    <string name="stat_average_wrong">Moy. erreurs / partie</string>
 </resources>

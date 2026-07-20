@@ -21,54 +21,47 @@
             android:paddingTop="20dp">
 
             <TextView
-                android:id="@+id/ViewHelpWordle_Tv_SwipeRight"
+                android:id="@+id/ViewHelpHangman_Tv_SwipeRight"
                 style="@style/TextView"
                 android:text="@string/swipe_right"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/ViewHelpWordle_Tv_SwipeLeft"
-                style="@style/TextView"
-                android:text="@string/swipe_left"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/ViewHelpWordle_Title"
+                android:id="@+id/ViewHelpHangman_Title"
                 style="@style/TitleTextView"
-                android:text="@string/wordle"
+                android:text="@string/hangman"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ViewHelpWordle_Tv_SwipeRight" />
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpHangman_Tv_SwipeRight" />
 
             <ImageView
-                android:id="@+id/ViewHelpWordle_Iv_TrueColors"
+                android:id="@+id/ViewHelpHangman_Iv_Hangman"
                 style="@style/ImageButton_Games"
-                android:contentDescription="@string/true_colors_game"
+                android:contentDescription="@string/hangman_game"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ViewHelpWordle_Title"
-                app:srcCompat="@drawable/wordle"/>
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpHangman_Title"
+                app:srcCompat="@drawable/hangman" />
 
             <TextView
-                android:id="@+id/ViewHelpWordle_Tv_ObjectiveTitle"
+                android:id="@+id/ViewHelpHangman_Tv_ObjectiveTitle"
                 style="@style/BigTextView"
                 android:layout_marginTop="40dp"
                 android:text="@string/objective"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ViewHelpWordle_Iv_TrueColors" />
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpHangman_Iv_Hangman" />
 
             <TextView
-                android:id="@+id/ViewHelpWordle_Tv_Objective"
+                android:id="@+id/ViewHelpHangman_Tv_Objective"
                 style="@style/TextView"
                 android:layout_marginTop="20dp"
-                android:text="@string/wordle_objective"
+                android:text="@string/hangman_objective"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ViewHelpWordle_Tv_ObjectiveTitle" />
+                app:layout_constraintTop_toBottomOf="@+id/ViewHelpHangman_Tv_ObjectiveTitle" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
